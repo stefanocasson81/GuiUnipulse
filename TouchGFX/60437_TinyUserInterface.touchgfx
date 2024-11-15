@@ -1,0 +1,5450 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "SProveGUI",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cEditVal1",
+            "X": 380,
+            "Y": 10,
+            "Width": 100,
+            "Height": 25,
+            "CustomContainerDefinitionName": "CEditVal"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cEditVal2",
+            "X": 380,
+            "Y": 43,
+            "Width": 100,
+            "Height": 25,
+            "CustomContainerDefinitionName": "CEditVal"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cEditVal3",
+            "X": 380,
+            "Y": 79,
+            "Width": 100,
+            "Height": 25,
+            "CustomContainerDefinitionName": "CEditVal"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SSplashScreen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "iLogo",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "ImgSfondoSplashScreen.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "X": 5,
+            "Y": 247,
+            "Width": 470,
+            "Height": 20,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAVersion",
+            "X": 10,
+            "Y": 247,
+            "Width": 460,
+            "Height": 20,
+            "TextId": "__SingleUse_DBOR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 50
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "iTipoMacchina",
+            "X": 88,
+            "Y": 136,
+            "Width": 304,
+            "Height": 86,
+            "RelativeFilename": "ImgLogoUnitech304x86.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAFirmwareName",
+            "X": 301,
+            "Y": 133,
+            "Width": 88,
+            "Height": 35,
+            "TextId": "__SingleUse_30P2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionTimer",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "Type": "ActionDelay",
+              "Duration": 3000
+            }
+          },
+          {
+            "InteractionName": "InteractionGoMain",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "InteractionTimer"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "North",
+              "ActionComponent": "SMain"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "SMain",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cInfoBar",
+            "Width": 480,
+            "Height": 39,
+            "CustomContainerDefinitionName": "CInfoBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cAllarmi",
+            "Y": -272,
+            "Width": 480,
+            "Height": 272,
+            "CustomContainerDefinitionName": "CAllarmi"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cStrumento",
+            "Y": 299,
+            "Width": 480,
+            "Height": 272,
+            "CustomContainerDefinitionName": "CStrumento"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SBasic",
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 199,
+            "Width": 84,
+            "Height": 23,
+            "TextId": "__SingleUse_JW99",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 234,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitolo",
+            "X": 6,
+            "Y": 32,
+            "Width": 246,
+            "Height": 23,
+            "TextId": "__SingleUse_RJOO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 234,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAValore",
+            "X": 252,
+            "Y": 32,
+            "Width": 222,
+            "Height": 23,
+            "TextId": "__SingleUse_MNJU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SWeldingProcess",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cInfoBar",
+            "Width": 480,
+            "Height": 39,
+            "CustomContainerDefinitionName": "CInfoBar"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SSetup",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 480,
+            "Height": 272
+          },
+          {
+            "Type": "Box",
+            "Name": "bSelezionato",
+            "X": 5,
+            "Y": 238,
+            "Width": 280,
+            "Height": 27,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "imageSelezionato",
+            "X": 10,
+            "Y": 242,
+            "Width": 38,
+            "Height": 20,
+            "RelativeFilename": "IcoHotStartPercent38x20.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cEditValEsteso",
+            "X": 10,
+            "Y": -249,
+            "Width": 460,
+            "Height": 240,
+            "CustomContainerDefinitionName": "CEditValEsteso"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAParametro",
+            "X": 67,
+            "Y": 238,
+            "Width": 218,
+            "Height": 27,
+            "TextId": "__SingleUse_69RO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAValue",
+            "X": 292,
+            "Y": 238,
+            "Width": 183,
+            "Height": 27,
+            "TextId": "__SingleUse_0H5Z",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bSfondoBase",
+            "X": 5,
+            "Y": 31,
+            "Width": 470,
+            "Height": 200,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bMobileBase",
+            "X": 325,
+            "Y": 111,
+            "Width": 50,
+            "Height": 40,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "iCiclo",
+            "X": 5,
+            "Y": 31,
+            "Width": 470,
+            "Height": 200,
+            "RelativeFilename": "Img2tFull.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitolo",
+            "X": 325,
+            "Y": 3,
+            "Width": 150,
+            "Height": 24,
+            "TextId": "__SingleUse_U55Y",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SMenuPrincipale",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cInfoBar",
+            "Width": 480,
+            "Height": 39,
+            "CustomContainerDefinitionName": "CInfoBar"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SHwCheck",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 480,
+            "Height": 272,
+            "Color": {
+              "Red": 13,
+              "Green": 82,
+              "Blue": 13
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 78,
+            "Width": 158,
+            "Height": 165,
+            "Color": {
+              "Red": 10,
+              "Green": 50,
+              "Blue": 10
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2_1",
+            "X": 240,
+            "Y": 1,
+            "Width": 158,
+            "Height": 165,
+            "Color": {
+              "Red": 10,
+              "Green": 50,
+              "Blue": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "Y": 25,
+            "Width": 75,
+            "Height": 23,
+            "TextId": "__SingleUse_ZNSC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "Y": 45,
+            "Width": 75,
+            "Height": 23,
+            "TextId": "__SingleUse_1DOW",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1",
+            "Y": 65,
+            "Width": 75,
+            "Height": 23,
+            "TextId": "__SingleUse_EPC1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_2",
+            "Y": 85,
+            "Width": 75,
+            "Height": 23,
+            "TextId": "__SingleUse_PR22",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_3",
+            "Y": 105,
+            "Width": 75,
+            "Height": 23,
+            "TextId": "__SingleUse_6OUF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_3_1",
+            "Y": 125,
+            "Width": 75,
+            "Height": 23,
+            "TextId": "__SingleUse_8P5O",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_3_1_1",
+            "Y": 145,
+            "Width": 75,
+            "Height": 23,
+            "TextId": "__SingleUse_TJMB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 78,
+            "Width": 157,
+            "Height": 23,
+            "TextId": "__SingleUse_Q1H7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_1",
+            "X": 240,
+            "Y": 1,
+            "Width": 157,
+            "Height": 23,
+            "TextId": "__SingleUse_KGGX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutA1",
+            "X": 80,
+            "Y": 30,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutA0",
+            "X": 158,
+            "Y": 30,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutB0",
+            "X": 158,
+            "Y": 50,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutB1",
+            "X": 80,
+            "Y": 50,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutD1",
+            "X": 80,
+            "Y": 90,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutD0",
+            "X": 158,
+            "Y": 90,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutC0",
+            "X": 158,
+            "Y": 70,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutC1",
+            "X": 80,
+            "Y": 70,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutF1",
+            "X": 80,
+            "Y": 130,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutG1",
+            "X": 80,
+            "Y": 150,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutF0",
+            "X": 158,
+            "Y": 130,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutG0",
+            "X": 158,
+            "Y": 150,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutE0",
+            "X": 158,
+            "Y": 110,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitOutE1",
+            "X": 80,
+            "Y": 110,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInE1",
+            "X": 242,
+            "Y": 110,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInE0",
+            "X": 320,
+            "Y": 110,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInG0",
+            "X": 320,
+            "Y": 150,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInF0",
+            "X": 320,
+            "Y": 130,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInG1",
+            "X": 242,
+            "Y": 150,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInF1",
+            "X": 242,
+            "Y": 130,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInC1",
+            "X": 242,
+            "Y": 70,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInC0",
+            "X": 320,
+            "Y": 70,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInD0",
+            "X": 320,
+            "Y": 90,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInD1",
+            "X": 242,
+            "Y": 90,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInB1",
+            "X": 242,
+            "Y": 50,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInB0",
+            "X": 320,
+            "Y": 50,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInA0",
+            "X": 320,
+            "Y": 30,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cShow8BitInA1",
+            "X": 242,
+            "Y": 30,
+            "Width": 76,
+            "Height": 12,
+            "CustomContainerDefinitionName": "CShow8Bit"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAADCIo",
+            "X": 10,
+            "Y": 168,
+            "Width": 65,
+            "Height": 50,
+            "TextId": "__SingleUse_JM68",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAADCVo",
+            "X": 10,
+            "Y": 218,
+            "Width": 65,
+            "Height": 50,
+            "TextId": "__SingleUse_WXV1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADACCnt",
+            "X": 405,
+            "Width": 64,
+            "Height": 45,
+            "TextId": "__SingleUse_VUDY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dGDACCnt",
+            "X": 405,
+            "Y": 50,
+            "Width": 75,
+            "Height": 222,
+            "DataSeed": -1753988920,
+            "NumberOfValues": 75,
+            "MaxY": 4096.0,
+            "Precision": "1",
+            "LastIndex": 74,
+            "XAxisScale": 1.0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 1,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 409.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dGADCIo",
+            "X": 78,
+            "Y": 168,
+            "Width": 318,
+            "Height": 100,
+            "DataSeed": -1753988920,
+            "NumberOfValues": 300,
+            "MaxY": 4096.0,
+            "Precision": "1",
+            "LastIndex": 299,
+            "XAxisScale": 1.0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 1,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 255
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 409.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dGADCVo",
+            "X": 78,
+            "Y": 168,
+            "Width": 318,
+            "Height": 100,
+            "DataSeed": -1753988920,
+            "NumberOfValues": 300,
+            "MaxY": 4096.0,
+            "Precision": "1",
+            "LastIndex": 299,
+            "XAxisScale": 1.0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 1,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 409.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAEncSX",
+            "X": 1,
+            "Y": 1,
+            "Width": 77,
+            "Height": 15,
+            "TextId": "__SingleUse_QJNA",
+            "TextRotation": "0",
+            "Color": {
+              "Green": 208,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAEncDX",
+            "X": 1,
+            "Y": 15,
+            "Width": 77,
+            "Height": 15,
+            "TextId": "__SingleUse_J1B7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 41,
+              "Green": 34,
+              "Blue": 31
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SHwCheckTraino",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 480,
+            "Height": 272,
+            "Color": {
+              "Red": 13,
+              "Green": 82,
+              "Blue": 13
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAVBus",
+            "X": 5,
+            "Width": 120,
+            "Height": 21,
+            "TextId": "__SingleUse_ML24",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAVEvGas",
+            "X": 135,
+            "Width": 124,
+            "Height": 21,
+            "TextId": "__SingleUse_13ZM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 141,
+              "Green": 39,
+              "Blue": 6
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dGVEvGas",
+            "X": 130,
+            "Y": 20,
+            "Width": 120,
+            "Height": 100,
+            "DataSeed": -1753988920,
+            "NumberOfValues": 120,
+            "MaxY": 400.0,
+            "Precision": "1",
+            "LastIndex": 119,
+            "XAxisScale": 1.0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 1,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 255
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 100.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dGVBus",
+            "Y": 20,
+            "Width": 120,
+            "Height": 100,
+            "DataSeed": -1281244206,
+            "NumberOfValues": 120,
+            "MaxY": 1000.0,
+            "Precision": "1",
+            "LastIndex": 119,
+            "XAxisScale": 1.0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 1,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 100.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAAEvGas",
+            "X": 270,
+            "Width": 120,
+            "Height": 21,
+            "TextId": "__SingleUse_FMGK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dGAEvGas",
+            "X": 260,
+            "Y": 20,
+            "Width": 120,
+            "Height": 100,
+            "DataSeed": -1281244206,
+            "NumberOfValues": 120,
+            "MaxY": 6600.0,
+            "Precision": "1",
+            "LastIndex": 119,
+            "XAxisScale": 1.0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 1,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 1000.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAVMot",
+            "X": 5,
+            "Y": 152,
+            "Width": 124,
+            "Height": 21,
+            "TextId": "__SingleUse_5EDR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 141,
+              "Green": 39,
+              "Blue": 6
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dGVMot",
+            "Y": 172,
+            "Width": 120,
+            "Height": 100,
+            "DataSeed": -1753988920,
+            "NumberOfValues": 120,
+            "MaxY": 400.0,
+            "Precision": "1",
+            "LastIndex": 119,
+            "XAxisScale": 1.0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 1,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 255
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 100.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAAMot",
+            "X": 140,
+            "Y": 152,
+            "Width": 120,
+            "Height": 21,
+            "TextId": "__SingleUse_VF2B",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dGAMot",
+            "X": 130,
+            "Y": 172,
+            "Width": 120,
+            "Height": 100,
+            "DataSeed": -1281244206,
+            "NumberOfValues": 120,
+            "MaxY": 6600.0,
+            "Precision": "1",
+            "LastIndex": 119,
+            "XAxisScale": 1.0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 1,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 1000.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAMMVelMot",
+            "X": 270,
+            "Y": 152,
+            "Width": 120,
+            "Height": 21,
+            "TextId": "__SingleUse_4V5M",
+            "TextRotation": "0",
+            "Color": {
+              "Green": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dGMMVelMot",
+            "X": 260,
+            "Y": 172,
+            "Width": 120,
+            "Height": 100,
+            "DataSeed": -1281244206,
+            "NumberOfValues": 120,
+            "MaxY": 250.0,
+            "Precision": "1",
+            "LastIndex": 119,
+            "XAxisScale": 1.0,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 1,
+                "FileNameImage": "",
+                "Color": {
+                  "Green": 255
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 50.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAPT1",
+            "X": 395,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_SWIV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAPT2",
+            "X": 395,
+            "Y": 15,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_7SUA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAMotMove",
+            "X": 395,
+            "Y": 30,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_8ZR3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAPAvFilo",
+            "X": 395,
+            "Y": 45,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_R5X0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAPGas",
+            "X": 395,
+            "Y": 60,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_ZKAH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tACmdEvGas",
+            "X": 395,
+            "Y": 75,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_1INA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tACadOn",
+            "X": 395,
+            "Y": 90,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_JIFC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tACadDown",
+            "X": 395,
+            "Y": 120,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_EQRU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tACadLeft",
+            "X": 395,
+            "Y": 135,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_3Q2H",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tACadRight",
+            "X": 395,
+            "Y": 150,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_U386",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tACadPot1",
+            "X": 395,
+            "Y": 165,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_JKAP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tACadPot2",
+            "X": 395,
+            "Y": 180,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_WSFD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tACadUp",
+            "X": 395,
+            "Y": 105,
+            "Width": 85,
+            "Height": 15,
+            "TextId": "__SingleUse_4PN7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SDebugVar",
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "tAUINT8",
+            "Width": 42,
+            "Height": 23,
+            "TextId": "__SingleUse_BQM8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAINT8",
+            "X": 80,
+            "Width": 32,
+            "Height": 23,
+            "TextId": "__SingleUse_DTLZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAINT16",
+            "X": 240,
+            "Width": 37,
+            "Height": 23,
+            "TextId": "__SingleUse_CZQQ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAUINT16",
+            "X": 160,
+            "Width": 47,
+            "Height": 23,
+            "TextId": "__SingleUse_JDDP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAUINT32",
+            "X": 320,
+            "Width": 51,
+            "Height": 23,
+            "TextId": "__SingleUse_KIXC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAINT32",
+            "X": 420,
+            "Width": 41,
+            "Height": 23,
+            "TextId": "__SingleUse_6DY2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Y": 125,
+            "Width": 480,
+            "Height": 25,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1_1",
+            "Y": 75,
+            "Width": 480,
+            "Height": 25,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1_1_1",
+            "Y": 175,
+            "Width": 480,
+            "Height": 25,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1_1_1_2",
+            "Y": 225,
+            "Width": 480,
+            "Height": 25,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1_1_1_1",
+            "Y": 25,
+            "Width": 480,
+            "Height": 25,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SInfo",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 480,
+            "Height": 272
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBCntInv",
+            "Y": 138,
+            "Width": 480,
+            "Height": 134,
+            "BorderColor": {
+              "Red": 255
+            },
+            "BorderSize": 3
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBUserInterface",
+            "Width": 480,
+            "Height": 134,
+            "Color": {
+              "Red": 56,
+              "Green": 56,
+              "Blue": 56
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255
+            },
+            "BorderSize": 3
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 6,
+            "Y": 6,
+            "Width": 468,
+            "Height": 39,
+            "Color": {
+              "Red": 255,
+              "Green": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1_1",
+            "X": 6,
+            "Y": 144,
+            "Width": 468,
+            "Height": 39,
+            "Color": {
+              "Red": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 98,
+            "Y": 151,
+            "Width": 284,
+            "Height": 30,
+            "TextId": "__SingleUse_XJCW",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 134,
+            "Y": 12,
+            "Width": 212,
+            "Height": 30,
+            "TextId": "__SingleUse_KAH4",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAInfoUserInterface",
+            "X": 6,
+            "Y": 50,
+            "Width": 468,
+            "Height": 76,
+            "TextId": "__SingleUse_UD20",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 200
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAInfoCntInv",
+            "X": 6,
+            "Y": 187,
+            "Width": 468,
+            "Height": 76,
+            "TextId": "__SingleUse_S3BD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 200
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SOrologio",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 480,
+            "Height": 272
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAMese",
+            "X": 25,
+            "Y": 27,
+            "Width": 173,
+            "Height": 25,
+            "TextId": "__SingleUse_CV87",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAAnno",
+            "X": 25,
+            "Y": 52,
+            "Width": 173,
+            "Height": 25,
+            "TextId": "__SingleUse_VYAY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATGiorno",
+            "X": 25,
+            "Y": 77,
+            "Width": 173,
+            "Height": 25,
+            "TextId": "__SingleUse_MVWB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAOra",
+            "X": 25,
+            "Y": 117,
+            "Width": 173,
+            "Height": 25,
+            "TextId": "__SingleUse_D0AJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAMinuti",
+            "X": 25,
+            "Y": 142,
+            "Width": 173,
+            "Height": 25,
+            "TextId": "__SingleUse_Q7NN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASecondi",
+            "X": 25,
+            "Y": 167,
+            "Width": 173,
+            "Height": 25,
+            "TextId": "__SingleUse_H0I6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAGiorno",
+            "X": 25,
+            "Y": 2,
+            "Width": 173,
+            "Height": 25,
+            "TextId": "__SingleUse_JRK6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SMenuDebug",
+        "Components": [],
+        "Interactions": []
+      },
+      {
+        "Name": "SMenuAdvance",
+        "Components": [
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cInfoBar",
+            "Width": 480,
+            "Height": 39,
+            "CustomContainerDefinitionName": "CInfoBar"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "SUpgradeFirmware",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Y": 1,
+            "Width": 480,
+            "Height": 272
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cUpgradeFirmware1",
+            "Width": 480,
+            "Height": 60,
+            "CustomContainerDefinitionName": "CUpgradeFirmware"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cUpgradeFirmware2",
+            "Y": 63,
+            "Width": 480,
+            "Height": 60,
+            "CustomContainerDefinitionName": "CUpgradeFirmware"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cUpgradeFirmware3",
+            "Y": 126,
+            "Width": 480,
+            "Height": 60,
+            "CustomContainerDefinitionName": "CUpgradeFirmware"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cUpgradeFirmware4",
+            "Y": 189,
+            "Width": 480,
+            "Height": 60,
+            "CustomContainerDefinitionName": "CUpgradeFirmware"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAInfo",
+            "X": 5,
+            "Y": 250,
+            "Width": 475,
+            "Height": 22,
+            "TextId": "__SingleUse_KTYL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 100
+            }
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "rB1",
+            "X": 448,
+            "Y": 18,
+            "Width": 24,
+            "Height": 25,
+            "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_on_active.png",
+            "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_on_pressed.png",
+            "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_off.png",
+            "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_off_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup1",
+            "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_active_rounded_small.json"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "rB2",
+            "X": 448,
+            "Y": 81,
+            "Width": 24,
+            "Height": 25,
+            "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_on_active.png",
+            "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_on_pressed.png",
+            "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_off.png",
+            "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_off_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup1",
+            "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_active_rounded_small.json"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "rB3",
+            "X": 448,
+            "Y": 144,
+            "Width": 24,
+            "Height": 25,
+            "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_on_active.png",
+            "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_on_pressed.png",
+            "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_off.png",
+            "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_off_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup1",
+            "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_active_rounded_small.json"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "rB4",
+            "X": 448,
+            "Y": 207,
+            "Width": 24,
+            "Height": 25,
+            "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_on_active.png",
+            "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_on_pressed.png",
+            "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_off.png",
+            "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_rounded_off_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup1",
+            "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_active_rounded_small.json"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "CInfoBar",
+        "Width": 480,
+        "Height": 39,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image",
+            "X": 2,
+            "Y": 2,
+            "Width": 38,
+            "Height": 35,
+            "RelativeFilename": "IcoMig38x35.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 370,
+            "Y": 8,
+            "Width": 96,
+            "Height": 24,
+            "RelativeFilename": "ImgLogoHelvi96x24.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitolo",
+            "X": 46,
+            "Y": 4,
+            "Width": 324,
+            "Height": 33,
+            "TextId": "__SingleUse_YEPE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAHeap",
+            "X": 62,
+            "Y": 8,
+            "Width": 302,
+            "Height": 27,
+            "TextId": "__SingleUse_USHV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CImpostazioneRapidaSinergia",
+        "Width": 181,
+        "Height": 86,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 181,
+            "Height": 86,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATipoFilo",
+            "X": 5,
+            "Y": 2,
+            "Width": 176,
+            "Height": 25,
+            "TextId": "__SingleUse_EC95",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADiametro",
+            "X": 5,
+            "Y": 30,
+            "Width": 176,
+            "Height": 25,
+            "TextId": "__SingleUse_VYG6",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATipoGas",
+            "X": 5,
+            "Y": 58,
+            "Width": 176,
+            "Height": 27,
+            "TextId": "__SingleUse_YNIY",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 5,
+            "Y": 28,
+            "Width": 170,
+            "Height": 1,
+            "EndX": 170.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1_1",
+            "X": 5,
+            "Y": 56,
+            "Width": 170,
+            "Height": 1,
+            "EndX": 170.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Round"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CImpostazioneRapida",
+        "Width": 90,
+        "Height": 90,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 90,
+            "Height": 90,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAValue",
+            "Y": 57,
+            "Width": 90,
+            "Height": 26,
+            "TextId": "__SingleUse_3CPF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitolo",
+            "Y": 27,
+            "Width": 90,
+            "Height": 24,
+            "TextId": "__SingleUse_6XJ2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image",
+            "X": 18,
+            "Y": 5,
+            "Width": 54,
+            "Height": 14,
+            "RelativeFilename": "Ico2tWhite54x14.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CTileMenu",
+        "Width": 111,
+        "Height": 111,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bSfondo",
+            "Width": 111,
+            "Height": 111,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADescrizione",
+            "X": 5,
+            "Y": 65,
+            "Width": 100,
+            "Height": 44,
+            "TextId": "__SingleUse_03KU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "LineSpacing": -4,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image",
+            "X": 34,
+            "Y": 4,
+            "Width": 42,
+            "Height": 51,
+            "RelativeFilename": "IcoWeldProcess42x51.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "bOscuramento",
+            "Width": 111,
+            "Height": 111,
+            "Alpha": 206
+          },
+          {
+            "Type": "Image",
+            "Name": "iLucchetto",
+            "X": 39,
+            "Y": 8,
+            "Width": 33,
+            "Height": 48,
+            "RelativeFilename": "IcoLock33x48.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CWeldingProcessMma",
+        "Width": 480,
+        "Height": 233,
+        "Components": [
+          {
+            "Type": "Circle",
+            "Name": "cPiccolo2",
+            "X": 242,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 3.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBSX",
+            "X": 5,
+            "Width": 150,
+            "Height": 201,
+            "Color": {
+              "Red": 219
+            },
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBSX4",
+            "X": 6,
+            "Y": 144,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBSX3",
+            "X": 6,
+            "Y": 88,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bProcesso",
+            "X": 6,
+            "Y": 32,
+            "Width": 148,
+            "Height": 56,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBSX1",
+            "X": 6,
+            "Width": 148,
+            "Height": 32,
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            },
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC",
+            "X": 165,
+            "Width": 150,
+            "Height": 201,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitoloProcesso",
+            "X": 11,
+            "Width": 143,
+            "Height": 32,
+            "TextId": "__SingleUse_KA8H",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC4",
+            "X": 166,
+            "Y": 144,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC3",
+            "X": 166,
+            "Y": 87,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC2",
+            "X": 166,
+            "Y": 31,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC1",
+            "X": 166,
+            "Width": 148,
+            "Height": 32,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitoloElettrodo",
+            "X": 171,
+            "Width": 143,
+            "Height": 32,
+            "TextId": "__SingleUse_70GC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 11,
+            "Y": 32,
+            "Width": 143,
+            "Height": 56,
+            "TextId": "__SingleUse_QPS7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 59,
+            "Y": 155,
+            "Width": 43,
+            "Height": 35,
+            "RelativeFilename": "IcoMma43x35.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 200,
+            "Y": 155,
+            "Width": 81,
+            "Height": 35,
+            "RelativeFilename": "IcoMmaElectrode81x35.png",
+            "Alpha": 90
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5_1",
+            "X": 271,
+            "Y": 34,
+            "Width": 37,
+            "Height": 23,
+            "TextId": "__SingleUse_TL5N",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5_1_1",
+            "X": 235,
+            "Y": 91,
+            "Width": 75,
+            "Height": 23,
+            "TextId": "__SingleUse_PX08",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image4",
+            "X": 131,
+            "Y": 67,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image4_1",
+            "X": 291,
+            "Y": 67,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png",
+            "Alpha": 90
+          },
+          {
+            "Type": "Image",
+            "Name": "image4_1_2",
+            "X": 289,
+            "Y": 123,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png",
+            "Alpha": 90
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 6,
+            "Y": 205,
+            "Width": 159,
+            "Height": 21,
+            "TextId": "__SingleUse_LDVM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4_1",
+            "X": 315,
+            "Y": 205,
+            "Width": 159,
+            "Height": 21,
+            "TextId": "__SingleUse_TZVF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image5",
+            "X": 51,
+            "Y": 209,
+            "Width": 15,
+            "Height": 14,
+            "RelativeFilename": "IcoBack15x14.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image6",
+            "X": 384,
+            "Y": 209,
+            "Width": 10,
+            "Height": 14,
+            "RelativeFilename": "IcoCheck10x14.png"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cGrande",
+            "X": 212,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 5.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cPiccolo1",
+            "X": 227,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 3.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cPiccolo3",
+            "X": 257,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 3.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CWeldingProcessTig",
+        "Width": 480,
+        "Height": 233,
+        "Components": [
+          {
+            "Type": "Circle",
+            "Name": "cPiccolo2",
+            "X": 242,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 3.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBSX",
+            "X": 5,
+            "Width": 150,
+            "Height": 201,
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBSX4",
+            "X": 6,
+            "Y": 144,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBSX3",
+            "X": 6,
+            "Y": 88,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bProcesso",
+            "X": 6,
+            "Y": 32,
+            "Width": 148,
+            "Height": 56,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBSX1",
+            "X": 6,
+            "Y": 1,
+            "Width": 148,
+            "Height": 32,
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            },
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC",
+            "X": 165,
+            "Width": 150,
+            "Height": 201,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitoloProcesso",
+            "X": 11,
+            "Y": 1,
+            "Width": 143,
+            "Height": 32,
+            "TextId": "__SingleUse_R5JD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC4",
+            "X": 166,
+            "Y": 144,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC3",
+            "X": 166,
+            "Y": 88,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC2",
+            "X": 166,
+            "Y": 32,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBC1",
+            "X": 166,
+            "Width": 148,
+            "Height": 32,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitoloElettrodo",
+            "X": 171,
+            "Width": 143,
+            "Height": 32,
+            "TextId": "__SingleUse_9UCX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBDX",
+            "X": 325,
+            "Width": 150,
+            "Height": 201,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBDX4",
+            "X": 326,
+            "Y": 144,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBDX3",
+            "X": 326,
+            "Y": 88,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBDX2",
+            "X": 326,
+            "Y": 32,
+            "Width": 148,
+            "Height": 56,
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBDX1",
+            "X": 326,
+            "Width": 148,
+            "Height": 32,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderColor": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitoloApporto",
+            "X": 331,
+            "Width": 143,
+            "Height": 32,
+            "TextId": "__SingleUse_VR8T",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 11,
+            "Y": 32,
+            "Width": 143,
+            "Height": 56,
+            "TextId": "__SingleUse_GDW6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 64,
+            "Y": 155,
+            "Width": 33,
+            "Height": 35,
+            "RelativeFilename": "IcoTig33x35.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 223,
+            "Y": 155,
+            "Width": 34,
+            "Height": 35,
+            "RelativeFilename": "IcoTigElectrode34x35.png",
+            "Alpha": 90
+          },
+          {
+            "Type": "Image",
+            "Name": "image3",
+            "X": 362,
+            "Y": 155,
+            "Width": 77,
+            "Height": 35,
+            "RelativeFilename": "IcoTigRod77x35.png",
+            "Alpha": 90
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5_1",
+            "X": 271,
+            "Y": 34,
+            "Width": 37,
+            "Height": 23,
+            "TextId": "__SingleUse_F1L7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5_1_2",
+            "X": 432,
+            "Y": 34,
+            "Width": 37,
+            "Height": 23,
+            "TextId": "__SingleUse_JEO1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5_1_1",
+            "X": 235,
+            "Y": 91,
+            "Width": 75,
+            "Height": 23,
+            "TextId": "__SingleUse_AGFP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image4",
+            "X": 131,
+            "Y": 67,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image4_1",
+            "X": 291,
+            "Y": 67,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png",
+            "Alpha": 90
+          },
+          {
+            "Type": "Image",
+            "Name": "image4_1_2",
+            "X": 289,
+            "Y": 123,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png",
+            "Alpha": 90
+          },
+          {
+            "Type": "Image",
+            "Name": "image4_1_1",
+            "X": 451,
+            "Y": 67,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png",
+            "Alpha": 90
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 6,
+            "Y": 205,
+            "Width": 159,
+            "Height": 21,
+            "TextId": "__SingleUse_6XG4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4_1",
+            "X": 315,
+            "Y": 205,
+            "Width": 159,
+            "Height": 21,
+            "TextId": "__SingleUse_84U6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image5",
+            "X": 51,
+            "Y": 209,
+            "Width": 15,
+            "Height": 14,
+            "RelativeFilename": "IcoBack15x14.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image6",
+            "X": 384,
+            "Y": 209,
+            "Width": 10,
+            "Height": 14,
+            "RelativeFilename": "IcoCheck10x14.png"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cGrande",
+            "X": 212,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 5.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cPiccolo1",
+            "X": 227,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 3.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cPiccolo3",
+            "X": 257,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 3.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CWeldingProcessMig4",
+        "Width": 150,
+        "Height": 202,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 150,
+            "Height": 202,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bD",
+            "X": 1,
+            "Y": 146,
+            "Width": 148,
+            "Height": 55
+          },
+          {
+            "Type": "Box",
+            "Name": "box",
+            "X": 1,
+            "Y": 90,
+            "Width": 148,
+            "Height": 55
+          },
+          {
+            "Type": "Box",
+            "Name": "bTipo",
+            "X": 2,
+            "Y": 34,
+            "Width": 148,
+            "Height": 55,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "iTipo",
+            "X": 126,
+            "Y": 73,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATipoDescr",
+            "X": 5,
+            "Y": 61,
+            "Width": 121,
+            "Height": 28,
+            "TextId": "__SingleUse_C0ZF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATipo",
+            "X": 51,
+            "Y": 34,
+            "Width": 93,
+            "Height": 27,
+            "TextId": "__SingleUse_4QR8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bTitolo",
+            "X": 1,
+            "Y": 1,
+            "Width": 148,
+            "Height": 32
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitolo",
+            "X": 5,
+            "Y": 2,
+            "Width": 144,
+            "Height": 32,
+            "TextId": "__SingleUse_FA68",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CWeldingProcessMig3",
+        "Width": 150,
+        "Height": 202,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 150,
+            "Height": 202,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bD",
+            "X": 1,
+            "Y": 146,
+            "Width": 148,
+            "Height": 55
+          },
+          {
+            "Type": "Image",
+            "Name": "iD",
+            "X": 58,
+            "Y": 156,
+            "Width": 35,
+            "Height": 35,
+            "RelativeFilename": "IcoGas35x35.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "box",
+            "X": 1,
+            "Y": 90,
+            "Width": 148,
+            "Height": 55
+          },
+          {
+            "Type": "Box",
+            "Name": "bTipo",
+            "X": 1,
+            "Y": 34,
+            "Width": 148,
+            "Height": 55,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "iTipo",
+            "X": 126,
+            "Y": 73,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "bTitolo",
+            "X": 1,
+            "Y": 1,
+            "Width": 148,
+            "Height": 32
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATipo",
+            "X": 51,
+            "Y": 34,
+            "Width": 93,
+            "Height": 27,
+            "TextId": "__SingleUse_D6MH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitolo",
+            "X": 5,
+            "Y": 2,
+            "Width": 144,
+            "Height": 32,
+            "TextId": "__SingleUse_98LD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATipoDescr2",
+            "X": 5,
+            "Y": 61,
+            "Width": 121,
+            "Height": 28,
+            "TextId": "__SingleUse_GTC7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATipoDescr1",
+            "X": 5,
+            "Y": 34,
+            "Width": 121,
+            "Height": 28,
+            "TextId": "__SingleUse_H9Z2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CWeldingProcessMig2",
+        "Width": 150,
+        "Height": 202,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 150,
+            "Height": 202,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bD",
+            "X": 1,
+            "Y": 146,
+            "Width": 148,
+            "Height": 55
+          },
+          {
+            "Type": "Image",
+            "Name": "iD",
+            "X": 62,
+            "Y": 156,
+            "Width": 30,
+            "Height": 35,
+            "RelativeFilename": "IcoFilo30x35.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "bDiametro",
+            "X": 1,
+            "Y": 90,
+            "Width": 148,
+            "Height": 55
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADiametroDescr",
+            "X": 5,
+            "Y": 117,
+            "Width": 121,
+            "Height": 28,
+            "TextId": "__SingleUse_YHOI",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "iDiametro",
+            "X": 126,
+            "Y": 129,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "bTipo",
+            "X": 1,
+            "Y": 34,
+            "Width": 148,
+            "Height": 55,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "iTipo",
+            "X": 126,
+            "Y": 73,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATipo",
+            "X": 51,
+            "Y": 35,
+            "Width": 93,
+            "Height": 27,
+            "TextId": "__SingleUse_UPPY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATipoDescr",
+            "X": 5,
+            "Y": 61,
+            "Width": 121,
+            "Height": 28,
+            "TextId": "__SingleUse_EDDP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bTitolo",
+            "X": 1,
+            "Y": 1,
+            "Width": 148,
+            "Height": 32
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitolo",
+            "X": 5,
+            "Y": 2,
+            "Width": 144,
+            "Height": 32,
+            "TextId": "__SingleUse_U0I2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADiametro",
+            "X": 5,
+            "Y": 91,
+            "Width": 139,
+            "Height": 27,
+            "TextId": "__SingleUse_7WEA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CWeldingProcessMig1",
+        "Width": 150,
+        "Height": 202,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 150,
+            "Height": 202,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bD",
+            "X": 1,
+            "Y": 146,
+            "Width": 148,
+            "Height": 55
+          },
+          {
+            "Type": "Image",
+            "Name": "iD",
+            "X": 61,
+            "Y": 156,
+            "Width": 38,
+            "Height": 35,
+            "RelativeFilename": "IcoMig38x35.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "bC",
+            "X": 1,
+            "Y": 90,
+            "Width": 148,
+            "Height": 55
+          },
+          {
+            "Type": "Box",
+            "Name": "bProcesso",
+            "X": 1,
+            "Y": 34,
+            "Width": 148,
+            "Height": 55,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tProcesso",
+            "X": 5,
+            "Y": 32,
+            "Width": 143,
+            "Height": 56,
+            "TextId": "__SingleUse_LMDU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "iProcesso",
+            "X": 126,
+            "Y": 73,
+            "Width": 18,
+            "Height": 11,
+            "RelativeFilename": "IcoFreccetta18x11.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "bTitolo",
+            "X": 1,
+            "Y": 1,
+            "Width": 148,
+            "Height": 32,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitolo",
+            "X": 5,
+            "Y": 2,
+            "Width": 144,
+            "Height": 32,
+            "TextId": "__SingleUse_LQON",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CWeldingProcessMig",
+        "Width": 480,
+        "Height": 233,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "tAGoBack",
+            "X": 6,
+            "Y": 205,
+            "Width": 159,
+            "Height": 21,
+            "TextId": "__SingleUse_WDMX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "iGoBack",
+            "X": 51,
+            "Y": 209,
+            "Width": 15,
+            "Height": 14,
+            "RelativeFilename": "IcoBack15x14.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAConfirm",
+            "X": 315,
+            "Y": 205,
+            "Width": 159,
+            "Height": 21,
+            "TextId": "__SingleUse_Y5IF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "iConfirm",
+            "X": 384,
+            "Y": 209,
+            "Width": 10,
+            "Height": 14,
+            "RelativeFilename": "IcoCheck10x14.png"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cPiccolo3",
+            "X": 257,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 3.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cPiccolo2",
+            "X": 242,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 3.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cPiccolo1",
+            "X": 227,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 3.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "cGrande",
+            "X": 212,
+            "Y": 213,
+            "Width": 10,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 5.0,
+            "CenterY": 5.0,
+            "Radius": 5.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cWeldingProcessMig_1",
+            "X": 5,
+            "Width": 150,
+            "Height": 202,
+            "CustomContainerDefinitionName": "CWeldingProcessMig1"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cWeldingProcessMig_2",
+            "X": 165,
+            "Width": 150,
+            "Height": 202,
+            "CustomContainerDefinitionName": "CWeldingProcessMig2"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cWeldingProcessMig_3",
+            "X": 325,
+            "Width": 150,
+            "Height": 202,
+            "CustomContainerDefinitionName": "CWeldingProcessMig3"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cWeldingProcessMig_4",
+            "X": 480,
+            "Width": 150,
+            "Height": 202,
+            "CustomContainerDefinitionName": "CWeldingProcessMig4"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CMainMig",
+        "Width": 480,
+        "Height": 233,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bSX",
+            "X": 5,
+            "Width": 230,
+            "Height": 127,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bSX1",
+            "X": 10,
+            "Y": 81,
+            "Width": 70,
+            "Height": 41,
+            "Color": {
+              "Red": 135,
+              "Green": 135,
+              "Blue": 135
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASX1",
+            "X": 10,
+            "Y": 80,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_IDN9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASX1Val",
+            "X": 10,
+            "Y": 103,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_J5KR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bSX2",
+            "X": 85,
+            "Y": 81,
+            "Width": 70,
+            "Height": 41,
+            "Color": {
+              "Red": 135,
+              "Green": 135,
+              "Blue": 135
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASX2",
+            "X": 85,
+            "Y": 80,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_KTEG",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASX2Val",
+            "X": 85,
+            "Y": 103,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_DRTY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bSX3",
+            "X": 160,
+            "Y": 81,
+            "Width": 70,
+            "Height": 41,
+            "Color": {
+              "Red": 135,
+              "Green": 135,
+              "Blue": 135
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASX3",
+            "X": 160,
+            "Y": 80,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_PAIH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASX3Val",
+            "X": 160,
+            "Y": 103,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_1CYD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bDX",
+            "X": 245,
+            "Width": 230,
+            "Height": 127,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bDX1",
+            "X": 250,
+            "Y": 81,
+            "Width": 70,
+            "Height": 41,
+            "Color": {
+              "Red": 135,
+              "Green": 135,
+              "Blue": 135
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADX1",
+            "X": 250,
+            "Y": 80,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_VW6U",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADX1Val",
+            "X": 250,
+            "Y": 103,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_P2JY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bDX3",
+            "X": 400,
+            "Y": 81,
+            "Width": 70,
+            "Height": 41,
+            "Color": {
+              "Red": 135,
+              "Green": 135,
+              "Blue": 135
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADX3",
+            "X": 400,
+            "Y": 80,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_V9NH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADX3Val",
+            "X": 400,
+            "Y": 103,
+            "Width": 70,
+            "Height": 25,
+            "TextId": "__SingleUse_KCLN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 5,
+            "Y": 129,
+            "Width": 470,
+            "Height": 3,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartY": 3.0,
+            "EndX": 470.0,
+            "EndY": 3.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Square"
+          },
+          {
+            "Type": "Box",
+            "Name": "bRapidaSinergia",
+            "X": 290,
+            "Y": 137,
+            "Width": 185,
+            "Height": 90,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bRapida3",
+            "X": 195,
+            "Y": 137,
+            "Width": 90,
+            "Height": 90,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bRapida2",
+            "X": 100,
+            "Y": 137,
+            "Width": 90,
+            "Height": 90,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bRapida1",
+            "X": 5,
+            "Y": 137,
+            "Width": 90,
+            "Height": 90,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cImpostazioneRapida1",
+            "X": 5,
+            "Y": 136,
+            "Width": 90,
+            "Height": 90,
+            "Visible": false,
+            "CustomContainerDefinitionName": "CImpostazioneRapida"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cImpostazioneRapida2",
+            "X": 100,
+            "Y": 136,
+            "Width": 90,
+            "Height": 90,
+            "Visible": false,
+            "CustomContainerDefinitionName": "CImpostazioneRapida"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cImpostazioneRapida3",
+            "X": 195,
+            "Y": 136,
+            "Width": 90,
+            "Height": 90,
+            "Visible": false,
+            "CustomContainerDefinitionName": "CImpostazioneRapida"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAValSX",
+            "X": 5,
+            "Y": -10,
+            "Width": 230,
+            "Height": 90,
+            "TextId": "__SingleUse_KDJ5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAValDX",
+            "X": 245,
+            "Y": -10,
+            "Width": 230,
+            "Height": 81,
+            "TextId": "__SingleUse_52JV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cImpostazioneRapidaSinergia",
+            "X": 292,
+            "Y": 139,
+            "Width": 181,
+            "Height": 86,
+            "CustomContainerDefinitionName": "CImpostazioneRapidaSinergia"
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "cPDX",
+            "X": 430,
+            "Y": 183,
+            "Width": 100,
+            "Height": 100,
+            "Color": {
+              "Red": 254,
+              "Green": 189,
+              "Blue": 23
+            },
+            "CenterX": 50.0,
+            "CenterY": 50.0,
+            "Radius": 40.0,
+            "LineWidth": 20.0,
+            "EndAngle": -90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Sfondo100x100Trasparente.png",
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 50
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "cPSX",
+            "X": -50,
+            "Y": 182,
+            "Width": 100,
+            "Height": 100,
+            "Color": {
+              "Red": 254,
+              "Green": 189,
+              "Blue": 23
+            },
+            "CenterX": 50.0,
+            "CenterY": 50.0,
+            "Radius": 40.0,
+            "LineWidth": 20.0,
+            "EndAngle": 90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Sfondo100x100Trasparente.png",
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 50
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "cPC",
+            "X": 185,
+            "Y": 183,
+            "Width": 100,
+            "Height": 100,
+            "Color": {
+              "Red": 254,
+              "Green": 189,
+              "Blue": 23
+            },
+            "CenterX": 50.0,
+            "CenterY": 50.0,
+            "Radius": 40.0,
+            "LineWidth": 20.0,
+            "StartAngle": -90.0,
+            "EndAngle": 90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Sfondo100x100Trasparente.png",
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 50
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CMainMma",
+        "Width": 480,
+        "Height": 233,
+        "Components": [
+          {
+            "Type": "CircleProgress",
+            "Name": "cPC",
+            "X": 185,
+            "Y": 183,
+            "Width": 100,
+            "Height": 100,
+            "Color": {
+              "Red": 254,
+              "Green": 189,
+              "Blue": 23
+            },
+            "CenterX": 50.0,
+            "CenterY": 50.0,
+            "Radius": 40.0,
+            "LineWidth": 20.0,
+            "StartAngle": -90.0,
+            "EndAngle": 90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Sfondo100x100Trasparente.png",
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 50
+          },
+          {
+            "Type": "Box",
+            "Name": "bSX",
+            "X": 5,
+            "Width": 230,
+            "Height": 127,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bSX1",
+            "X": 10,
+            "Y": 91,
+            "Width": 70,
+            "Height": 31,
+            "Color": {
+              "Red": 135,
+              "Green": 135,
+              "Blue": 135
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASX1",
+            "X": 10,
+            "Y": 91,
+            "Width": 70,
+            "Height": 31,
+            "TextId": "__SingleUse_UPML",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAValSX",
+            "X": 5,
+            "Width": 230,
+            "Height": 106,
+            "TextId": "__SingleUse_L7IK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CMainTig",
+        "Width": 480,
+        "Height": 233,
+        "Components": [
+          {
+            "Type": "CircleProgress",
+            "Name": "cPC",
+            "X": 185,
+            "Y": 183,
+            "Width": 100,
+            "Height": 100,
+            "Color": {
+              "Red": 254,
+              "Green": 189,
+              "Blue": 23
+            },
+            "CenterX": 50.0,
+            "CenterY": 50.0,
+            "Radius": 40.0,
+            "LineWidth": 20.0,
+            "StartAngle": -90.0,
+            "EndAngle": 90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Sfondo100x100Trasparente.png",
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 50
+          },
+          {
+            "Type": "Box",
+            "Name": "bSX",
+            "X": 5,
+            "Width": 230,
+            "Height": 127,
+            "Color": {
+              "Red": 49,
+              "Green": 49,
+              "Blue": 49
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bSX1",
+            "X": 10,
+            "Y": 91,
+            "Width": 70,
+            "Height": 31,
+            "Color": {
+              "Red": 135,
+              "Green": 135,
+              "Blue": 135
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASX1",
+            "X": 10,
+            "Y": 91,
+            "Width": 70,
+            "Height": 31,
+            "TextId": "__SingleUse_V03B",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAValSX",
+            "X": 5,
+            "Width": 230,
+            "Height": 106,
+            "TextId": "__SingleUse_8D77",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CShow8Bit",
+        "Width": 76,
+        "Height": 12,
+        "Components": [
+          {
+            "Type": "BoxWithBorder",
+            "Name": "bWBBase",
+            "Width": 76,
+            "Height": 12,
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "Box",
+            "Name": "bB7",
+            "X": 2,
+            "Y": 2,
+            "Width": 8,
+            "Height": 8,
+            "Color": {
+              "Green": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bB6",
+            "X": 11,
+            "Y": 2,
+            "Width": 8,
+            "Height": 8,
+            "Color": {
+              "Green": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bB5",
+            "X": 20,
+            "Y": 2,
+            "Width": 8,
+            "Height": 8,
+            "Color": {
+              "Green": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bB4",
+            "X": 29,
+            "Y": 2,
+            "Width": 8,
+            "Height": 8,
+            "Color": {
+              "Green": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bB3",
+            "X": 39,
+            "Y": 2,
+            "Width": 8,
+            "Height": 8,
+            "Color": {
+              "Green": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bB2",
+            "X": 48,
+            "Y": 2,
+            "Width": 8,
+            "Height": 8,
+            "Color": {
+              "Green": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bB1",
+            "X": 57,
+            "Y": 2,
+            "Width": 8,
+            "Height": 8,
+            "Color": {
+              "Green": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bB0",
+            "X": 66,
+            "Y": 2,
+            "Width": 8,
+            "Height": 8,
+            "Color": {
+              "Green": 255
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CStrumento",
+        "Width": 480,
+        "Height": 272,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 345,
+            "Y": 78,
+            "Width": 150,
+            "Height": 33,
+            "TextId": "__SingleUse_IBB6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 480,
+            "Height": 272,
+            "Alpha": 220
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder",
+            "X": 20,
+            "Y": 45,
+            "Width": 440,
+            "Height": 180,
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 3
+          },
+          {
+            "Type": "Box",
+            "Name": "bA",
+            "X": 27,
+            "Y": 188,
+            "Width": 205,
+            "Height": 30,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "bV",
+            "X": 248,
+            "Y": 188,
+            "Width": 205,
+            "Height": 30,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Line",
+            "Name": "line",
+            "X": 238,
+            "Y": 45,
+            "Width": 3,
+            "Height": 180,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "EndY": 180.0,
+            "LineWidth": 10.0,
+            "LineEndingStyle": "Square"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAA",
+            "X": 123,
+            "Y": 191,
+            "Width": 15,
+            "Height": 22,
+            "TextId": "__SingleUse_QGY3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAV",
+            "X": 343,
+            "Y": 190,
+            "Width": 15,
+            "Height": 22,
+            "TextId": "__SingleUse_TE02",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATensione",
+            "X": 240,
+            "Y": 58,
+            "Width": 220,
+            "Height": 103,
+            "TextId": "__SingleUse_CWU0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tACorrente",
+            "X": 20,
+            "Y": 58,
+            "Width": 220,
+            "Height": 103,
+            "TextId": "__SingleUse_NTR6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAPuntino",
+            "X": 375,
+            "Y": 92,
+            "Width": 42,
+            "Height": 121,
+            "TextId": "__SingleUse_33E3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CAllarmi",
+        "Width": 480,
+        "Height": 272,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 480,
+            "Height": 272
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "X": 30,
+            "Y": 36,
+            "Width": 420,
+            "Height": 200,
+            "BorderColor": {
+              "Red": 255
+            },
+            "BorderSize": 3
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATraino",
+            "X": 40,
+            "Y": 102,
+            "Width": 390,
+            "Height": 34,
+            "TextId": "__SingleUse_MXIN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tABoard",
+            "X": 40,
+            "Y": 145,
+            "Width": 390,
+            "Height": 34,
+            "TextId": "__SingleUse_5P6Y",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAPower",
+            "X": 40,
+            "Y": 188,
+            "Width": 390,
+            "Height": 34,
+            "TextId": "__SingleUse_T62N",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 40,
+            "Y": 46,
+            "Width": 400,
+            "Height": 45,
+            "Color": {
+              "Red": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 44,
+            "Y": 52,
+            "Width": 34,
+            "Height": 33,
+            "RelativeFilename": "IcoWarningBlack34x33.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1_1",
+            "X": 402,
+            "Y": 50,
+            "Width": 34,
+            "Height": 33,
+            "RelativeFilename": "IcoWarningBlack34x33.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 159,
+            "Y": 46,
+            "Width": 162,
+            "Height": 53,
+            "TextId": "__SingleUse_3QN6",
+            "TextRotation": "0",
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CEditVal",
+        "Width": 100,
+        "Height": 25,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bBase",
+            "Width": 100,
+            "Height": 25,
+            "Color": {
+              "Red": 89,
+              "Green": 89,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAUdm",
+            "Width": 100,
+            "Height": 25,
+            "TextId": "__SingleUse_1I1Y",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 120,
+              "Green": 120,
+              "Blue": 120
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAVal",
+            "Width": 100,
+            "Height": 25,
+            "TextId": "__SingleUse_ORPO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 15
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CEditValEsteso",
+        "Width": 460,
+        "Height": 240,
+        "Components": [
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "X": -1,
+            "Width": 460,
+            "Height": 240,
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 5
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 460,
+            "Height": 43,
+            "Color": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 422,
+            "Y": 14,
+            "Width": 14,
+            "Height": 14,
+            "RelativeFilename": "IcoDomanda14x14.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image",
+            "X": 5,
+            "Y": 5,
+            "Width": 35,
+            "Height": 35,
+            "RelativeFilename": "IcoGas35x35.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tADescrizione",
+            "X": 240,
+            "Y": 49,
+            "Width": 210,
+            "Height": 158,
+            "TextId": "__SingleUse_JY4M",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "LineSpacing": -1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAUdm",
+            "X": 163,
+            "Y": 125,
+            "Width": 67,
+            "Height": 23,
+            "TextId": "__SingleUse_L9QN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tAValue",
+            "X": 11,
+            "Y": 117,
+            "Height": 53,
+            "TextId": "__SingleUse_FUSY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitolo",
+            "X": 49,
+            "Y": 7,
+            "Width": 362,
+            "Height": 31,
+            "TextId": "__SingleUse_8ICU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image6",
+            "X": 360,
+            "Y": 212,
+            "Width": 10,
+            "Height": 14,
+            "RelativeFilename": "IcoCheck10x14.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image5",
+            "X": 56,
+            "Y": 213,
+            "Width": 15,
+            "Height": 14,
+            "RelativeFilename": "IcoBack15x14.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4_1",
+            "X": 291,
+            "Y": 209,
+            "Width": 159,
+            "Height": 21,
+            "TextId": "__SingleUse_9BLY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 11,
+            "Y": 209,
+            "Width": 159,
+            "Height": 21,
+            "TextId": "__SingleUse_UOAX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CUpgradeFirmware",
+        "Width": 480,
+        "Height": 60,
+        "Components": [
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "Width": 480,
+            "Height": 60,
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASotto",
+            "X": 6,
+            "Y": 41,
+            "Width": 427,
+            "Height": 19,
+            "TextId": "__SingleUse_FEOO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 100
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tASopra",
+            "X": 6,
+            "Y": 7,
+            "Width": 427,
+            "Height": 23,
+            "TextId": "__SingleUse_98BS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 100
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder2",
+            "X": 441,
+            "Width": 39,
+            "Height": 60,
+            "BorderColor": {
+              "Red": 102,
+              "Green": 179,
+              "Blue": 46
+            },
+            "BorderSize": 2
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "SSplashScreen",
+    "SelectedStartupLanguage": "EN",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32H7",
+    "SubFamily": "STM32H730 Value line",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../60437_UniPulsedTinyUI.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": []
+  },
+  "Version": "4.23.2"
+}

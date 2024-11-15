@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.23.2">
+  <Languages>
+    <Language Id="EN" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1">
+      <Text Id="AAAA" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">New Text</Translation>
+      </Text>
+      <Text Id="MMA_HOTSTART" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Hot start</Translation>
+      </Text>
+      <Text Id="MMA_ARCFORCE" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Arc force</Translation>
+      </Text>
+      <Text Id="HOTSTART_SPEEDPERC" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Hot start speed</Translation>
+      </Text>
+      <Text Id="HOTSTART_BALANCEV" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Hot start balance voltage</Translation>
+      </Text>
+      <Text Id="CRATERFILLER_SPEEDPERC" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Crater filler speed</Translation>
+      </Text>
+      <Text Id="CRATERFILLER_BALANCEV" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Crater filler balance</Translation>
+      </Text>
+      <Text Id="HOTSTART_SPEED" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Hot start speed</Translation>
+      </Text>
+      <Text Id="HOTSTART_VOLTAGE" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Hot start voltage</Translation>
+      </Text>
+      <Text Id="HOTSTART_TIME" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Hot start time</Translation>
+      </Text>
+      <Text Id="HOTSTART_SLOPE" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Hot start slope</Translation>
+      </Text>
+      <Text Id="CRATERFILLER_SPEED" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Crater filler speed</Translation>
+      </Text>
+      <Text Id="INFO" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">INFO</Translation>
+      </Text>
+      <Text Id="CRATERFILLER_VOLTAGE" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Crater filler voltage</Translation>
+      </Text>
+      <Text Id="CRATERFILLER_SLOPE" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Crater filler slope</Translation>
+      </Text>
+      <Text Id="CRATERFILLER_TIME" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Crater filler time</Translation>
+      </Text>
+      <Text Id="WELDINGLFPROCESS" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">WELDING\nPROCESS</Translation>
+      </Text>
+      <Text Id="BASIC" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">BASIC</Translation>
+      </Text>
+      <Text Id="RAPIDMENU" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">RAPID\nMENU</Translation>
+      </Text>
+      <Text Id="SETTINGS" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">SETTINGS</Translation>
+      </Text>
+      <Text Id="LANGUAGE" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">LANG.</Translation>
+      </Text>
+      <Text Id="HARDWARECHECK" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">HARDWARE\nCHECK</Translation>
+      </Text>
+      <Text Id="VCUT" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">VCUT</Translation>
+      </Text>
+      <Text Id="VRD" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">VRD</Translation>
+      </Text>
+      <Text Id="TIPOFILO" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Wire</Translation>
+      </Text>
+      <Text Id="TIPOGAS" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Gas</Translation>
+      </Text>
+      <Text Id="DIAMETRO" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Diameter</Translation>
+      </Text>
+      <Text Id="DINAMICA" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Dynamic</Translation>
+      </Text>
+      <Text Id="POSTGAS" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Post gas</Translation>
+      </Text>
+      <Text Id="BBT" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">BBT</Translation>
+      </Text>
+      <Text Id="SLOPE" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Slope</Translation>
+      </Text>
+      <Text Id="PREGAS" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Pre gas</Translation>
+      </Text>
+      <Text Id="TEMPI" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Trigger</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_4V5M" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">VelMot:&lt;value&gt;m/Min</Translation>
+      </Text>
+      <Text Id="__SingleUse_WSFD" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">CadPot2: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JKAP" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">CadPot1: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_U386" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">CadRight: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3Q2H" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">CadLeft: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4PN7" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">CadUp: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_EQRU" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">CadDown: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JIFC" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">CadOn: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KTYL" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZKAH" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">PGas: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1INA" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">EvGasCmd: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8ZR3" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">MotMove: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_R5X0" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">PAvWire: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_7SUA" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">PT2: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_SWIV" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">PT1: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_5EDR" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">VMot: &lt;value&gt;V</Translation>
+      </Text>
+      <Text Id="__SingleUse_VF2B" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">AMot: &lt;value&gt;mA</Translation>
+      </Text>
+      <Text Id="__SingleUse_FMGK" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">AEvGas: &lt;value&gt;mA</Translation>
+      </Text>
+      <Text Id="__SingleUse_13ZM" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">VEvGas: &lt;value&gt;V</Translation>
+      </Text>
+      <Text Id="__SingleUse_ML24" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">VBus: &lt;value&gt;V</Translation>
+      </Text>
+      <Text Id="__SingleUse_FEOO" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_98BS" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JRK6" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Giorno: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_H0I6" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Secondi: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q7NN" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Minuti: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_D0AJ" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Ora: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MVWB" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">TGiorno: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VYAY" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Anno: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CV87" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Mese: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_P2JY" Alignment="Center" TypographyId="Regular15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KCLN" Alignment="Center" TypographyId="Regular15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1CYD" Alignment="Center" TypographyId="Regular15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_DRTY" Alignment="Center" TypographyId="Regular15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_J5KR" Alignment="Center" TypographyId="Regular15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_S3BD" Alignment="Center" TypographyId="Regular20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_UD20" Alignment="Center" TypographyId="Regular20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KAH4" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">INFO USER INTERFACE</Translation>
+      </Text>
+      <Text Id="__SingleUse_XJCW" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">INFO CONTROLLER INVERTER</Translation>
+      </Text>
+      <Text Id="__SingleUse_J1B7" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">EncDX: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_QJNA" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">EncSX: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_YNIY" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VYG6" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">Ø &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_EC95" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_6XJ2" Alignment="Center" TypographyId="Semibold15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3CPF" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_U55Y" Alignment="Right" TypographyId="Semibold20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_33E3" Alignment="Left" TypographyId="HindSemibold75">
+        <Translation Language="EN">.</Translation>
+      </Text>
+      <Text Id="__SingleUse_IBB6" Alignment="Left" TypographyId="BoldItalic33">
+        <Translation Language="EN">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_30P2" Alignment="Center" TypographyId="BoldItalic33">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MNJU" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_RJOO" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KIXC" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">UINT32</Translation>
+      </Text>
+      <Text Id="__SingleUse_6DY2" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">INT32</Translation>
+      </Text>
+      <Text Id="__SingleUse_CZQQ" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">INT16</Translation>
+      </Text>
+      <Text Id="__SingleUse_JDDP" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">UINT16</Translation>
+      </Text>
+      <Text Id="__SingleUse_DTLZ" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">INT8</Translation>
+      </Text>
+      <Text Id="__SingleUse_BQM8" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">UINT8</Translation>
+      </Text>
+      <Text Id="__SingleUse_VUDY" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">DACCnt:&#10;&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0H5Z" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_69RO" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_9BLY" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">press    to confirm</Translation>
+      </Text>
+      <Text Id="__SingleUse_UOAX" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">press     to go back</Translation>
+      </Text>
+      <Text Id="__SingleUse_8ICU" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_FUSY" Alignment="Left" TypographyId="Semibold35">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_L9QN" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JY4M" Alignment="Left" TypographyId="Light10">
+        <Translation Language="EN">Fin che la barca va lasciala andare&#10;Fin che la barca va tu non remare&#10;Fin che la barca stai a guardare&#10;Quando l'amore viene il campanello suonerà&#10;Quando l'amore viene il campanello suonerà</Translation>
+      </Text>
+      <Text Id="__SingleUse_T62N" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">Power: [&lt;value&gt;]</Translation>
+      </Text>
+      <Text Id="__SingleUse_5P6Y" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">Board: [&lt;value&gt;]</Translation>
+      </Text>
+      <Text Id="__SingleUse_MXIN" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">Traino: [&lt;value&gt;]</Translation>
+      </Text>
+      <Text Id="__SingleUse_3QN6" Alignment="Center" TypographyId="Semibold35">
+        <Translation Language="EN">WARNING</Translation>
+      </Text>
+      <Text Id="__SingleUse_H9Z2" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_WXV1" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">ADC[Vo]:&#10;&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JM68" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">ADC[Io]:&#10;&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_C0ZF" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4QR8" Alignment="Right" TypographyId="Semibold15">
+        <Translation Language="EN">TYPE</Translation>
+      </Text>
+      <Text Id="__SingleUse_FA68" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">MIG TYPE</Translation>
+      </Text>
+      <Text Id="__SingleUse_GTC7" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_D6MH" Alignment="Right" TypographyId="Semibold15">
+        <Translation Language="EN">TYPE</Translation>
+      </Text>
+      <Text Id="__SingleUse_98LD" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">GAS</Translation>
+      </Text>
+      <Text Id="__SingleUse_YHOI" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_7WEA" Alignment="Right" TypographyId="Semibold15">
+        <Translation Language="EN">DIAMETER</Translation>
+      </Text>
+      <Text Id="__SingleUse_EDDP" Alignment="Left" TypographyId="Regular20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_UPPY" Alignment="Right" TypographyId="Semibold15">
+        <Translation Language="EN">TYPE</Translation>
+      </Text>
+      <Text Id="__SingleUse_U0I2" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">WIRE</Translation>
+      </Text>
+      <Text Id="__SingleUse_LQON" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">PROCESS</Translation>
+      </Text>
+      <Text Id="__SingleUse_LMDU" Alignment="Left" TypographyId="Semibold35">
+        <Translation Language="EN">MIG</Translation>
+      </Text>
+      <Text Id="__SingleUse_TZVF" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">press    to confirm</Translation>
+      </Text>
+      <Text Id="__SingleUse_LDVM" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">press     to go back</Translation>
+      </Text>
+      <Text Id="__SingleUse_PX08" Alignment="Right" TypographyId="Semibold15">
+        <Translation Language="EN">DIAMETER</Translation>
+      </Text>
+      <Text Id="__SingleUse_TL5N" Alignment="Right" TypographyId="Semibold15">
+        <Translation Language="EN">TYPE</Translation>
+      </Text>
+      <Text Id="__SingleUse_QPS7" Alignment="Left" TypographyId="Semibold35">
+        <Translation Language="EN">MMA</Translation>
+      </Text>
+      <Text Id="__SingleUse_70GC" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">ELECTRODE</Translation>
+      </Text>
+      <Text Id="__SingleUse_KA8H" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">PROCESS</Translation>
+      </Text>
+      <Text Id="__SingleUse_84U6" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">press    to confirm</Translation>
+      </Text>
+      <Text Id="__SingleUse_6XG4" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">press     to go back</Translation>
+      </Text>
+      <Text Id="__SingleUse_AGFP" Alignment="Right" TypographyId="Semibold15">
+        <Translation Language="EN">DIAMETER</Translation>
+      </Text>
+      <Text Id="__SingleUse_JEO1" Alignment="Right" TypographyId="Semibold15">
+        <Translation Language="EN">TYPE</Translation>
+      </Text>
+      <Text Id="__SingleUse_F1L7" Alignment="Right" TypographyId="Semibold15">
+        <Translation Language="EN">TYPE</Translation>
+      </Text>
+      <Text Id="__SingleUse_GDW6" Alignment="Left" TypographyId="Semibold35">
+        <Translation Language="EN">TIG</Translation>
+      </Text>
+      <Text Id="__SingleUse_VR8T" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">TIG RODES</Translation>
+      </Text>
+      <Text Id="__SingleUse_9UCX" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">ELECTRODE</Translation>
+      </Text>
+      <Text Id="__SingleUse_R5JD" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">PROCESS</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y5IF" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">press    to confirm</Translation>
+      </Text>
+      <Text Id="__SingleUse_WDMX" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">press     to go back</Translation>
+      </Text>
+      <Text Id="__SingleUse_TE02" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">V</Translation>
+      </Text>
+      <Text Id="__SingleUse_QGY3" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">A</Translation>
+      </Text>
+      <Text Id="__SingleUse_CWU0" Alignment="Center" TypographyId="ChivoMonoBold100">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_NTR6" Alignment="Center" TypographyId="ChivoMonoBold100">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KGGX" Alignment="Center" TypographyId="Regular15">
+        <Translation Language="EN">IN</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q1H7" Alignment="Center" TypographyId="Regular15">
+        <Translation Language="EN">OUT</Translation>
+      </Text>
+      <Text Id="__SingleUse_TJMB" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">PORT_G:</Translation>
+      </Text>
+      <Text Id="__SingleUse_8P5O" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">PORT_F:</Translation>
+      </Text>
+      <Text Id="__SingleUse_6OUF" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">PORT_E:</Translation>
+      </Text>
+      <Text Id="__SingleUse_PR22" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">PORT_D:</Translation>
+      </Text>
+      <Text Id="__SingleUse_EPC1" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">PORT_C:</Translation>
+      </Text>
+      <Text Id="__SingleUse_1DOW" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">PORT_B:</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZNSC" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">PORT_A:</Translation>
+      </Text>
+      <Text Id="__SingleUse_8D77" Alignment="Center" TypographyId="HindSemibold75">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_V03B" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">A</Translation>
+      </Text>
+      <Text Id="__SingleUse_L7IK" Alignment="Center" TypographyId="HindSemibold75">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_UPML" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">A</Translation>
+      </Text>
+      <Text Id="__SingleUse_1I1Y" Alignment="Right" TypographyId="Regular15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ORPO" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_USHV" Alignment="Right" TypographyId="Light10">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_03KU" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_YEPE" Alignment="Left" TypographyId="Semibold20">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_52JV" Alignment="Center" TypographyId="HindSemibold75">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_V9NH" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">+/-V</Translation>
+      </Text>
+      <Text Id="__SingleUse_VW6U" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">V</Translation>
+      </Text>
+      <Text Id="__SingleUse_KTEG" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">m/min</Translation>
+      </Text>
+      <Text Id="__SingleUse_PAIH" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_IDN9" Alignment="Center" TypographyId="Semibold20">
+        <Translation Language="EN">A</Translation>
+      </Text>
+      <Text Id="__SingleUse_KDJ5" Alignment="Center" TypographyId="HindSemibold75">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JW99" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">Basic menu</Translation>
+      </Text>
+      <Text Id="__SingleUse_DBOR" Alignment="Center" TypographyId="Regular15">
+        <Translation Language="EN">&lt;value&gt;</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Regular15" Font="Prompt-Regular.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+    <Typography Id="Semibold20" Font="Prompt-SemiBold.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+    <Typography Id="HindSemibold75" Font="hind-semibold.otf" Size="75" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="&quot; &quot;+-,." WildcardCharacterRanges="0-9" />
+    <Typography Id="Regular20" Font="Prompt-Regular.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+    <Typography Id="Semibold15" Font="Prompt-SemiBold.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+    <Typography Id="Semibold35" Font="Prompt-SemiBold.ttf" Size="35" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+    <Typography Id="Light10" Font="Prompt-Light.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+    <Typography Id="BoldItalic33" Font="Prompt-Bold.ttf" Size="33" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+    <Typography Id="ChivoMonoBold100" Font="ChivoMono-Bold.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+  </Typographies>
+</TextDatabase>
