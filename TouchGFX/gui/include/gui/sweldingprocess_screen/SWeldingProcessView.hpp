@@ -7,7 +7,7 @@
 extern "C"
 {
 	#include "ARMLib/Common/ComDef.h"
-	#include "CORELib/Viper/ViperDef.h"
+	#include "CORELib/Viper/Common/ViperDef.h"
 };
 
 

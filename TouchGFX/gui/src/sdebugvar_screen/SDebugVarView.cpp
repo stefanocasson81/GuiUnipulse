@@ -5,7 +5,7 @@ extern "C"
 {
 	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
 	#include "ARMLib/Common/Data.h"
-	#include "CORELib/Viper/ViperDef.h"
+	#include "CORELib/Viper/Common/ViperDef.h"
 	#include "ARMLib/Common/Data8Pack.h"
 };
 

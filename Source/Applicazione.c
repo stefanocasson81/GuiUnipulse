@@ -29,7 +29,7 @@
 #include "ARMLib/Common/FWUpgrade.h"
 #include "XmlSupport.h"
 #include "Features.h"
-#include "CORELib/Viper/ViperDef.h"
+#include "CORELib/Viper/Common/ViperDef.h"
 
 #include "ARMLib/GUI/TGFX/TGFXCustom.h"
 #include "CORELib/Viper/UserInterface/ViperUI.h"

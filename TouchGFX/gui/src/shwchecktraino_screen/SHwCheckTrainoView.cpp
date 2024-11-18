@@ -3,7 +3,7 @@
 extern "C"
 {
 	#include "ARMLib/Common/ComDef.h"
-	#include "CORELib/Viper/ViperDef.h"
+	#include "CORELib/Viper/Common/ViperDef.h"
 	#include "CORELib/Viper/UserInterface/ViperUI.h"
 	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
 	#include "ARMLib/Common/SwTimer.h"

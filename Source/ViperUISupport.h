@@ -4,7 +4,7 @@
 //===================================================================== INCLUDES
 
 #include "ARMLib/Common/ComDef.h"
-#include "CORELib/Viper/ViperDef.h"
+#include "CORELib/Viper/Common/ViperDef.h"
 #include "ARMLib/Common/CustomString.h"
 #include "CORELib/Viper/UserInterface/ViperUI.h"
 

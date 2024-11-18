@@ -6,7 +6,7 @@
 extern "C"
 {
 	#include "ARMLib/Common/CustomString.h"
-	#include "CORELib/Viper/ViperDef.h"
+	#include "CORELib/Viper/Common/ViperDef.h"
 	#include "ARMLib/Common/Data.h"
 	#include "CORELib/Viper/UserInterface/ViperUI.h"
 	#include "_Board.h"

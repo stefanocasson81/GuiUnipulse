@@ -4,7 +4,7 @@ extern "C"
 {
 	#include "CORELib/Viper/UserInterface/ViperUI.h"
 	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
-	#include "CORELib/Viper/ViperDef.h"
+	#include "CORELib/Viper/Common/ViperDef.h"
 };
 
 CWeldingProcessTig::CWeldingProcessTig()

@@ -64,12 +64,12 @@
 		<link>
 			<name>CORELib/Viper/ViperDef.c</name>
 			<type>1</type>
-			<location>x:/CORELib/Viper/ViperDef.c</location>
+			<location>X:/CORELib/Viper/Common/ViperDef.c</location>
 		</link>
 		<link>
 			<name>CORELib/Viper/ViperDef.h</name>
 			<type>1</type>
-			<location>x:/CORELib/Viper/ViperDef.h</location>
+			<location>X:/CORELib/Viper/Common/ViperDef.h</location>
 		</link>
 		<link>
 			<name>_BOARDLib/60437/_Board.c</name>
