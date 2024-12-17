@@ -1,0 +1,24 @@
+[submodule "ARMLib/Common"]
+	path = ARMLib/Common
+	url = H:/Helvi/lab_firm/Firmware_Sorgenti/GIT/LIBRERIE/ARMLib/Common
+[submodule "ARMLib/Device"]
+	path = ARMLib/Device
+	url = H:/Helvi/lab_firm/Firmware_Sorgenti/GIT/LIBRERIE/ARMLib/Device
+[submodule "ARMLib/FileSystem"]
+	path = ARMLib/FileSystem
+	url = H:/Helvi/lab_firm/Firmware_Sorgenti/GIT/LIBRERIE/ARMLib/FileSystem
+[submodule "ARMLib/TGFX"]
+	path = ARMLib/TGFX
+	url = H:/Helvi/lab_firm/Firmware_Sorgenti/GIT/LIBRERIE/ARMLib/TGFX
+[submodule "ARMLib/Protocolli"]
+	path = ARMLib/Protocolli
+	url = H:/Helvi/lab_firm/Firmware_Sorgenti/GIT/LIBRERIE/ARMLib/Protocolli
+[submodule "CORELib/Common"]
+	path = CORELib/Common
+	url = H:/Helvi/lab_firm/Firmware_Sorgenti/GIT/LIBRERIE/CORELib/Viper/Common
+[submodule "CORELib/UserInterface"]
+	path = CORELib/UserInterface
+	url = H:/Helvi/lab_firm/Firmware_Sorgenti/GIT/LIBRERIE/CORELib/Viper/UserInterface
+[submodule "BOARDLib/60437"]
+	path = BOARDLib/60437
+	url = H:/Helvi/lab_firm/Firmware_Sorgenti/GIT/LIBRERIE/BOARDLib/60437

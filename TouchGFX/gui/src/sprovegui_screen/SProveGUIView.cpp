@@ -2,8 +2,8 @@
 
 extern "C"
 {
-	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
-	#include "CORELib/Viper/UserInterface/ViperUI.h"
+	#include "ARMLib/TGFX/TGFXCustom.h"
+	#include "CORELib/UserInterface/ViperUI.h"
 };
 
 char TmpBuffer[20];

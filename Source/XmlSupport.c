@@ -15,7 +15,7 @@
 #include "Applicazione.h"
 #include "ARMLib/Common/CustomString.h"
 #include "Applicazione.h"
-#include "CORELib/Viper/UserInterface/ViperUI.h"
+#include "CORELib/UserInterface/ViperUI.h"
 
 
 //====================================================================== DEFINES

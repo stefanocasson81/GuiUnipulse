@@ -4,8 +4,8 @@ extern "C"
 {
 	#include "ARMLib/Common/CustomRtc.h"
 	#include "ARMLib/Common/SwTimer.h"
-	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
-	#include "CORELib/Viper/UserInterface/ViperUI.h"
+	#include "ARMLib/TGFX/TGFXCustom.h"
+	#include "CORELib/UserInterface/ViperUI.h"
 };
 
 

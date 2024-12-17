@@ -3,9 +3,9 @@
 
 extern "C"
 {
-	//#include "CORELib/Viper/UserInterface/ViperUI.h"
-	//#include "ARMLib/GUI/TGFX/TGFXCustom.h"
-	//#include "CORELib/Viper/Common/ViperDef.h"
+	//#include "CORELib/UserInterface/ViperUI.h"
+	//#include "ARMLib/TGFX/TGFXCustom.h"
+	//#include "CORELib/Common/ViperDef.h"
 	#include "ARMLib/Common/CustomString.h"
 };
 
@@ -120,7 +120,7 @@ void CWeldingProcessMig2::ManagerTickEvent(void)
 			case VIPERDEF_TIPOFILO_CRNI2209:
 				Unicode::strncpy(tATipoDescrBuffer,"CrNi-2209", TATIPODESCR_SIZE-1);
 			break;
-			case VIPERDEF_TIPOFILO_AL4043:
+			case VIPERDEF_TIPOFILO_ALSI4043:
 				Unicode::strncpy(tATipoDescrBuffer,"Al-4043", TATIPODESCR_SIZE-1);
 			break;
 			case VIPERDEF_TIPOFILO_AL4047:
@@ -132,7 +132,7 @@ void CWeldingProcessMig2::ManagerTickEvent(void)
 			case VIPERDEF_TIPOFILO_AL4557:
 				Unicode::strncpy(tATipoDescrBuffer,"Al-4557", TATIPODESCR_SIZE-1);
 			break;
-			case VIPERDEF_TIPOFILO_AL5356:
+			case VIPERDEF_TIPOFILO_ALMG5356:
 				Unicode::strncpy(tATipoDescrBuffer,"Al-5356", TATIPODESCR_SIZE-1);
 			break;
 			case VIPERDEF_TIPOFILO_AL5554:

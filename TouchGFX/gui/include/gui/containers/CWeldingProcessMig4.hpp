@@ -6,7 +6,7 @@
 extern "C"
 {
 	#include "ARMLib/Common/ComDef.h"
-	#include "CORELib/Viper/UserInterface/ViperUI.h"
+	#include "CORELib/UserInterface/ViperUI.h"
 };
 
 class CWeldingProcessMig4 : public CWeldingProcessMig4Base

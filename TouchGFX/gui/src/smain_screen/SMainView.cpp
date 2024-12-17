@@ -8,9 +8,9 @@
 extern "C"
 {
 	#include "ARMLib/Common/ComDef.h"
-	#include "CORELib/Viper/Common/ViperDef.h"
+	#include "CORELib/Common/ViperDef.h"
 	#include "_Board.h"
-	#include "CORELib/Viper/UserInterface/ViperUI.h"
+	#include "CORELib/UserInterface/ViperUI.h"
 };
 
 

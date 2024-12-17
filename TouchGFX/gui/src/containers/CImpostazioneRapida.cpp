@@ -4,7 +4,7 @@ extern "C"
 {
 	#include "ARMLib/Common/Data.h"
 	#include "ViperUISupport.h"
-	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
+	#include "ARMLib/TGFX/TGFXCustom.h"
 };
 
 

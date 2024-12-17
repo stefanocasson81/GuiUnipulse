@@ -5424,7 +5424,16 @@
     "FrameworkFeatures": {
       "LCD16bpp": {
         "Id": "LCD16bpp",
-        "IsEnabled": true
+        "Features": [
+          {
+            "Id": "TextureMapperImageFormats",
+            "IsEnabled": true
+          },
+          {
+            "Id": "L8Compression",
+            "IsEnabled": true
+          }
+        ]
       }
     },
     "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
@@ -5446,5 +5455,5 @@
     "OptionalComponents": [],
     "AdditionalFeatures": []
   },
-  "Version": "4.23.2"
+  "Version": "4.24.1"
 }

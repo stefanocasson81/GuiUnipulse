@@ -7,7 +7,7 @@
 extern "C"
 {
 	#include "ViperUISupport.h"
-	#include "CORELib/Viper/Common/ViperDef.h"
+	#include "CORELib/Common/ViperDef.h"
 };
 
 

@@ -88,7 +88,7 @@ void viperuisupport_GetTxtPtrData(data_Data_t *ptrData,char* ptrStr,uint16_t max
 			case VIPERDEF_TIPOFILO_CRNI2209:
 				snprintf(ptrStr,maxLen,"CrNi-2209");
 			break;
-			case VIPERDEF_TIPOFILO_AL4043:
+			case VIPERDEF_TIPOFILO_ALSI4043:
 				snprintf(ptrStr,maxLen,"Al-4043");
 			break;
 			case VIPERDEF_TIPOFILO_AL4047:
@@ -100,7 +100,7 @@ void viperuisupport_GetTxtPtrData(data_Data_t *ptrData,char* ptrStr,uint16_t max
 			case VIPERDEF_TIPOFILO_AL4557:
 				snprintf(ptrStr,maxLen,"Al-4557");
 			break;
-			case VIPERDEF_TIPOFILO_AL5356:
+			case VIPERDEF_TIPOFILO_ALMG5356:
 				snprintf(ptrStr,maxLen,"Al-5356");
 			break;
 			case VIPERDEF_TIPOFILO_AL5554:

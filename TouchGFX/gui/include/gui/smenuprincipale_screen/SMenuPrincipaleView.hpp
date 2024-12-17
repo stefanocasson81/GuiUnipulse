@@ -3,7 +3,7 @@
 
 #include <gui_generated/smenuprincipale_screen/SMenuPrincipaleViewBase.hpp>
 #include <gui/smenuprincipale_screen/SMenuPrincipalePresenter.hpp>
-#include "ARMLib/GUI/TGFX/TGFXMenu.hpp"
+#include <ARMLib/TGFX/TGFXMenu.hpp>
 
 #define SMENUPRINCIPALEVIEW_MAXTILE 8
 

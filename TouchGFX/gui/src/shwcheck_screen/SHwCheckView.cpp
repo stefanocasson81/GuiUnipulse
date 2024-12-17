@@ -3,9 +3,9 @@
 extern "C"
 {
 	#include "ARMLib/Common/ComDef.h"
-	#include "CORELib/Viper/Common/ViperDef.h"
-	#include "CORELib/Viper/UserInterface/ViperUI.h"
-	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
+	#include "CORELib/Common/ViperDef.h"
+	#include "CORELib/UserInterface/ViperUI.h"
+	#include "ARMLib/TGFX/TGFXCustom.h"
 	#include "ARMLib/Common/SwTimer.h"
 	#include "_Board.h"
 	#include "ARMLib/Common/CustomString.h"

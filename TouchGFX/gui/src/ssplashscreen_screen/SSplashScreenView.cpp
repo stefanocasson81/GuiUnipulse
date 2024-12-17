@@ -4,9 +4,9 @@
 extern "C"
 {
 	#include "ARMLib/Common/ComDef.h"
-	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
+	#include "ARMLib/TGFX/TGFXCustom.h"
 	#include "Features.h"
-	#include "CORELib/Viper/Common/ViperDef.h"
+	#include "CORELib/Common/ViperDef.h"
 	#include "_Board.h"
 };
 

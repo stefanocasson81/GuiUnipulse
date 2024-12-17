@@ -5,8 +5,8 @@
 
 extern "C"
 {
-	#include "CORELib/Viper/UserInterface/ViperUI.h"
-	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
+	#include "CORELib/UserInterface/ViperUI.h"
+	#include "ARMLib/TGFX/TGFXCustom.h"
 	#include "Applicazione.h"
 };
 

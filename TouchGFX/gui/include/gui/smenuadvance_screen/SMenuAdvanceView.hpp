@@ -3,7 +3,7 @@
 
 #include <gui_generated/smenuadvance_screen/SMenuAdvanceViewBase.hpp>
 #include <gui/smenuadvance_screen/SMenuAdvancePresenter.hpp>
-#include "ARMLib/GUI/TGFX/TGFXMenu.hpp"
+#include <ARMLib/TGFX/TGFXMenu.hpp>
 
 class SMenuAdvanceView : public SMenuAdvanceViewBase
 {

@@ -2,7 +2,7 @@
 
 extern "C"
 {
-	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
+	#include "ARMLib/TGFX/TGFXCustom.h"
 };
 
 typedef enum

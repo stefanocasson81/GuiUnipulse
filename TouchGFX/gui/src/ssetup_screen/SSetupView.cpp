@@ -4,9 +4,9 @@
 
 extern "C"
 {
-	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
+	#include "ARMLib/TGFX/TGFXCustom.h"
 	#include <ViperUISupport.h>
-	#include "CORELib/Viper/UserInterface/ViperUI.h"
+	#include "CORELib/UserInterface/ViperUI.h"
 };
 
 

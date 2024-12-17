@@ -9,7 +9,7 @@ extern "C"
 	#include "ARMLib/Common/ComDef.h"
 	#include "ARMLib/FileSystem/_DrvFileSystemUSB.h"
 	#include "ARMLib/Protocolli/HProt/HProtFU.h"
-	#include "ARMLib/GUI/TGFX/TGFXCustom.h"
+	#include "ARMLib/TGFX/TGFXCustom.h"
 	#include "ARMLib/Common/FWUpgrade.h"
 };
 

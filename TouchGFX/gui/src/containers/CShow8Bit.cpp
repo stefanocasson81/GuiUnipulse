@@ -4,7 +4,7 @@
 
 extern "C"
 {
-	#include "CORELib/Viper/Common/ViperDef.h"
+	#include "CORELib/Common/ViperDef.h"
 };
 
 
