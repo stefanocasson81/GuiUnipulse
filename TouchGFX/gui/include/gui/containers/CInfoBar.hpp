@@ -11,7 +11,7 @@ public:
 
     virtual void initialize();
 
-    void SetTitolo(char *ptrStr);
+    void SetTitolo(touchgfx::TypedText ptrStr);
 
     void ManagerTickEvent(void);
     void SetIco(uint32_t icoId);

@@ -32,9 +32,9 @@ void CInfoBar::initialize()
     CInfoBarBase::initialize();
 }
 
-void CInfoBar::SetTitolo(char *ptrStr)
+void CInfoBar::SetTitolo(touchgfx::TypedText ptrStr)
 {
-	Unicode::strncpy(tATitoloBuffer,ptrStr, TATITOLO_SIZE-1);
+	tATitolo.setTypedText(touchgfx::TypedText(ptrStr));
 	tATitolo.invalidate();
 }
 

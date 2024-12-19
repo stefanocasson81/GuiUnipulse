@@ -26,11 +26,16 @@ public:
     virtual void deactivate();
 
     virtual ~SMenuPrincipalePresenter() {};
+    void setPressionEncoder(Model::Enc_Type e, Model::Enc_Pression p);
+    void setOffsetEncoder(Model::Enc_Type e, S16 offset,S8 dir);
+//    void setOffsetEncoder(Model::Enc_Type e,U16 offset);
 
 private:
     SMenuPrincipalePresenter();
 
     SMenuPrincipaleView& view;
+
+    U16 encValue[3];
 };
 
 #endif // SMENUPRINCIPALEPRESENTER_HPP

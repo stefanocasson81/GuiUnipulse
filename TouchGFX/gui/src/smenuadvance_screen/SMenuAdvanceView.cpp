@@ -1,4 +1,6 @@
 #include <gui/smenuadvance_screen/SMenuAdvanceView.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+
 
 extern "C"
 {
@@ -20,9 +22,9 @@ SMenuAdvanceView::SMenuAdvanceView()
 void SMenuAdvanceView::setupScreen()
 {
 	cInfoBar.SetIco(0xffffffff);
-	cInfoBar.SetTitolo((char*)"MENU ADVANCED");
+	cInfoBar.SetTitolo(T_TITLE_ADVANCED);
 
-	add(*TGFXMenu.CreateTile((char*)"UPGRADE\nFIRMWARE",0xffffffff,true,SMENUPRINCIPALEVIEW_TAG_FIRMWAREUPGRADE));
+//	add(*TGFXMenu.CreateTile((char*)"UPGRADE\nFIRMWARE",0xffffffff,true,SMENUPRINCIPALEVIEW_TAG_FIRMWAREUPGRADE));
 
     SMenuAdvanceViewBase::setupScreen();
 }
@@ -39,11 +41,11 @@ void SMenuAdvanceView::handleTickEvent()
 	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
 		application().VisualizzaSMenuPrincipale();	// Torna indietro
 
-	switch(TGFXMenu.ManagerTickEvent())
-	{
-		case SMENUPRINCIPALEVIEW_TAG_FIRMWAREUPGRADE:
-			application().VisualizzaSUpgradeFirmware();
-		break;
-	}
+//	switch(TGFXMenu.ManagerTickEvent())
+//	{
+//		case SMENUPRINCIPALEVIEW_TAG_FIRMWAREUPGRADE:
+//			application().VisualizzaSUpgradeFirmware();
+//		break;
+//	}
 
 }

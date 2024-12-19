@@ -27,6 +27,22 @@ public:
 
     virtual ~SWeldingProcessPresenter() {};
 
+   /**
+    * Set Functions
+    **/
+   void setGas(uint8_t gas);
+   void setProcess(uint8_t prc);
+   void setPressioneEncoder(Model::Enc_Type t,Model::Enc_Pression p);
+   /**
+    * Get Functions
+    **/
+   U8 getProcess();
+
+//    void wireChanged(uint8_t type)
+//    {
+//       view.wireChanged(type);
+//    }
+
 private:
     SWeldingProcessPresenter();
 

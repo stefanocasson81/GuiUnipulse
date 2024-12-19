@@ -13,11 +13,11 @@ public:
 
     void Seleziona(bool stato);
     void Abilita(bool stato);
-
-    void SetDescrizione(char *ptrStr);
-    void SetDescrizione(const Unicode::UnicodeChar* ptrUnicodeChar);
+;
+    void SetDescrizione(touchgfx::TypedText ptrUnicodeChar);
 
     void SetIco(uint32_t icoId);
+    void SetIcoSelected();
 
     uint32_t Tag;
 

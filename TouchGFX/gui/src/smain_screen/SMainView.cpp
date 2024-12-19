@@ -3,7 +3,7 @@
 #include <gui/containers/CMainMma.hpp>
 #include <gui/containers/CMainTig.hpp>
 #include <images/BitmapDatabase.hpp>
-
+#include <texts/TextKeysAndLanguages.hpp>
 
 extern "C"
 {
@@ -73,7 +73,7 @@ void SMainView::handleTickEvent()
 				default:
 				break;
 				case VIPERDEF_PROCESSO_MMA:
-					cInfoBar.SetTitolo((char*)"MMA");
+					cInfoBar.SetTitolo(T_TITLE_MMA);
 
 					PtrQuadro = new CMainMma();
 					if(PtrQuadro)
@@ -84,7 +84,7 @@ void SMainView::handleTickEvent()
 					}
 				break;
 				case VIPERDEF_PROCESSO_TIG:
-					cInfoBar.SetTitolo((char*)"TIG");
+					cInfoBar.SetTitolo(T_TITLE_TIG);
 
 					PtrQuadro = new CMainTig();
 					if(PtrQuadro)
@@ -98,17 +98,17 @@ void SMainView::handleTickEvent()
 					switch(viperdef_Pack8GenTx_Base.TipoMig)
 					{
 						default:
-							cInfoBar.SetTitolo((char*)"XXX");
+							cInfoBar.SetTitolo(T_TITLE_XXX);
 						break;
 
 						case VIPERDEF_TIPOMIG_MAN:
-							cInfoBar.SetTitolo((char*)"MIG MANUAL");
+							cInfoBar.SetTitolo(T_TITLE_MIG_MAN);
 						break;
 						case VIPERDEF_TIPOMIG_SYN:
-							cInfoBar.SetTitolo((char*)"MIG SYNERGIC");
+							cInfoBar.SetTitolo(T_TITLE_MIG_SYN);
 						break;
 						case VIPERDEF_TIPOMIG_PULSE:
-							cInfoBar.SetTitolo((char*)"MIG PULSED");
+							cInfoBar.SetTitolo(T_TITLE_MIG_PUL);
 						break;
 					}
 
@@ -164,12 +164,12 @@ void SMainView::handleTickEvent()
 		add(cStrumento);
 		invalidate();
 	}
-	if(cAllarmi.ManagerTickEvent() || rigenera)
-	{	// Accrocchio per mettere in primo piano la finestra
-		remove(cAllarmi);
-		add(cAllarmi);
-		invalidate();
-	}
+//	if(cAllarmi.ManagerTickEvent() || rigenera)
+//	{	// Accrocchio per mettere in primo piano la finestra
+//		remove(cAllarmi);
+//		add(cAllarmi);
+//		invalidate();
+//	}
 
 	cInfoBar.ManagerTickEvent();
 }

@@ -46,19 +46,28 @@ void CTileMenu::Abilita(bool stato)
 	invalidate();
 }
 
-void CTileMenu::SetDescrizione(char *ptrStr)
-{
-	Unicode::strncpy(tADescrizioneBuffer,ptrStr, TADESCRIZIONE_SIZE-1);
+//void CTileMenu::SetDescrizione(char *ptrStr)
+//{
+//	Unicode::strncpy(tDescrizioneBuffer,ptrStr, TADESCRIZIONE_SIZE-1);
+//
+//	tADescrizione.invalidate();
+//}
 
+//void CTileMenu::SetDescrizione(const Unicode::UnicodeChar* ptrUnicodeChar)
+//{
+////	Unicode::strncpy(tDescrizioneBuffer,ptrUnicodeChar, TADESCRIZIONE_SIZE-1);
+//
+//	tADescrizione.invalidate();
+//}
+
+
+void CTileMenu::SetDescrizione(touchgfx::TypedText ptrUnicodeChar)
+{
+// Unicode::strncpy(tDescrizioneBuffer,ptrUnicodeChar, TADESCRIZIONE_SIZE-1);
+   tADescrizione.setTypedText(touchgfx::TypedText(ptrUnicodeChar));
 	tADescrizione.invalidate();
 }
 
-void CTileMenu::SetDescrizione(const Unicode::UnicodeChar* ptrUnicodeChar)
-{
-	Unicode::strncpy(tADescrizioneBuffer,ptrUnicodeChar, TADESCRIZIONE_SIZE-1);
-
-	tADescrizione.invalidate();
-}
 
 void CTileMenu::SetIco(uint32_t icoId)
 {

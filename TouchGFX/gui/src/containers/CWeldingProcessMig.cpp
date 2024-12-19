@@ -12,7 +12,7 @@ extern "C"
 };
 
 
-CWeldingProcessMig::CWeldingProcessMig()
+CWeldingProcessMig::CWeldingProcessMig():IndiceMaxEnumDiametro(0)
 {
 	OldAttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MAX;	// Tanto per dare prima rigenerata
 
