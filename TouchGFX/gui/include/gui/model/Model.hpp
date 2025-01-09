@@ -44,8 +44,6 @@ extern "C"
 class ModelListener;
 
 
-
-
 class Model
 {
 public:
@@ -76,7 +74,29 @@ public:
        TGFXCUSTOM_ENCODER_MAX
     };
 
+#if 0
+    enum Process_Type
+    {
+       VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO,
 
+       VIPERUI_ATUALESELEZIONEPROCESSO_MMA,
+
+       VIPERUI_ATUALESELEZIONEPROCESSO_TIG,
+
+       VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO,
+       VIPERUI_ATUALESELEZIONEPROCESSO_MIG_DIAMETROFILO,
+       VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS,
+       VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG,
+    };
+#endif
+    enum Process_Type
+    {
+    	VIPERDEF_PROCESSO_MMA,
+    	VIPERDEF_PROCESSO_TIG,
+    	VIPERDEF_PROCESSO_MIG,
+
+    	VIPERDEF_PROCESSO_MAX
+    };
     /** Functions**/
     void tick();
 /** get functions */

@@ -14,7 +14,7 @@ public:
     void SetTitolo(touchgfx::TypedText ptrStr);
 
     void ManagerTickEvent(void);
-    void SetIco(uint32_t icoId);
+//    void SetIco(uint32_t icoId);
 protected:
     uint32_t OldMsTickCounter;
 };

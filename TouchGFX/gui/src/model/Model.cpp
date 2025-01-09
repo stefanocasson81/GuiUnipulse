@@ -10,7 +10,7 @@ extern "C"
 
 
 Model::Model() : modelListener(0),OldAttualeSelezione(VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO),OldTipoFilo(VIPERDEF_TIPOFILO_MANUAL)\
-               ,OldDiametroFilo(VIPERDEF_DIAMETROFILO_06),ProcessoAllocato(VIPERDEF_PROCESSO_MMA)
+               ,OldDiametroFilo(VIPERDEF_DIAMETROFILO_06)/*,ProcessoAllocato(VIPERDEF_PROCESSO_MMA)*/
 {
    viperui_Info.SelezioneProcesso.Processo = viperdef_Pack8GenTx_Base.Processo;
    viperui_Info.SelezioneProcesso.CurvaInfo.TipoGas = viperdef_Pack8GenTx_Base.TipoGas;
@@ -83,12 +83,18 @@ void Model::tick()
 
 }
 
+/**@GET Functions ***/
+
 U8 Model::getProcess()
 {
    return (U8)ProcessoAllocato;
 }
 
 
+/**@SET Functions ***/
+
+
+/**@Generic Functions  **/
 
 tgfxcustom_PressioneEncoder_e Model::encGetPression(Model::Enc_Type encoder)
 {

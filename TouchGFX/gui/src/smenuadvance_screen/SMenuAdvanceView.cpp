@@ -21,7 +21,7 @@ SMenuAdvanceView::SMenuAdvanceView()
 
 void SMenuAdvanceView::setupScreen()
 {
-	cInfoBar.SetIco(0xffffffff);
+//	cInfoBar.SetIco(0xffffffff);
 	cInfoBar.SetTitolo(T_TITLE_ADVANCED);
 
 //	add(*TGFXMenu.CreateTile((char*)"UPGRADE\nFIRMWARE",0xffffffff,true,SMENUPRINCIPALEVIEW_TAG_FIRMWAREUPGRADE));

@@ -35,7 +35,7 @@ typedef enum
 
 void SMenuPrincipaleView::setupScreen()
 {
-	cInfoBar.SetIco(0xffffffff);
+//	cInfoBar.SetIco(0xffffffff);
 
 	cInfoBar.SetTitolo(T_TITLE_MAIN);
 //	add(*TGFXMenu.CreateTile((char*)"WELDING\nPROCESS",BITMAP_ICOWELDPROCESS42X51_ID,true,SMENUPRINCIPALEVIEW_TAG_WELDINGPROCESS));

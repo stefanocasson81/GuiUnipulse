@@ -322,7 +322,9 @@ void CWeldingProcessMig::ManagerTickEvent(void)
 		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG:
 			sA = 0;
 			if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_RIGHT) == TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+			{
 				sA = 1;
+			}
 			else
 			{
 				sA = tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);

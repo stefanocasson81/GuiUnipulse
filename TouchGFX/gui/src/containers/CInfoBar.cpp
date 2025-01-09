@@ -52,18 +52,18 @@ void CInfoBar::ManagerTickEvent(void)
 }
 
 
-void CInfoBar::SetIco(uint32_t icoId)
-{
-	if(icoId==0xffffffff)
-		image.setVisible(false);
-	else
-	{
-		image.setVisible(true);
-		image.setBitmap(touchgfx::Bitmap(icoId));
-	}
-
-	image.invalidate();
-}
+//void CInfoBar::SetIco(uint32_t icoId)
+//{
+//	if(icoId==0xffffffff)
+//		image.setVisible(false);
+//	else
+//	{
+//		image.setVisible(true);
+//		image.setBitmap(touchgfx::Bitmap(icoId));
+//	}
+//
+//	image.invalidate();
+//}
 
 
 

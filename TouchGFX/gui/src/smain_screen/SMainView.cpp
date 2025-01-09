@@ -127,13 +127,13 @@ void SMainView::handleTickEvent()
 				default:
 				break;
 				case VIPERDEF_PROCESSO_MMA:
-					cInfoBar.SetIco(BITMAP_ICOMMA43X35_ID);
+//					cInfoBar.SetIco(BITMAP_ICOMMA43X35_ID);
 				break;
 				case VIPERDEF_PROCESSO_TIG:
-					cInfoBar.SetIco(BITMAP_ICOTIG33X35_ID);
+//					cInfoBar.SetIco(BITMAP_ICOTIG33X35_ID);
 				break;
 				case VIPERDEF_PROCESSO_MIG:
-					cInfoBar.SetIco(BITMAP_ICOMIG38X35_ID);
+//					cInfoBar.SetIco(BITMAP_ICOMIG38X35_ID);
 				break;
 			}
 

@@ -32,7 +32,9 @@ public:
     **/
    void setGas(uint8_t gas);
    void setProcess(uint8_t prc);
-   void setPressioneEncoder(Model::Enc_Type t,Model::Enc_Pression p);
+   void setPressionEncoder(Model::Enc_Type e, Model::Enc_Pression p);
+   void setOffsetEncoder(Model::Enc_Type e, S16 offset, S8 dir);
+//   void setFocusMenu(U8);
    /**
     * Get Functions
     **/

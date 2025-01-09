@@ -20,10 +20,13 @@
       <Text Id="PROC_PROCESS_TITLE" Alignment="Left" TypographyId="Regular15">
         <Translation Language="EN">PROCESS</Translation>
       </Text>
-      <Text Id="PROC_DIAMETER" Alignment="Right" TypographyId="Regular15">
+      <Text Id="PROC_DIAMETER" Alignment="Right" TypographyId="Regular11">
         <Translation Language="EN">DIAMETER</Translation>
       </Text>
-      <Text Id="PROC_TYPE" Alignment="Right" TypographyId="Regular15">
+      <Text Id="PROC_GAS" Alignment="Right" TypographyId="Regular11">
+        <Translation Language="EN">GAS</Translation>
+      </Text>
+      <Text Id="PROC_TYPE" Alignment="Right" TypographyId="Regular11">
         <Translation Language="EN">TYPE</Translation>
       </Text>
       <Text Id="PROC_MIG" Alignment="Left" TypographyId="Regular40">
@@ -32,9 +35,21 @@
       <Text Id="PROC_TIG" Alignment="Left" TypographyId="Regular40">
         <Translation Language="EN">TIG</Translation>
       </Text>
+      <Text Id="PROC_MMA" Alignment="Left" TypographyId="Regular40">
+        <Translation Language="EN">MMA</Translation>
+      </Text>
+      <Text Id="PROC_MANUAL" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">MANUAL</Translation>
+      </Text>
+      <Text Id="PROC_SYNERGIC" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">SYNERGIC</Translation>
+      </Text>
+      <Text Id="PROC_PULSED" Alignment="Left" TypographyId="Regular15">
+        <Translation Language="EN">PULSED</Translation>
+      </Text>
     </TextGroup>
     <TextGroup Id="Main_Menu">
-      <Text Id="ICN_MM_WELDING_PROCESS" Alignment="Center" TypographyId="Regular15">
+      <Text Id="ICN_MM_WELDING_PROCESS" Alignment="Left" TypographyId="Regular15">
         <Translation Language="EN" Alignment="Center">WELDING&#10;PROCESS</Translation>
       </Text>
       <Text Id="ICN_MM_WELDING_MODE" Alignment="Left" TypographyId="Regular15">
@@ -178,113 +193,35 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_86UH" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">&lt;v&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_G7UI" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_URR5" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_US27" Alignment="Left" TypographyId="Semibold15">
-        <Translation Language="EN"></Translation>
-      </Text>
-      <Text Id="__SingleUse_CMDS" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_S2G9" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_EI6H" Alignment="Left" TypographyId="Semibold15">
-        <Translation Language="EN"></Translation>
-      </Text>
-      <Text Id="__SingleUse_DVJ3" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_9TS5" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">&lt;v&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_74OH" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_U9R5" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_XE3X" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_HM24" Alignment="Left" TypographyId="Semibold15">
-        <Translation Language="EN"></Translation>
-      </Text>
-      <Text Id="__SingleUse_A6TN" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_G41Z" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_0SO8" Alignment="Left" TypographyId="Semibold15">
-        <Translation Language="EN"></Translation>
-      </Text>
-      <Text Id="__SingleUse_XHZ5" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_TEUC" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_K58K" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_TFE2" Alignment="Left" TypographyId="Semibold15">
-        <Translation Language="EN"></Translation>
-      </Text>
-      <Text Id="__SingleUse_41DB" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_5EYI" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_INJM" Alignment="Left" TypographyId="Semibold15">
-        <Translation Language="EN"></Translation>
-      </Text>
-      <Text Id="__SingleUse_VFM7" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_N861" Alignment="Right" TypographyId="Regular15">
+      <Text Id="__SingleUse_3JKU" Alignment="Right" TypographyId="Regular15">
         <Translation Language="EN">press    to confirm</Translation>
       </Text>
-      <Text Id="__SingleUse_SX6N" Alignment="Left" TypographyId="Regular15">
+      <Text Id="__SingleUse_P8E6" Alignment="Left" TypographyId="Regular15">
         <Translation Language="EN">press     to go back</Translation>
       </Text>
-      <Text Id="__SingleUse_2WYS" Alignment="Left" TypographyId="Regular20">
+      <Text Id="__SingleUse_WWZO" Alignment="Left" TypographyId="Regular20">
         <Translation Language="EN">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_WSUS" Alignment="Right" TypographyId="Semibold15">
+      <Text Id="__SingleUse_DWRN" Alignment="Right" TypographyId="Semibold15">
         <Translation Language="EN">DIAMETER</Translation>
       </Text>
-      <Text Id="__SingleUse_G8NQ" Alignment="Left" TypographyId="Regular20">
+      <Text Id="__SingleUse_1HUD" Alignment="Left" TypographyId="Regular20">
         <Translation Language="EN">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_08RR" Alignment="Left" TypographyId="Semibold15">
+      <Text Id="__SingleUse_K22F" Alignment="Left" TypographyId="Semibold15">
         <Translation Language="EN"></Translation>
       </Text>
-      <Text Id="__SingleUse_EUD9" Alignment="Right" TypographyId="Semibold15">
+      <Text Id="__SingleUse_N2DY" Alignment="Right" TypographyId="Semibold15">
         <Translation Language="EN">DIAMETER</Translation>
       </Text>
-      <Text Id="__SingleUse_IXU6" Alignment="Left" TypographyId="Regular20">
+      <Text Id="__SingleUse_YFL7" Alignment="Left" TypographyId="Regular20">
         <Translation Language="EN">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_77TN" Alignment="Left" TypographyId="Semibold15">
+      <Text Id="__SingleUse_29T4" Alignment="Left" TypographyId="Semibold15">
         <Translation Language="EN"></Translation>
       </Text>
-      <Text Id="__SingleUse_PHOF" Alignment="Right" TypographyId="Semibold15">
+      <Text Id="__SingleUse_YDY0" Alignment="Right" TypographyId="Semibold15">
         <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_Q1YB" Alignment="Right" TypographyId="Regular15">
-        <Translation Language="EN">press    to confirm</Translation>
-      </Text>
-      <Text Id="__SingleUse_P1GJ" Alignment="Left" TypographyId="Regular15">
-        <Translation Language="EN">press     to go back</Translation>
       </Text>
       <Text Id="__SingleUse_4V5M" Alignment="Left" TypographyId="Regular15">
         <Translation Language="EN">VelMot:&lt;value&gt;m/Min</Translation>
@@ -691,7 +628,6 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Regular15" Font="Prompt-Regular.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
     <Typography Id="Semibold20" Font="Prompt-SemiBold.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
     <Typography Id="HindSemibold75" Font="hind-semibold.otf" Size="75" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="&quot; &quot;+-,." WildcardCharacterRanges="0-9" />
     <Typography Id="Regular20" Font="Prompt-Regular.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
@@ -701,5 +637,7 @@
     <Typography Id="BoldItalic33" Font="Prompt-Bold.ttf" Size="33" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
     <Typography Id="ChivoMonoBold100" Font="ChivoMono-Bold.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
     <Typography Id="Regular40" Font="Prompt-Regular.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Regular15" Font="Prompt-Regular.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+    <Typography Id="Regular11" Font="Prompt-Regular.ttf" Size="11" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

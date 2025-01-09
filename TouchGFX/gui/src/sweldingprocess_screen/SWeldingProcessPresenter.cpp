@@ -37,17 +37,59 @@ U8 SWeldingProcessPresenter::getProcess(void)
 }
 
 
-void SWeldingProcessPresenter::setPressioneEncoder(Model::Enc_Type e, Model::Enc_Pression p)
+
+void SWeldingProcessPresenter::setPressionEncoder(Model::Enc_Type e, Model::Enc_Pression p)
 {
    switch (e)
    {
       case Model::TGFXCUSTOM_ENCODER_LEFT:
          if ( p == Model::TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO )
          {
-            view.setMenuPrincipale();
+            view.GoBack();
+         }
+      break;
+      case Model::TGFXCUSTOM_ENCODER_CENTER:
+
+      break;
+      case Model::TGFXCUSTOM_ENCODER_RIGHT:
+         if ( p == Model::TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO )
+         {
+//            view.setMenu();
          }
       break;
       default:
-         break;
+      break;
    }
 }
+
+void SWeldingProcessPresenter::setOffsetEncoder(Model::Enc_Type e, S16 offset, S8 dir)
+{
+	switch (e)
+	{
+		case Model::TGFXCUSTOM_ENCODER_LEFT:
+			if ( dir > 0 )
+				view.encSX_incDec(1);
+			else
+				view.encSX_incDec(-1);
+		break;
+		case Model::TGFXCUSTOM_ENCODER_CENTER:
+
+		break;
+
+		case Model::TGFXCUSTOM_ENCODER_RIGHT:
+			if ( dir > 0 )
+				view.encRX_incDec(1);
+			else
+				view.encRX_incDec(-1);
+		break;
+
+		default:
+		break;
+   }
+//   view.encRoffset(offset);
+
+}
+
+
+
+
