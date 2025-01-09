@@ -48,6 +48,11 @@ void CWeldingGenericContainerParam::set_TA_Title_1(const TypedText& t)
    tATitle_1.setTypedText(t);
    tATitle_1.invalidate();
 }
+void CWeldingGenericContainerParam::set_TA_Desc_1(const char *t)
+{
+   Unicode::strncpy(tADesc_1Buffer,t, TADESC_1_SIZE-1);
+}
+
 void CWeldingGenericContainerParam::set_TA_Desc_1(const TypedText& t)
 {
    tADesc_1.setTypedText(t);
@@ -102,6 +107,10 @@ void CWeldingGenericContainerParam::set_TA_Desc_2(const TypedText& t)
 {
    tADesc_2.setTypedText(t);
    tADesc_2.invalidate();
+}
+void CWeldingGenericContainerParam::set_TA_Desc_2(const char *t)
+{
+   Unicode::strncpy(tADesc_2Buffer,t, TADESC_2_SIZE-1);
 }
 void CWeldingGenericContainerParam::set_IMG_iD_2(const Bitmap& v)
 {

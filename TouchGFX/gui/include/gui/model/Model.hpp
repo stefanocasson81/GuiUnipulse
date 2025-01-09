@@ -2,12 +2,13 @@
 #define MODEL_HPP
 
 #include <ARMLib/TGFX/cpp_define.hpp>
+#include <gui/custom/WeldingSupport.hpp>
 #include <array>
 
 extern "C"
 {
    #include "ARMLib/Common/ComDef.h"
-   #include "CORELib/UserInterface/ViperUI.h"
+//   #include "CORELib/UserInterface/ViperUI.h"
    #include "ARMLib/TGFX/TGFXCustom.h"
    #include "CORELib/Common/ViperDef.h"
 };
@@ -26,19 +27,18 @@ extern "C"
 //};
 
 
-//class clsEcoder
-//{
-//public:
-//   clsEcoder();
-//   ~clsEcoder();
-//   tgfxcustom_PressioneEncoder_e  encGetPression(U8 encoder);
-//   int16_t encGetOffset(tgfxcustom_Encoder_e encoder):
-//};
-//
-//tgfxcustom_PressioneEncoder_e clsEcoder::encGetPression(U8 e)
-//{
-//   return tgfxcustom_GetPressioneEncoder((tgfxcustom_Encoder_e)e);
-//}
+class cEcoder
+{
+public:
+   cEcoder(){EncType = 0;Offset = 0;PressionType = 0;}
+   ~cEcoder(){}
+   void setPressione(U8 t, U8 p){EncType = t; PressionType= 0;}
+
+private:
+   U8 EncType;
+   U16 Offset;
+   U16 PressionType;
+};
 
 
 class ModelListener;
@@ -54,6 +54,16 @@ public:
         modelListener = listener;
     }
     /** Enum **/
+    enum Process_Type
+    {
+      MODEL_PROCESSO_MMA,
+      MODEL_PROCESSO_TIG,
+      MODEL_PROCESSO_MIG,
+
+      MODEL_PROCESSO_MAX
+    };
+
+
     enum Enc_Pression
     {
        TGFXCUSTOM_PRESSIONEENCODER_NONPREMUTO       ,
@@ -74,33 +84,14 @@ public:
        TGFXCUSTOM_ENCODER_MAX
     };
 
-#if 0
-    enum Process_Type
-    {
-       VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO,
 
-       VIPERUI_ATUALESELEZIONEPROCESSO_MMA,
+    cViper_Info viper_Info;
+    cEcoder Enc;
 
-       VIPERUI_ATUALESELEZIONEPROCESSO_TIG,
-
-       VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO,
-       VIPERUI_ATUALESELEZIONEPROCESSO_MIG_DIAMETROFILO,
-       VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS,
-       VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG,
-    };
-#endif
-    enum Process_Type
-    {
-    	VIPERDEF_PROCESSO_MMA,
-    	VIPERDEF_PROCESSO_TIG,
-    	VIPERDEF_PROCESSO_MIG,
-
-    	VIPERDEF_PROCESSO_MAX
-    };
     /** Functions**/
     void tick();
 /** get functions */
-    U8 getProcess();
+//    U8 getProcess();
     tgfxcustom_PressioneEncoder_e  encGetPression(Model::Enc_Type encoder);
     S16 encGetOffset(Model::Enc_Type encoder);
 
@@ -114,11 +105,12 @@ protected:
 private:
 
    static const U8 nSizeEncArray = 3;
-   viperui_AttualeSelezioneProcesso_e OldAttualeSelezione;
-   viperdef_TipoFilo_e OldTipoFilo;
-   viperdef_DiametroFilo_e OldDiametroFilo;
-   viperdef_Processo_e ProcessoAllocato;
+//   viperui_AttualeSelezioneProcesso_e OldAttualeSelezione;
+//   viperdef_TipoFilo_e OldTipoFilo;
+//   viperdef_DiametroFilo_e OldDiametroFilo;
+//   viperdef_Processo_e ProcessoAllocato;
    std::array<S16,nSizeEncArray>encArray;
+
 
 //   clsEcoder Enc;
 };

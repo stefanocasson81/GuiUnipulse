@@ -1,6 +1,7 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 #include <ARMLib/TGFX/cpp_define.hpp>
+
 extern "C"
 {
    #include "CORELib/UserInterface/ViperUI.h"
@@ -9,35 +10,18 @@ extern "C"
 };
 
 
-Model::Model() : modelListener(0),OldAttualeSelezione(VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO),OldTipoFilo(VIPERDEF_TIPOFILO_MANUAL)\
-               ,OldDiametroFilo(VIPERDEF_DIAMETROFILO_06)/*,ProcessoAllocato(VIPERDEF_PROCESSO_MMA)*/
+Model::Model() : modelListener(0)
 {
-   viperui_Info.SelezioneProcesso.Processo = viperdef_Pack8GenTx_Base.Processo;
-   viperui_Info.SelezioneProcesso.CurvaInfo.TipoGas = viperdef_Pack8GenTx_Base.TipoGas;
-   viperui_Info.SelezioneProcesso.CurvaInfo.DiametroFilo = viperdef_Pack8GenTx_Base.DiametroFilo;
 
-   viperui_Info.SelezioneProcesso.CurvaInfoDiPartenza.TipoMig     = viperui_Info.SelezioneProcesso.CurvaInfo.TipoMig;
-   viperui_Info.SelezioneProcesso.CurvaInfoDiPartenza.TipoFilo    = viperui_Info.SelezioneProcesso.CurvaInfo.TipoFilo;
-   viperui_Info.SelezioneProcesso.CurvaInfoDiPartenza.TipoGas     = viperui_Info.SelezioneProcesso.CurvaInfo.TipoGas;
-   viperui_Info.SelezioneProcesso.CurvaInfoDiPartenza.DiametroFilo = viperui_Info.SelezioneProcesso.CurvaInfo.DiametroFilo;
 }
 
 void Model::tick()
 {
    U8 i = TGFXCUSTOM_ENCODER_LEFT;
    S16 tmp;
+   Enc_Pression prsRead = TGFXCUSTOM_PRESSIONEENCODER_NONPREMUTO;
 
-   if(viperui_Info.SelezioneProcesso.CurvaInfo.TipoFilo != OldTipoFilo)
-   {
-      OldTipoFilo = viperui_Info.SelezioneProcesso.CurvaInfo.TipoFilo;
-      modelListener->wireChanged(OldTipoFilo);
-   }
 
-   if(viperui_Info.SelezioneProcesso.Processo != ProcessoAllocato)
-   {
-      ProcessoAllocato = viperui_Info.SelezioneProcesso.Processo;
-      modelListener->processChanged(ProcessoAllocato);
-   }
    while(i != TGFXCUSTOM_ENCODER_MAX)
    {
       switch(encGetPression((Model::Enc_Type)i))
@@ -46,6 +30,7 @@ void Model::tick()
          break;
          case TGFXCUSTOM_PRESSIONEENCODER_NONPREMUTO:
 //            modelListener->setPressionEncoder(i,TGFXCUSTOM_PRESSIONEENCODER_NONPREMUTO);
+
          break;
          case TGFXCUSTOM_PRESSIONEENCODER_PREMUTO:
             modelListener->setPressionEncoder((Model::Enc_Type)i,TGFXCUSTOM_PRESSIONEENCODER_PREMUTO);
@@ -60,7 +45,7 @@ void Model::tick()
             modelListener->setPressionEncoder((Model::Enc_Type)i,TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGHISSIMO);
          break;
       }
-
+      Enc.setPressione(i, prsRead);
       tmp = encGetOffset((Model::Enc_Type)i);
       if(tmp)
       {
@@ -79,16 +64,18 @@ void Model::tick()
       i++;
    }
 
+//   switch(viper_Info.))
+
 //   TGFXMenu.ManagerTickEvent()
 
 }
 
 /**@GET Functions ***/
 
-U8 Model::getProcess()
-{
-   return (U8)ProcessoAllocato;
-}
+//Model::Process_Type Model::getProcess()
+//{
+//
+//}
 
 
 /**@SET Functions ***/

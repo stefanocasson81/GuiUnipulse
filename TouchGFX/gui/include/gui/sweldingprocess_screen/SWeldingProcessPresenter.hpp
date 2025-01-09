@@ -3,6 +3,10 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+//extern "C"
+//{
+//   #include <CORELib/Common/ViperDef.h>
+//}
 
 using namespace touchgfx;
 
@@ -30,6 +34,7 @@ public:
    /**
     * Set Functions
     **/
+   void setProcessToModel(Model::Process_Type p);
    void setGas(uint8_t gas);
    void setProcess(uint8_t prc);
    void setPressionEncoder(Model::Enc_Type e, Model::Enc_Pression p);
@@ -38,7 +43,7 @@ public:
    /**
     * Get Functions
     **/
-   U8 getProcess();
+   Model::Process_Type getProcess();
 
 //    void wireChanged(uint8_t type)
 //    {

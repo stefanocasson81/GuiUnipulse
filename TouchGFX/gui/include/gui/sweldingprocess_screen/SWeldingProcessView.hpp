@@ -4,11 +4,10 @@
 #include <ARMLib/TGFX/cpp_define.hpp>
 #include <gui_generated/sweldingprocess_screen/SWeldingProcessViewBase.hpp>
 #include <gui/sweldingprocess_screen/SWeldingProcessPresenter.hpp>
-#include <gui/custom/CWeldingContainerMig.hpp>
-//#include <gui/containers/CWeldingGenericContainerParam.hpp>
+//#include <gui/custom/CWeldingContainerMig.hpp>
 #include <gui/containers/CWeldingGenericContainer.hpp>
-//#include <gui/custom/CWeldingPrsMig.hpp>
-//#include <Array>
+#include <touchgfx/Callback.hpp>
+
 extern "C"
 {
 	#include "ARMLib/Common/ComDef.h"
@@ -43,24 +42,19 @@ public:
     void setWireCB();
     void setMigConfiguration();
 
-    void MenucSelectedeContainer(U8 d,U8 e);
+    void fromContainerMenuSelected_Callback(U8 d,U8 e);
+    void createSelectedProcess(Model::Process_Type t);
 
 protected:
     CWeldingGenericContainer *PtrQuadro;
-//    CWeldingPrsMig *PtrQuadro;
-//    CWeldingPrsMig CMig;
-    U8 selectedProcess;
     Callback<SWeldingProcessView, U8,U8> setMenuSelectedContainer_Callback;
 
 private :
-//    static const U8 nWeldingContainerParam = 4;
-//    std::array<CWeldingGenericContainerParam*,nWeldingContainerParam>pCWeldingSetParamGeneric;
-    S16 Process,menuList;
-    U8 ActualSelection;
-    U8 encR,encL;
+    U8 process;
+    U8 focusMenu;
+    U8 encR;
+	 U8 encL;
     U8 indexMenu;
-//    ColorDefined color;
-
 };
 
 #endif // SWELDINGPROCESSVIEW_HPP

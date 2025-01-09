@@ -433,107 +433,11 @@
       <Text Id="__SingleUse_3QN6" Alignment="Center" TypographyId="Semibold35">
         <Translation Language="EN">WARNING</Translation>
       </Text>
-      <Text Id="__SingleUse_H9Z2" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
       <Text Id="__SingleUse_WXV1" Alignment="Left" TypographyId="Regular15">
         <Translation Language="EN">ADC[Vo]:&#10;&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_JM68" Alignment="Left" TypographyId="Regular15">
         <Translation Language="EN">ADC[Io]:&#10;&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_C0ZF" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_4QR8" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">TYPE</Translation>
-      </Text>
-      <Text Id="__SingleUse_FA68" Alignment="Left" TypographyId="Semibold20">
-        <Translation Language="EN">MIG TYPE</Translation>
-      </Text>
-      <Text Id="__SingleUse_GTC7" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_D6MH" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">TYPE</Translation>
-      </Text>
-      <Text Id="__SingleUse_98LD" Alignment="Left" TypographyId="Semibold20">
-        <Translation Language="EN">GAS</Translation>
-      </Text>
-      <Text Id="__SingleUse_YHOI" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_7WEA" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_EDDP" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_UPPY" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">TYPE</Translation>
-      </Text>
-      <Text Id="__SingleUse_U0I2" Alignment="Left" TypographyId="Semibold20">
-        <Translation Language="EN">WIRE</Translation>
-      </Text>
-      <Text Id="__SingleUse_LQON" Alignment="Left" TypographyId="Semibold20">
-        <Translation Language="EN">PROCESS</Translation>
-      </Text>
-      <Text Id="__SingleUse_LMDU" Alignment="Left" TypographyId="Semibold35">
-        <Translation Language="EN">MIG</Translation>
-      </Text>
-      <Text Id="__SingleUse_TZVF" Alignment="Right" TypographyId="Regular15">
-        <Translation Language="EN">press    to confirm</Translation>
-      </Text>
-      <Text Id="__SingleUse_LDVM" Alignment="Left" TypographyId="Regular15">
-        <Translation Language="EN">press     to go back</Translation>
-      </Text>
-      <Text Id="__SingleUse_PX08" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_TL5N" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">TYPE</Translation>
-      </Text>
-      <Text Id="__SingleUse_QPS7" Alignment="Left" TypographyId="Semibold35">
-        <Translation Language="EN">MMA</Translation>
-      </Text>
-      <Text Id="__SingleUse_70GC" Alignment="Left" TypographyId="Semibold20">
-        <Translation Language="EN">ELECTRODE</Translation>
-      </Text>
-      <Text Id="__SingleUse_KA8H" Alignment="Left" TypographyId="Semibold20">
-        <Translation Language="EN">PROCESS</Translation>
-      </Text>
-      <Text Id="__SingleUse_84U6" Alignment="Right" TypographyId="Regular15">
-        <Translation Language="EN">press    to confirm</Translation>
-      </Text>
-      <Text Id="__SingleUse_6XG4" Alignment="Left" TypographyId="Regular15">
-        <Translation Language="EN">press     to go back</Translation>
-      </Text>
-      <Text Id="__SingleUse_AGFP" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_JEO1" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">TYPE</Translation>
-      </Text>
-      <Text Id="__SingleUse_F1L7" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">TYPE</Translation>
-      </Text>
-      <Text Id="__SingleUse_GDW6" Alignment="Left" TypographyId="Semibold35">
-        <Translation Language="EN">TIG</Translation>
-      </Text>
-      <Text Id="__SingleUse_VR8T" Alignment="Left" TypographyId="Semibold20">
-        <Translation Language="EN">TIG RODES</Translation>
-      </Text>
-      <Text Id="__SingleUse_9UCX" Alignment="Left" TypographyId="Semibold20">
-        <Translation Language="EN">ELECTRODE</Translation>
-      </Text>
-      <Text Id="__SingleUse_R5JD" Alignment="Left" TypographyId="Semibold20">
-        <Translation Language="EN">PROCESS</Translation>
-      </Text>
-      <Text Id="__SingleUse_Y5IF" Alignment="Right" TypographyId="Regular15">
-        <Translation Language="EN">press    to confirm</Translation>
-      </Text>
-      <Text Id="__SingleUse_WDMX" Alignment="Left" TypographyId="Regular15">
-        <Translation Language="EN">press     to go back</Translation>
       </Text>
       <Text Id="__SingleUse_TE02" Alignment="Left" TypographyId="Semibold20">
         <Translation Language="EN">V</Translation>

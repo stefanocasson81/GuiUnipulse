@@ -1,13 +1,13 @@
 #include <gui/custom/CWeldingContainerTig.hpp>
 #include <ARMLib/TGFX/color_define.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
-extern "C"
-{
-	#include "CORELib/UserInterface/ViperUI.h"
-	#include "ARMLib/TGFX/TGFXCustom.h"
-	#include "CORELib/Common/ViperDef.h"
-	#include "Features.h"
-};
+//extern "C"
+//{
+//	#include "CORELib/UserInterface/ViperUI.h"
+//	#include "ARMLib/TGFX/TGFXCustom.h"
+//	#include "CORELib/Common/ViperDef.h"
+//	#include "Features.h"
+//};
 
 
 CWeldingContainerTig::CWeldingContainerTig():indexMenu(0)
@@ -45,7 +45,7 @@ void CWeldingContainerTig::confirmMenu(S8 p)
 }
 
 
-void CWeldingContainerTig::seletcMenu(S8 menu)
+void CWeldingContainerTig::seletcMenu(S8 menu,S8 submenu)
 {
 	indexMenu += menu;
 

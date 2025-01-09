@@ -22,6 +22,7 @@ public:
 	void set_TA_Process_1(const TypedText& t);
 	void set_TA_Title_1(const TypedText &t);
 	void set_TA_Desc_1(const TypedText &t);
+	void set_TA_Desc_1(const char *t);
 	void set_IMG_iD_1(const Bitmap &v);
 	void set_Color_BASE_1(colortype color);
 	void setVisible_TA_Process_1(bool b);
@@ -32,6 +33,7 @@ public:
 	//@base 2
 	void set_TA_Title_2(const TypedText &t);
 	void set_TA_Desc_2(const TypedText &t);
+	void set_TA_Desc_2(const char *t);
 	void set_IMG_iD_2(const Bitmap &v);
 	void set_Color_BASE_2(colortype color);
 	void setVisible_TA_Title_2(bool b);
@@ -41,6 +43,7 @@ public:
 	//@base 3
 	void set_TA_Title_3(const TypedText &t);
 	void set_TA_Desc_3(const TypedText &t);
+	void set_TA_Desc_3(const char *t);
 	void set_IMG_iD_3(const Bitmap &v);
 	void set_Color_BASE_3(colortype color);
 	void setVisible_TA_Title_3(bool b);

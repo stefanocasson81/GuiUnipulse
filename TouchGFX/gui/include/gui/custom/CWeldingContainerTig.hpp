@@ -6,13 +6,13 @@
 #include <gui/containers/CWeldingGenericContainerParam.hpp>
 #include <gui/containers/CWeldingGenericContainer.hpp>
 
-extern "C"
-{
-#include "CORELib/UserInterface/ViperUI.h"
-#include "ARMLib/TGFX/TGFXCustom.h"
-#include "CORELib/Common/ViperDef.h"
-#include "Features.h"
-};
+//extern "C"
+//{
+//#include "CORELib/UserInterface/ViperUI.h"
+//#include "ARMLib/TGFX/TGFXCustom.h"
+//#include "CORELib/Common/ViperDef.h"
+//#include "Features.h"
+//};
 
 //class SWeldingProcessView;
 
@@ -24,7 +24,7 @@ public:
 
 
     virtual void initialize();
-    void seletcMenu(S8 menu);
+    void seletcMenu(S8 menu,S8 submenu);
     void confirmMenu(S8 preessed);
 //    void setMenuList(U8 list);
 //    void setPtr(SWeldingProcessView* ptr);

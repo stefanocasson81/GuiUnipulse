@@ -1,26 +1,27 @@
 #ifndef CWELDINGPRSMIG_HPP
 #define CWELDINGPRSMIG_HPP
 
-//#include <gui/custom/CWeldingProcess__.hpp>
-#include <touchgfx/Callback.hpp>
+
+
 
 #include <gui/containers/CWeldingGenericContainerParam.hpp>
 #include <gui/containers/CWeldingGenericContainer.hpp>
+#include <touchgfx/Callback.hpp>
+#include <array>
 
-//#include <array>
-
-extern "C"
-{
-   #include "ARMLib/Common/ComDef.h"
-   #include "CORELib/Common/ViperDef.h"
-   #include "CORELib/UserInterface/ViperUI.h"
-};
+//extern "C"
+//{
+//   #include "ARMLib/Common/ComDef.h"
+//   #include "CORELib/Common/ViperDef.h"
+//   #include "CORELib/UserInterface/ViperUI.h"
+//};
 
 class CWeldingContainerMig : public CWeldingGenericContainer
 {
 private:
 
     U8 indexMenu;
+    U8 indexSubMenu;
     ColorDefined colorSelection;
     static const U8 nCWeldParam = 3;
     std::array<CWeldingGenericContainerParam,nCWeldParam>CWeldingGenContParm;
@@ -32,8 +33,11 @@ public:
 
    virtual void initialize();
 
-   void seletcMenu(S8 menu);
-   void seletcSubMenu(S8 menu);
+   void seletcMenu(S8 menu,S8 submenu);
+   void seletcSubMenu_TipoDiametro(S8 menu);
+   void seletcSubMenu_TipoFilo(S8 menu);
+   void seletcSubMenu_TipoMig(S8 menu);
+   void seletcSubMenu_TipoMGas(S8 menu);
    void confirmMenu(S8 preessed);
 //   void setPtr(SWeldingProcessView* ptr);
 //    void setMenuList(U8 list);

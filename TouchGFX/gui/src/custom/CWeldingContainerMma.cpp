@@ -1,13 +1,13 @@
 #include <gui/custom/CWeldingContainerMma.hpp>
 #include <ARMLib/TGFX/color_define.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
-extern "C"
-{
-	#include "CORELib/UserInterface/ViperUI.h"
-	#include "ARMLib/TGFX/TGFXCustom.h"
-	#include "CORELib/Common/ViperDef.h"
-	#include "Features.h"
-};
+//extern "C"
+//{
+//	#include "CORELib/UserInterface/ViperUI.h"
+//	#include "ARMLib/TGFX/TGFXCustom.h"
+//	#include "CORELib/Common/ViperDef.h"
+//	#include "Features.h"
+//};
 
 
 CWeldingContainerMma::CWeldingContainerMma():indexMenu(0)
@@ -46,7 +46,7 @@ void CWeldingContainerMma::confirmMenu(S8 p)
 
 }
 
-void CWeldingContainerMma::seletcMenu(S8 menu)
+void CWeldingContainerMma::seletcMenu(S8 menu,S8 submenu)
 {
 	indexMenu += menu;
 
@@ -58,18 +58,19 @@ void CWeldingContainerMma::seletcMenu(S8 menu)
 
 	switch (indexMenu)
 	{
+      case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG:
+         CWeldingGenContParm[0].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
+      break;
 		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO:
-			CWeldingGenContParm[0].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
+			CWeldingGenContParm[1].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
 		break;
 		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_DIAMETROFILO:
-			CWeldingGenContParm[0].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
+			CWeldingGenContParm[1].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
 		break;
 		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS:
 			CWeldingGenContParm[1].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
 		break;
-		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG:
-			CWeldingGenContParm[1].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
-		break;
+
 		default:
 			if ( indexMenu < VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO)
 				indexMenu = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO;

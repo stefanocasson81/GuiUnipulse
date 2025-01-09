@@ -1,5 +1,5 @@
-#ifndef CWELDINGPROCESS___HPP
-#define CWELDINGPROCESS___HPP
+#ifndef CWELDINCONTAINER___HPP
+#define CWELDINCONTAINER___HPP
 
 #include <ARMLib/TGFX/cpp_define.hpp>
 //#include <gui/sweldingprocess_screen/SWeldingProcessView.hpp>
@@ -30,4 +30,4 @@ protected:
 //    SWeldingProcessView* viewPtr;
 };
 
-#endif // CWELDINGPROCESS___HPP
+#endif // CWELDINCONTAINER___HPP

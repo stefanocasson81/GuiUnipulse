@@ -53,8 +53,9 @@ void SBasicView::handleTickEvent()
 	//________________________________________________________Valuta dove andare
 	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
 	{
-		viperui_Generatore_SalvaParametriInEEProm();
-		viperui_Generatore_SalvaTaratura();	//niknik da togliere questo accrocchio, qui NON c'è taratura da salvare nella versione ufficiale, viene usato solo per taratura fascio cavi
+		presenter->setSaveParametersEeprom();
+//		presenter->setSaveCalibration();
+//		viperui_Generatore_SalvaTaratura();	//niknik da togliere questo accrocchio, qui NON c'è taratura da salvare nella versione ufficiale, viene usato solo per taratura fascio cavi
 		application().VisualizzaSMain();
 	}
 

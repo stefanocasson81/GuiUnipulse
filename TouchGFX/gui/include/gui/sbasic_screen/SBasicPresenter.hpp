@@ -27,6 +27,8 @@ public:
 
     virtual ~SBasicPresenter() {};
 
+    void setSaveParametersEeprom(){model->viper_Info.viperui_Generatore_SalvaParametriInEEProm();}
+    void setSaveCalibration(){model->viper_Info.viperui_Generatore_SalvaTaratura();}
 private:
     SBasicPresenter();
 
