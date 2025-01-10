@@ -1,0 +1,199 @@
+#include <gui/sdebugvar_screen/SDebugVarView.hpp>
+
+
+extern "C"
+{
+	#include "ARMLib/TGFX/TGFXCustom.h"
+	#include "ARMLib/Common/Data.h"
+	#include "CORELib/Common/ViperDef.h"
+	#include "ARMLib/Common/Data8Pack.h"
+};
+
+
+
+typedef enum
+{
+	SDEBUGVARVIEW_DATA_UINT8_0,
+	SDEBUGVARVIEW_DATA_UINT8_1,
+	SDEBUGVARVIEW_DATA_UINT8_2,
+	SDEBUGVARVIEW_DATA_UINT8_3,
+	SDEBUGVARVIEW_DATA_UINT8_4,
+	SDEBUGVARVIEW_DATA_UINT8_5,
+	SDEBUGVARVIEW_DATA_UINT8_6,
+	SDEBUGVARVIEW_DATA_UINT8_7,
+	SDEBUGVARVIEW_DATA_INT8_0,
+	SDEBUGVARVIEW_DATA_INT8_1,
+	SDEBUGVARVIEW_DATA_INT8_2,
+	SDEBUGVARVIEW_DATA_INT8_3,
+	SDEBUGVARVIEW_DATA_INT8_4,
+	SDEBUGVARVIEW_DATA_INT8_5,
+	SDEBUGVARVIEW_DATA_INT8_6,
+	SDEBUGVARVIEW_DATA_INT8_7,
+
+	SDEBUGVARVIEW_DATA_UINT16_0,
+	SDEBUGVARVIEW_DATA_UINT16_1,
+	SDEBUGVARVIEW_DATA_UINT16_2,
+	SDEBUGVARVIEW_DATA_UINT16_3,
+	SDEBUGVARVIEW_DATA_INT16_0,
+	SDEBUGVARVIEW_DATA_INT16_1,
+	SDEBUGVARVIEW_DATA_INT16_2,
+	SDEBUGVARVIEW_DATA_INT16_3,
+
+	SDEBUGVARVIEW_DATA_UINT32_0,
+	SDEBUGVARVIEW_DATA_UINT32_1,
+	SDEBUGVARVIEW_DATA_INT32_0,
+	SDEBUGVARVIEW_DATA_INT32_1,
+
+	SDEBUGVARVIEW_DATA_MAX
+}sdebugvarview_Data_e;
+
+
+static const data_Data_t LocalStrutturaDati[SDEBUGVARVIEW_DATA_MAX] =
+{	// Tenere allineata la struttura con gli enum del tipo VIPERUI_DATA_xxxxx
+	{ &viperdef_GetTx_VarTestUInt8[0],		3,0,	_TYPEDATA_UINT8_,	DATA_SCALARE(0),				DATA_SCALARE(UINT8_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT8	},
+	{ &viperdef_GetTx_VarTestUInt8[1],		3,0,	_TYPEDATA_UINT8_,	DATA_SCALARE(0),				DATA_SCALARE(UINT8_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT8	},
+	{ &viperdef_GetTx_VarTestUInt8[2],		3,0,	_TYPEDATA_UINT8_,	DATA_SCALARE(0),				DATA_SCALARE(UINT8_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT8	},
+	{ &viperdef_GetTx_VarTestUInt8[3],		3,0,	_TYPEDATA_UINT8_,	DATA_SCALARE(0),				DATA_SCALARE(UINT8_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT8	},
+	{ &viperdef_GetTx_VarTestUInt8[4],		3,0,	_TYPEDATA_UINT8_,	DATA_SCALARE(0),				DATA_SCALARE(UINT8_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT8	},
+	{ &viperdef_GetTx_VarTestUInt8[5],		3,0,	_TYPEDATA_UINT8_,	DATA_SCALARE(0),				DATA_SCALARE(UINT8_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT8	},
+	{ &viperdef_GetTx_VarTestUInt8[6],		3,0,	_TYPEDATA_UINT8_,	DATA_SCALARE(0),				DATA_SCALARE(UINT8_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT8	},
+	{ &viperdef_GetTx_VarTestUInt8[7],		3,0,	_TYPEDATA_UINT8_,	DATA_SCALARE(0),				DATA_SCALARE(UINT8_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT8	},
+	{ &viperdef_GetTx_VarTestSInt8[0],		3,0,	_TYPEDATA_SINT8_,	DATA_SCALARE(INT8_MIN),			DATA_SCALARE(INT8_MAX),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT8	},
+	{ &viperdef_GetTx_VarTestSInt8[1],		3,0,	_TYPEDATA_SINT8_,	DATA_SCALARE(INT8_MIN),			DATA_SCALARE(INT8_MAX),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT8	},
+	{ &viperdef_GetTx_VarTestSInt8[2],		3,0,	_TYPEDATA_SINT8_,	DATA_SCALARE(INT8_MIN),			DATA_SCALARE(INT8_MAX),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT8	},
+	{ &viperdef_GetTx_VarTestSInt8[3],		3,0,	_TYPEDATA_SINT8_,	DATA_SCALARE(INT8_MIN),			DATA_SCALARE(INT8_MAX),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT8	},
+	{ &viperdef_GetTx_VarTestSInt8[4],		3,0,	_TYPEDATA_SINT8_,	DATA_SCALARE(INT8_MIN),			DATA_SCALARE(INT8_MAX),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT8	},
+	{ &viperdef_GetTx_VarTestSInt8[5],		3,0,	_TYPEDATA_SINT8_,	DATA_SCALARE(INT8_MIN),			DATA_SCALARE(INT8_MAX),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT8	},
+	{ &viperdef_GetTx_VarTestSInt8[6],		3,0,	_TYPEDATA_SINT8_,	DATA_SCALARE(INT8_MIN),			DATA_SCALARE(INT8_MAX),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT8	},
+	{ &viperdef_GetTx_VarTestSInt8[7],		3,0,	_TYPEDATA_SINT8_,	DATA_SCALARE(INT8_MIN),			DATA_SCALARE(INT8_MAX),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT8	},
+
+	{ &viperdef_GetTx_VarTestUInt16[0],		5,0,	_TYPEDATA_UINT16_,	DATA_SCALARE(0),				DATA_SCALARE(UINT16_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT16	},
+	{ &viperdef_GetTx_VarTestUInt16[1],		5,0,	_TYPEDATA_UINT16_,	DATA_SCALARE(0),				DATA_SCALARE(UINT16_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT16	},
+	{ &viperdef_GetTx_VarTestUInt16[2],		5,0,	_TYPEDATA_UINT16_,	DATA_SCALARE(0),				DATA_SCALARE(UINT16_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT16	},
+	{ &viperdef_GetTx_VarTestUInt16[3],		5,0,	_TYPEDATA_UINT16_,	DATA_SCALARE(0),				DATA_SCALARE(UINT16_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT16	},
+	{ &viperdef_GetTx_VarTestSInt16[0],		5,0,	_TYPEDATA_SINT16_,	DATA_SCALARE(INT16_MIN),		DATA_SCALARE(INT16_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT16	},
+	{ &viperdef_GetTx_VarTestSInt16[1],		5,0,	_TYPEDATA_SINT16_,	DATA_SCALARE(INT16_MIN),		DATA_SCALARE(INT16_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT16	},
+	{ &viperdef_GetTx_VarTestSInt16[2],		5,0,	_TYPEDATA_SINT16_,	DATA_SCALARE(INT16_MIN),		DATA_SCALARE(INT16_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT16	},
+	{ &viperdef_GetTx_VarTestSInt16[3],		5,0,	_TYPEDATA_SINT16_,	DATA_SCALARE(INT16_MIN),		DATA_SCALARE(INT16_MAX),	VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT16	},
+
+	{ &viperdef_GetTx_VarTestUInt32[0],		9,0,	_TYPEDATA_UINT32_,	DATA_SCALARE(0),				DATA_SCALARE(1000000),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT32	},
+	{ &viperdef_GetTx_VarTestUInt32[1],		9,0,	_TYPEDATA_UINT32_,	DATA_SCALARE(0),				DATA_SCALARE(1000000),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTUINT32	},
+	{ &viperdef_GetTx_VarTestSInt32[0],		9,0,	_TYPEDATA_SINT32_,	DATA_SCALARE(-1000000),			DATA_SCALARE(1000000),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT32	},
+	{ &viperdef_GetTx_VarTestSInt32[1],		9,0,	_TYPEDATA_SINT32_,	DATA_SCALARE(-1000000),			DATA_SCALARE(1000000),		VIPERDEF_BASECANID_GENRX+VIPERDEF_CANID_GEN_VARTESTSINT32	},
+
+};
+
+
+
+
+
+
+
+
+
+SDebugVarView::SDebugVarView()
+{
+	uint8_t uCA;
+	uint8_t indiceCEditVal=0;
+
+	// uint8_t
+	for(uCA=0;uCA<8;uCA++)
+	{
+		cEditValTab[indiceCEditVal].setXY(5,26+25*uCA);
+		cEditValTab[indiceCEditVal].SetPtrStructData(&LocalStrutturaDati[indiceCEditVal]);
+		add(cEditValTab[indiceCEditVal]);
+		indiceCEditVal++;
+	}
+	// int8_t
+	for(uCA=0;uCA<8;uCA++)
+	{
+		cEditValTab[indiceCEditVal].setXY(85,26+25*uCA);
+		cEditValTab[indiceCEditVal].SetPtrStructData(&LocalStrutturaDati[indiceCEditVal]);
+		add(cEditValTab[indiceCEditVal]);
+		indiceCEditVal++;
+	}
+	// uint16_t
+	for(uCA=0;uCA<4;uCA++)
+	{
+		cEditValTab[indiceCEditVal].setXY(165,26+25*uCA);
+		cEditValTab[indiceCEditVal].SetPtrStructData(&LocalStrutturaDati[indiceCEditVal]);
+		add(cEditValTab[indiceCEditVal]);
+		indiceCEditVal++;
+	}
+	// int16_t
+	for(uCA=0;uCA<4;uCA++)
+	{
+		cEditValTab[indiceCEditVal].setXY(245,26+25*uCA);
+		cEditValTab[indiceCEditVal].SetPtrStructData(&LocalStrutturaDati[indiceCEditVal]);
+		add(cEditValTab[indiceCEditVal]);
+		indiceCEditVal++;
+	}
+	// uint32_t
+	for(uCA=0;uCA<2;uCA++)
+	{
+		cEditValTab[indiceCEditVal].setXY(325,26+25*uCA);
+		cEditValTab[indiceCEditVal].SetPtrStructData(&LocalStrutturaDati[indiceCEditVal]);
+		add(cEditValTab[indiceCEditVal]);
+		indiceCEditVal++;
+	}
+	// int32_t
+	for(uCA=0;uCA<2;uCA++)
+	{
+		cEditValTab[indiceCEditVal].setXY(405,26+25*uCA);
+		cEditValTab[indiceCEditVal].SetPtrStructData(&LocalStrutturaDati[indiceCEditVal]);
+		add(cEditValTab[indiceCEditVal]);
+		indiceCEditVal++;
+	}
+
+
+    IndiceSelezionato=0;
+    IndiceMaxSelezionabile=SDEBUGVARVIEW_NELEMENTCEDITVAL-1;
+    OldIndiceSelezionato = 0xff;
+}
+
+void SDebugVarView::setupScreen()
+{
+    SDebugVarViewBase::setupScreen();
+}
+
+void SDebugVarView::tearDownScreen()
+{
+    SDebugVarViewBase::tearDownScreen();
+}
+
+void SDebugVarView::handleTickEvent()
+{
+	uint8_t uCA;
+	int32_t lA;
+
+	//________________________________________________________Valuta dove andare
+	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+		application().VisualizzaSMenuPrincipale();
+
+	lA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);
+	if(lA)
+	{
+		lA+=IndiceSelezionato;
+		if(lA<0)
+			lA = 0;
+		else if(lA>IndiceMaxSelezionabile)
+			lA = IndiceMaxSelezionabile;
+		IndiceSelezionato = lA;
+	}
+
+	if(OldIndiceSelezionato!=IndiceSelezionato)
+	{
+		OldIndiceSelezionato=IndiceSelezionato;
+
+		for(uCA=0;uCA<_NELEMENTS_(cEditValTab);uCA++)
+			cEditValTab[uCA].Seleziona(false);
+
+		cEditValTab[IndiceSelezionato].Seleziona(true);
+	}
+
+	for(uCA=0;uCA<_NELEMENTS_(cEditValTab);uCA++)
+	{
+		if(cEditValTab[uCA].ManagerTickEvent())
+			data8pack_ForceTX(LocalStrutturaDati[uCA].Id);
+	}
+}
