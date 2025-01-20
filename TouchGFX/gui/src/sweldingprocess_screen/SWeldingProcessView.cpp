@@ -7,9 +7,9 @@
 
 
 
-SWeldingProcessView::SWeldingProcessView():PtrQuadro(NULL),setMenuSelectedContainer_Callback(this,&SWeldingProcessView::fromContainerMenuSelected_Callback),process(0),focusMenu(0),encR(0),encL(0),indexMenu(0)
+SWeldingProcessView::SWeldingProcessView():PtrQuadro(NULL),setInitContainer_Callback(this,&SWeldingProcessView::fromContainerInitContainer_Callback),\
+setMenuSelectedContainer_Callback(this,&SWeldingProcessView::fromContainerMenuSelected_Callback),process(0),focusMenu(0)
 {
-
 	cInfoBar.SetTitolo(T_TITLE_WELDING_PROCESS);
 }
 
@@ -17,7 +17,6 @@ SWeldingProcessView::~SWeldingProcessView()
 {
 	if(PtrQuadro)
 		_DELETE_(PtrQuadro);
-
 }
 
 void SWeldingProcessView::setupScreen()
@@ -30,15 +29,15 @@ void SWeldingProcessView::setupScreen()
       _DELETE_(PtrQuadro);
    }
 
-   if ( process >= Model::MODEL_PROCESSO_MAX )
+   if ( process >= VIPERDEF_PROCESSO_MAX )
       process = VIPERDEF_PROCESSO_MIG;
    else if ( process < VIPERDEF_PROCESSO_MMA )
       process = VIPERDEF_PROCESSO_MMA;
 
-   createSelectedProcess(Model::Process_Type (process));
+   createSelectedProcess(viperdef_Processo_e(process));
+
+   focusMenu = VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO;
 }
-
-
 
 
 
@@ -53,60 +52,88 @@ void SWeldingProcessView::GoBack()
 }
 
 
-void SWeldingProcessView::encRconfirm()
-{
-   presenter->setProcessToModel((Model::Process_Type)process);
-}
 
 
-void SWeldingProcessView::createSelectedProcess(Model::Process_Type p)
+void SWeldingProcessView::createSelectedProcess(viperdef_Processo_e p)
 {
+   if ( PtrQuadro )
+   {
+      remove(*PtrQuadro);
+      _DELETE_(PtrQuadro);
+   }
+
    switch (p)
    {
-      case Model::MODEL_PROCESSO_MMA:
+      case VIPERDEF_PROCESSO_MMA:
 
          PtrQuadro = new CWeldingContainerMma();
+         PtrQuadro->setMenuSelectedView_Callback(setMenuSelectedContainer_Callback);
          add(*PtrQuadro);
          PtrQuadro->initialize();
          PtrQuadro->invalidate();
-         PtrQuadro->setMenuSelectedView_Callback(setMenuSelectedContainer_Callback);
+         presenter->setProcessToModel(p);
       break;
-      case Model::MODEL_PROCESSO_TIG:
+      case VIPERDEF_PROCESSO_TIG:
          //       cWeldingSetProcess.set_TA_Process_1(touchgfx::TypedText(VIPERDEF_PROCESSO_TIG));
          PtrQuadro = new CWeldingContainerTig();
+         PtrQuadro->setMenuSelectedView_Callback(setMenuSelectedContainer_Callback);
          add(*PtrQuadro);
          PtrQuadro->initialize();
          PtrQuadro->invalidate();
-         PtrQuadro->setMenuSelectedView_Callback(setMenuSelectedContainer_Callback);
+         presenter->setProcessToModel(p);
       break;
-      case Model::MODEL_PROCESSO_MIG:
+      case VIPERDEF_PROCESSO_MIG:
          //       cWeldingSetProcess.set_TA_Process_1(touchgfx::TypedText(VIPERDEF_PROCESSO_MIG));
          PtrQuadro = new CWeldingContainerMig();
+         PtrQuadro->setMenuSelectedView_Callback(setMenuSelectedContainer_Callback);
+         PtrQuadro->setInitContainer_Callback(setInitContainer_Callback);
          add(*PtrQuadro);
          PtrQuadro->initialize();
          PtrQuadro->invalidate();
-         PtrQuadro->setMenuSelectedView_Callback(setMenuSelectedContainer_Callback);
+         presenter->setProcessToModel(p);
       break;
 
-      case Model::MODEL_PROCESSO_MAX:
+      case VIPERDEF_PROCESSO_MAX:
       default:
-         if ( process >= Model::MODEL_PROCESSO_MAX )
-            process = Model::MODEL_PROCESSO_MIG;
-         else if ( process < Model::MODEL_PROCESSO_MMA )
-            process = Model::MODEL_PROCESSO_MMA;
+//         if ( process >= VIPERDEF_PROCESSO_MAX )
+//            process = VIPERDEF_PROCESSO_MIG;
+//         else if ( process < VIPERDEF_PROCESSO_MMA )
+//            process = VIPERDEF_PROCESSO_MMA;
       break;
    }
 }
 
 
-void SWeldingProcessView::fromContainerMenuSelected_Callback(U8 Menu,U8 Process)
+void SWeldingProcessView::encRXconfirm(void)
 {
+//   if(focusMenu == VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO)
+//   {
+//      presenter->setProcessToModel(viperdef_TipoMig_e(process));
+//      focusMenu = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG;
+//   }
+//   else
+//      focusMenu +=1;
+}
 
-
+/***********************Calback*************************/
+void SWeldingProcessView::fromContainerInitContainer_Callback(void)
+{
+   if ( PtrQuadro->getContainerType() == VIPERDEF_PROCESSO_MIG )
+   {
+      presenter->getWireDiameter();
+      presenter->getWireType();
+      presenter->getGasType();
+      presenter->getMigType();
+   }
+}
+void SWeldingProcessView::fromContainerMenuSelected_Callback(S8 Menu,S8 Process)
+{
+   presenter->setFocusIdVariableToModel(Menu, Process);
 }
 
 void SWeldingProcessView::encRX_incDec(S8 toward)
 {
+/*
    if(!focusMenu)
    {
       if ( PtrQuadro )
@@ -119,157 +146,70 @@ void SWeldingProcessView::encRX_incDec(S8 toward)
          process = VIPERDEF_PROCESSO_MIG;
       else if ( process < VIPERDEF_PROCESSO_MMA )
          process = VIPERDEF_PROCESSO_MMA;
-
-      createSelectedProcess((Model::Process_Type)process);
+      presenter->setFocusIdVariableToModel(0, process);
+      createSelectedProcess(viperdef_TipoMig_e(process));
    }
-   else
-   {
-      if ( PtrQuadro )
-      {
-         PtrQuadro->seletcMenu(focusMenu,toward);
-      }
-   }
+   */
+//   else
+//   {
+//      if ( PtrQuadro )
+//      {
+//         PtrQuadro->seletcMenu(focusMenu,toward);
+//      }
+//   }
 }
 
-
+void SWeldingProcessView::setMenuContainer(viperui_AttualeSelezioneProcesso_e m)
+{
+   if(PtrQuadro)
+   {
+      PtrQuadro->seletcMenu(m,0);
+   }
+}
 
 void SWeldingProcessView::encSX_incDec(S8 toward)
 {
-   focusMenu = toward;
-   focusMenu = 0;
-	if(PtrQuadro)
-	{
-		PtrQuadro->seletcMenu(focusMenu,0);
-	}
-}
+//   if(focusMenu == VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO)
+//      focusMenu = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG;
+//   else
+//   focusMenu += toward;
 
-
-void SWeldingProcessView::handleTickEvent()
-{
-
-//	switch(process)
+//	if(PtrQuadro)
 //	{
-//		default:
-//		break;
-//		case VIPERDEF_PROCESSO_MMA:
-//			((CWeldingProcessMma*)PtrQuadro)->ManagerTickEvent();
-//		break;
-//		case VIPERDEF_PROCESSO_TIG:
-//			((CWeldingProcessTig*)PtrQuadro)->ManagerTickEvent();
-//		break;
-//		case VIPERDEF_PROCESSO_MIG:
-////			((CWeldingProcessMig*)PtrQuadro)->ManagerTickEvent();
-//		break;
+//		PtrQuadro->seletcMenu(focusMenu,0);
 //	}
 }
 
-//void SWeldingProcessView::processChanged(uint8_t prc)
-//{
-//   process = prc;
-//
-//   if ( PtrQuadro )
-//		{
-//			remove(*PtrQuadro);
-//			delete PtrQuadro;
-//		}
-//
-//   switch (process)
-//		{
-//			default:
-//			break;
-//			case VIPERDEF_PROCESSO_MMA:
-//				PtrQuadro = new CWeldingProcessMma();
-//
-//         if ( PtrQuadro )
-//         {
-//            ((CWeldingProcessMma*) PtrQuadro)->setXY(0, cInfoBar.getHeight());
-//            add(*PtrQuadro);
-//            ((CWeldingProcessMma*) PtrQuadro)->invalidate();
-//         }
-//      break;
-//      case VIPERDEF_PROCESSO_TIG:
-//         PtrQuadro = new CWeldingProcessTig();
-//         if ( PtrQuadro )
-//         {
-//            ((CWeldingProcessTig*) PtrQuadro)->setXY(0, cInfoBar.getHeight());
-//            add(*PtrQuadro);
-//            ((CWeldingProcessTig*) PtrQuadro)->invalidate();
-//         }
-//      break;
-//      case VIPERDEF_PROCESSO_MIG:
-////         PtrQuadro = new CWeldingProcessMig();
-//         if ( PtrQuadro )
-//         {
-////            ((CWeldingProcessMig*) PtrQuadro)
-//            ((CWeldingProcessMig_*) PtrQuadro)->setXY(0, cInfoBar.getHeight());
-//            add(*PtrQuadro);
-//            ((CWeldingProcessMig_*) PtrQuadro)->invalidate();
-//				}
-//			break;
-//		}
-//}
 
 
-void SWeldingProcessView::gasChanged(uint8_t type)
+void SWeldingProcessView::updateWireType(viperdef_TipoFilo_e type)
 {
-   /******** SCA dynami cast not permitted **********/
-//   if(typeid(*PtrQuadro) == typeid(CWeldingProcessMig_))
-//   {
-//      ((CWeldingProcessMig_*)PtrQuadro)->setGas(type);
-//   }
-//   if(CWeldingProcessMig_* Ptr = dynamic_cast<CWeldingProcessMig_*>(PtrQuadro))
-//   {
-//      Ptr->setGas(type);
-//   }
-//   switch (process)
-//   {
-//      default:
-//      break;
-//      case VIPERDEF_PROCESSO_MMA:
-//
-//      break;
-//      case VIPERDEF_PROCESSO_TIG:
-//
-//      break;
-//      case VIPERDEF_PROCESSO_MIG:
-////         ((CWeldingProcessMig*) PtrQuadro)->setGas(type);
-//      break;
-//   }
+   if(PtrQuadro->getContainerType() == VIPERDEF_PROCESSO_MIG)
+   {
+      PtrQuadro->seletcMig_WireType(type);
+   }
 }
 
-
-#if 0
-void SWeldingProcessView::setMigConfiguration()
+void SWeldingProcessView::updateWireDiameter(viperdef_DiametroFilo_e type)
 {
-
-	pCWeldingSetParamContainer[0]->setVisible_TA_MainTitle(true);
-   pCWeldingSetParamContainer[0]->setVisible_TA_Desc_1(false);
-   pCWeldingSetParamContainer[0]->set_Color_BASE_1(color.setBackground_Focus());
-
-   pCWeldingSetParamContainer[0]->setVisible_TA_Title_2(false);
-   pCWeldingSetParamContainer[0]->setVisible_TA_Desc_2(false);
-   pCWeldingSetParamContainer[0]->setVisible_IMG_iD_2(false);
-   pCWeldingSetParamContainer[0]->setVisible_IMG_iTypo_2(false);
-
-   pCWeldingSetParamContainer[0]->setVisible_TA_Title_3(false);
-   pCWeldingSetParamContainer[0]->setVisible_TA_Desc_3(false);
-   pCWeldingSetParamContainer[0]->setVisible_IMG_iD_3(true);
-   pCWeldingSetParamContainer[0]->setVisible_IMG_iTypo_2(false);
-   pCWeldingSetParamContainer[0]->set_IMG_iD_3(BITMAP_ICOTIG33X35_ID);
-
-   pCWeldingSetParamContainer[0]->setActveBase(0, true);
-   pCWeldingSetParamContainer[0]->setActveBase(1, false);
-   pCWeldingSetParamContainer[0]->setActveBase(2, false);
-   pCWeldingSetParamContainer[0]->set_TA_MainTitle(T_PROC_MIG);
-
+   if(PtrQuadro->getContainerType() == VIPERDEF_PROCESSO_MIG)
+   {
+      PtrQuadro->seletcMig_WireDIameter(type);
+   }
 }
 
-void SWeldingProcessView::setTigConfiguration()
+void SWeldingProcessView::updateGasType(viperdef_TipoGas_e type)
 {
-
+   if(PtrQuadro->getContainerType() == VIPERDEF_PROCESSO_MIG)
+   {
+      PtrQuadro->seletcMig_GasType(type);
+   }
 }
-void SWeldingProcessView::setWireCB()
+
+void SWeldingProcessView::updateMigType(viperdef_TipoMig_e type)
 {
-
+   if(PtrQuadro->getContainerType() == VIPERDEF_PROCESSO_MIG)
+   {
+      PtrQuadro->seletcMig_MigType(type);
+   }
 }
-#endif

@@ -111,7 +111,7 @@ void CMainMig::ManagerTickEvent(void)
 	viperui_Data_e enumData=VIPERUI_DATA_MIGSYN_MAX;
 
 	//________________________________________________________Valuta dove andare
-	uSA = tgfxcustom_EncoderStatus[TGFXCUSTOM_ENCODER_CENTER].MsTempoPressione;
+	uSA = tgfxcustom_EncoderStatus[ENCODER_CENTER].MsTempoPressione;
 	if(uSA>100)
 	{
 		if(!cPC.isVisible())
@@ -129,21 +129,21 @@ void CMainMig::ManagerTickEvent(void)
 			cPC.invalidate();
 		}
 	}
-	switch(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_CENTER))
+	switch(tgfxcustom_GetPressioneEncoder(ENCODER_CENTER))
 	{
 		default:
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_NONPREMUTO:
+		case ENCODER_PRESSION_NOT_PRESSED:
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_PREMUTO:
+		case ENCODER_PRESSION_PRESSED:
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO:
+		case ENCODER_PRESSION_RELEASED:
 			application().VisualizzaSSetup();
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGO:
+		case ENCODER_PRESSION_LONG_PRESSED:
 			application().VisualizzaSMenuPrincipale();
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGHISSIMO:
+		case ENCODER_PRESSION_VERY_LONG_PRESSED:
 		break;
 	}
 
@@ -153,11 +153,11 @@ void CMainMig::ManagerTickEvent(void)
 		default:
 		break;
 		case CMAINMIG_SELEZIONATO_VOID:
-			switch(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT))
+			switch(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT))
 			{
 				default:
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_NONPREMUTO:
+				case ENCODER_PRESSION_NOT_PRESSED:
 					BeepSegnalato = 0;
 
 					if(cPSX.isVisible())
@@ -165,7 +165,7 @@ void CMainMig::ManagerTickEvent(void)
 						cPSX.setVisible(false);
 						cPSX.invalidate();
 					}
-					sA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);
+					sA=tgfxcustom_GetOffsetEncoder(ENCODER_LEFT);
 					if(sA)
 					{
 						if(viperdef_Pack8GenTx_Base.TipoMig==VIPERDEF_TIPOMIG_MAN)
@@ -188,8 +188,8 @@ void CMainMig::ManagerTickEvent(void)
 						OldIndiceImpostazioneRapida = 0xff;
 					}
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_PREMUTO:
-					uSA = tgfxcustom_EncoderStatus[TGFXCUSTOM_ENCODER_LEFT].MsTempoPressione;
+				case ENCODER_PRESSION_PRESSED:
+					uSA = tgfxcustom_EncoderStatus[ENCODER_LEFT].MsTempoPressione;
 					if(uSA>100)
 					{
 						if(!cPSX.isVisible())
@@ -208,7 +208,7 @@ void CMainMig::ManagerTickEvent(void)
 						}
 					}
 
-					if(tgfxcustom_EncoderStatus[TGFXCUSTOM_ENCODER_LEFT].MsTempoPressione>=CMAINMIG_MSWAITVIS)
+					if(tgfxcustom_EncoderStatus[ENCODER_LEFT].MsTempoPressione>=CMAINMIG_MSWAITVIS)
 					{
 						cPSXPainter.setColor(colortype(viperui_OpacizzaColore(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE],1)));
 						cPSX.invalidate();
@@ -220,7 +220,7 @@ void CMainMig::ManagerTickEvent(void)
 							_board_Beep_Set(400);
 						}
 					}
-					else if(tgfxcustom_EncoderStatus[TGFXCUSTOM_ENCODER_LEFT].MsTempoPressione>=CMAINMIG_MSWAITIMPOSTAZIONERAPIDA)
+					else if(tgfxcustom_EncoderStatus[ENCODER_LEFT].MsTempoPressione>=CMAINMIG_MSWAITIMPOSTAZIONERAPIDA)
 					{
 						cPSXPainter.setColor(colortype(viperui_OpacizzaColore(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE],0.5)));
 						cPSX.invalidate();
@@ -233,33 +233,33 @@ void CMainMig::ManagerTickEvent(void)
 							_board_Beep_Set(200);
 						}
 					}
-					else if(tgfxcustom_EncoderStatus[TGFXCUSTOM_ENCODER_LEFT].MsTempoPressione<CMAINMIG_MSWAITVIS)
+					else if(tgfxcustom_EncoderStatus[ENCODER_LEFT].MsTempoPressione<CMAINMIG_MSWAITVIS)
 					{
 						cPSXPainter.setColor(colortype(viperui_OpacizzaColore(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE],0.2)));
 						cPSX.invalidate();
 					}
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO:
+				case ENCODER_PRESSION_RELEASED:
 					if(Selezionato == CMAINMIG_SELEZIONATO_IMPOSTAZIONERAPIDA)
 						Selezionato = CMAINMIG_SELEZIONATO_VOID;
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGO:
+				case ENCODER_PRESSION_LONG_PRESSED:
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGHISSIMO:
+				case ENCODER_PRESSION_VERY_LONG_PRESSED:
 				break;
 			}
 
-			switch(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_RIGHT))
+			switch(tgfxcustom_GetPressioneEncoder(ENCODER_RIGHT))
 			{
 				default:
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_NONPREMUTO:
+				case ENCODER_PRESSION_NOT_PRESSED:
 					if(cPDX.isVisible())
 					{
 						cPDX.setVisible(false);
 						cPDX.invalidate();
 					}
-					sA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_RIGHT);
+					sA=tgfxcustom_GetOffsetEncoder(ENCODER_RIGHT);
 					if(sA)
 					{
 						if(viperdef_Pack8GenTx_Base.TipoMig==VIPERDEF_TIPOMIG_MAN)
@@ -274,8 +274,8 @@ void CMainMig::ManagerTickEvent(void)
 						}
 					}
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_PREMUTO:
-					uSA = tgfxcustom_EncoderStatus[TGFXCUSTOM_ENCODER_RIGHT].MsTempoPressione;
+				case ENCODER_PRESSION_PRESSED:
+					uSA = tgfxcustom_EncoderStatus[ENCODER_RIGHT].MsTempoPressione;
 					if(uSA>100)
 					{
 						if(!cPDX.isVisible())
@@ -293,26 +293,26 @@ void CMainMig::ManagerTickEvent(void)
 							cPDX.invalidate();
 						}
 					}
-					if(tgfxcustom_EncoderStatus[TGFXCUSTOM_ENCODER_RIGHT].MsTempoPressione>=CMAINMIG_MSWAITVIS)
+					if(tgfxcustom_EncoderStatus[ENCODER_RIGHT].MsTempoPressione>=CMAINMIG_MSWAITVIS)
 					{
 						if(viperdef_Pack8GenTx_Base.TipoMig!=VIPERDEF_TIPOMIG_MAN)
 							Selezionato = CMAINMIG_SELEZIONATO_WHATVISDX;
 					}
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO:
+				case ENCODER_PRESSION_RELEASED:
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGO:
+				case ENCODER_PRESSION_LONG_PRESSED:
 				break;
-				case TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGHISSIMO:
+				case ENCODER_PRESSION_VERY_LONG_PRESSED:
 				break;
 			}
 		break;
 		case CMAINMIG_SELEZIONATO_WHATVISSX:
-			if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+			if(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT)==ENCODER_PRESSION_RELEASED)
 				Selezionato = CMAINMIG_SELEZIONATO_VOID;
 			else
 			{
-				sA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);
+				sA=tgfxcustom_GetOffsetEncoder(ENCODER_LEFT);
 				if(sA)
 				{
 					ValShowSX=0xffff;
@@ -324,11 +324,11 @@ void CMainMig::ManagerTickEvent(void)
 			}
 		break;
 		case CMAINMIG_SELEZIONATO_WHATVISDX:
-			if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_RIGHT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+			if(tgfxcustom_GetPressioneEncoder(ENCODER_RIGHT)==ENCODER_PRESSION_RELEASED)
 				Selezionato = CMAINMIG_SELEZIONATO_VOID;
 			else
 			{
-				sA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_RIGHT);
+				sA=tgfxcustom_GetOffsetEncoder(ENCODER_RIGHT);
 				if(sA)
 				{
 					ValShowDX=0xffff;
@@ -340,7 +340,7 @@ void CMainMig::ManagerTickEvent(void)
 			}
 		break;
 		case CMAINMIG_SELEZIONATO_IMPOSTAZIONERAPIDA:
-			if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+			if(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT)==ENCODER_PRESSION_RELEASED)
 			{	// Esce dalla impostazione rapida
 				cImpostazioneRapida1.Seleziona(false);
 				cImpostazioneRapida2.Seleziona(false);
@@ -351,7 +351,7 @@ void CMainMig::ManagerTickEvent(void)
 			else
 			{
 				//__________________Valuta quale impostazione rapida selezionare
-				sA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);
+				sA=tgfxcustom_GetOffsetEncoder(ENCODER_LEFT);
 				if(sA)
 				{
 					sA += IndiceImpostazioneRapida;

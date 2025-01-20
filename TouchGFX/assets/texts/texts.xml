@@ -193,6 +193,9 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_TNBD" Alignment="Left" TypographyId="Semibold15">
+        <Translation Language="EN">DIAMETER&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_3JKU" Alignment="Right" TypographyId="Regular15">
         <Translation Language="EN">press    to confirm</Translation>
       </Text>
@@ -212,15 +215,6 @@
         <Translation Language="EN"></Translation>
       </Text>
       <Text Id="__SingleUse_N2DY" Alignment="Right" TypographyId="Semibold15">
-        <Translation Language="EN">DIAMETER</Translation>
-      </Text>
-      <Text Id="__SingleUse_YFL7" Alignment="Left" TypographyId="Regular20">
-        <Translation Language="EN">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_29T4" Alignment="Left" TypographyId="Semibold15">
-        <Translation Language="EN"></Translation>
-      </Text>
-      <Text Id="__SingleUse_YDY0" Alignment="Right" TypographyId="Semibold15">
         <Translation Language="EN">DIAMETER</Translation>
       </Text>
       <Text Id="__SingleUse_4V5M" Alignment="Left" TypographyId="Regular15">
@@ -541,7 +535,7 @@
     <Typography Id="BoldItalic33" Font="Prompt-Bold.ttf" Size="33" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
     <Typography Id="ChivoMonoBold100" Font="ChivoMono-Bold.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
     <Typography Id="Regular40" Font="Prompt-Regular.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Regular15" Font="Prompt-Regular.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
-    <Typography Id="Regular11" Font="Prompt-Regular.ttf" Size="11" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Regular15" Font="Prompt-Regular.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="32-175,224-253" />
+    <Typography Id="Regular11" Font="Prompt-Regular.ttf" Size="13" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

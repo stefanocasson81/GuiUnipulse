@@ -2419,6 +2419,7 @@
       },
       {
         "Name": "CWeldingGenericContainerParam",
+        "X": 1,
         "Width": 153,
         "Height": 204,
         "Components": [
@@ -2426,7 +2427,7 @@
             "Type": "Box",
             "Name": "bBackground",
             "Width": 153,
-            "Height": 204,
+            "Height": 203,
             "Color": {
               "Red": 102,
               "Green": 179,
@@ -2436,9 +2437,9 @@
           {
             "Type": "Box",
             "Name": "bBase_3",
-            "X": 3,
+            "X": 2,
             "Y": 148,
-            "Width": 147,
+            "Width": 149,
             "Height": 53
           },
           {
@@ -2452,73 +2453,11 @@
             "RelativeFilename": "IcoTig33x35.png"
           },
           {
-            "Type": "TextArea",
-            "Name": "tATitle_3",
-            "X": 6,
-            "Y": 159,
-            "Width": 140,
-            "Height": 20,
-            "Visible": false,
-            "TextId": "__SingleUse_YDY0",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "tAProcess_3",
-            "X": 5,
-            "Y": 148,
-            "Width": 140,
-            "Height": 52,
-            "Visible": false,
-            "TextId": "__SingleUse_29T4",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "tADesc_3",
-            "X": 3,
-            "Y": 173,
-            "Width": 121,
-            "Height": 28,
-            "Visible": false,
-            "TextId": "__SingleUse_YFL7",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Wildcard1": {
-              "UseBuffer": true,
-              "BufferSize": 20
-            }
-          },
-          {
-            "Type": "Image",
-            "Name": "iTipo_3",
-            "X": 126,
-            "Y": 183,
-            "Width": 18,
-            "Height": 11,
-            "Visible": false,
-            "RelativeFilename": "IcoFreccetta18x11.png"
-          },
-          {
             "Type": "Box",
             "Name": "bBase_2",
-            "X": 3,
+            "X": 2,
             "Y": 94,
-            "Width": 147,
+            "Width": 149,
             "Height": 53
           },
           {
@@ -2533,11 +2472,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "tATitle_2",
-            "X": 6,
+            "Name": "tATitle_2_Rx",
+            "X": 84,
             "Y": 95,
-            "Width": 140,
-            "Height": 28,
+            "Width": 64,
+            "Height": 22,
             "Visible": false,
             "TextId": "__SingleUse_N2DY",
             "TextRotation": "0",
@@ -2595,9 +2534,9 @@
           {
             "Type": "Box",
             "Name": "bBase_1",
-            "X": 3,
+            "X": 2,
             "Y": 39,
-            "Width": 147,
+            "Width": 149,
             "Height": 53
           },
           {
@@ -2612,11 +2551,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "tATitle_1",
-            "X": 6,
-            "Y": 40,
-            "Width": 140,
-            "Height": 28,
+            "Name": "tATitle_1_Rx",
+            "X": 84,
+            "Y": 41,
+            "Width": 64,
+            "Height": 22,
             "Visible": false,
             "TextId": "__SingleUse_DWRN",
             "TextRotation": "0",
@@ -2624,6 +2563,26 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tATitle_1_Sx",
+            "X": 4,
+            "Y": 41,
+            "Width": 64,
+            "Height": 22,
+            "Visible": false,
+            "TextId": "__SingleUse_TNBD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -2687,8 +2646,8 @@
             "Name": "tAMainTitle",
             "X": 6,
             "Y": 7,
-            "Width": 75,
-            "Height": 26,
+            "Width": 139,
+            "Height": 25,
             "TextId": "PROC_PROCESS_TITLE",
             "TextRotation": "0",
             "Color": {

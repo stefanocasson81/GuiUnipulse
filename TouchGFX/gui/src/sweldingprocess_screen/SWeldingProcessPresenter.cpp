@@ -12,7 +12,7 @@ SWeldingProcessPresenter::SWeldingProcessPresenter(SWeldingProcessView& v)
 
 void SWeldingProcessPresenter::activate()
 {
-
+   model->setCurrentScreen(Model::View_WeldingProcess);
 }
 
 void SWeldingProcessPresenter::deactivate()
@@ -24,43 +24,37 @@ void SWeldingProcessPresenter::deactivate()
 /*********************************************
  * FUNCTION SET SOMETHING TO MODEL
  **********************************************/
-void SWeldingProcessPresenter::setProcessToModel(Model::Process_Type p)
+void SWeldingProcessPresenter::setProcessToModel(viperdef_Processo_e p)
 {
-   model->viper_Info.viperui_setProcess((U8)p);
+   model->viper_Info.viperui_setProcess(p);
 }
 
+void SWeldingProcessPresenter::setFocusIdVariableToModel(S8 m,S8 p)
+{
+//   model->viper_Info.viperui_setAttualProcess(viperui_AttualeSelezioneProcesso_e(m),viperdef_Processo_e(p));
+}
 
 /*********************************************
  * FUNCTION SET SOMETHING TO VIEW
  **********************************************/
 
-void SWeldingProcessPresenter::setGas(uint8_t gas)
-{
-   view.gasChanged(gas);
-}
-
-void SWeldingProcessPresenter::setProcess(uint8_t prc)
-{
-   view.processChanged(prc);
-}
-
 void SWeldingProcessPresenter::setPressionEncoder(Model::Enc_Type e, Model::Enc_Pression p)
 {
    switch (e)
    {
-      case Model::TGFXCUSTOM_ENCODER_LEFT:
-         if ( p == Model::TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO )
+      case Model::ENC_LEFT:
+         if ( p == Model::ENC_PRESSION_RELEASED )
          {
             view.GoBack();
          }
       break;
-      case Model::TGFXCUSTOM_ENCODER_CENTER:
+      case Model::ENC_CENTER:
 
       break;
-      case Model::TGFXCUSTOM_ENCODER_RIGHT:
-         if ( p == Model::TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO )
+      case Model::ENC_RIGHT:
+         if ( p == Model::ENC_PRESSION_RELEASED )
          {
-//            view.setMenu();
+            view.encRXconfirm();
          }
       break;
       default:
@@ -72,17 +66,17 @@ void SWeldingProcessPresenter::setOffsetEncoder(Model::Enc_Type e, S16 offset, S
 {
    switch (e)
    {
-      case Model::TGFXCUSTOM_ENCODER_LEFT:
+      case Model::ENC_LEFT:
          if ( dir > 0 )
             view.encSX_incDec(1);
          else
             view.encSX_incDec(-1);
       break;
-      case Model::TGFXCUSTOM_ENCODER_CENTER:
+      case Model::ENC_CENTER:
 
       break;
 
-      case Model::TGFXCUSTOM_ENCODER_RIGHT:
+      case Model::ENC_RIGHT:
          if ( dir > 0 )
             view.encRX_incDec(1);
          else
@@ -96,13 +90,64 @@ void SWeldingProcessPresenter::setOffsetEncoder(Model::Enc_Type e, S16 offset, S
 
 }
 
+viperui_AttualeSelezioneProcesso_e SWeldingProcessPresenter::getActualSelezioneProcesso(void)
+{
+   return ActualSelezioneProcesso;
+}
+void SWeldingProcessPresenter::setMigWeldingProcessMenu(viperui_AttualeSelezioneProcesso_e selection)
+{
+   ActualSelezioneProcesso = selection;
+   view.setMenuContainer(selection);
+}
+
+void SWeldingProcessPresenter::setProcessWelding(viperdef_Processo_e p)
+{
+   view.createSelectedProcess(p);
+}
+void SWeldingProcessPresenter::setWireType(viperdef_TipoFilo_e wiretype)
+{
+   view.updateWireType(wiretype);
+}
+void SWeldingProcessPresenter::setWireDiameter(viperdef_DiametroFilo_e wireDiameter)
+{
+   view.updateWireDiameter(wireDiameter);
+}
+void SWeldingProcessPresenter::setGasType(viperdef_TipoGas_e gastype)
+{
+   view.updateGasType(gastype);
+}
+void SWeldingProcessPresenter::setMigType(viperdef_TipoMig_e migtype)
+{
+   view.updateMigType(migtype);
+}
+
+
+viperdef_TipoFilo_e SWeldingProcessPresenter::getWireType(void)
+{
+   view.updateWireType(model->getWireTypeFromController());
+}
+viperdef_DiametroFilo_e SWeldingProcessPresenter::getWireDiameter(void)
+{
+   view.updateWireDiameter(model->getWireDiameterFromController());
+}
+viperdef_TipoGas_e SWeldingProcessPresenter::getGasType(void)
+{
+   view.updateGasType(model->getGasTypeFromController());
+}
+viperdef_TipoMig_e SWeldingProcessPresenter::getMigType(void)
+{
+   view.updateMigType(model->getMigTypeFromController());
+}
+
+
+
 /*********************************************
  * FUNCTION GET SOMETHING FROM MODEL
  **********************************************/
 
-Model::Process_Type SWeldingProcessPresenter::getProcess(void)
+viperdef_Processo_e SWeldingProcessPresenter::getProcess(void)
 {
-   return Model::Process_Type(model->viper_Info.getProcess());
+   return (model->viper_Info.getProcess());
 }
 
 

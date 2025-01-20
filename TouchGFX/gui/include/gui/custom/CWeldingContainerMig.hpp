@@ -6,6 +6,7 @@
 
 #include <gui/containers/CWeldingGenericContainerParam.hpp>
 #include <gui/containers/CWeldingGenericContainer.hpp>
+#include <ARMLib/TGFX/color_define.hpp>
 #include <touchgfx/Callback.hpp>
 #include <array>
 
@@ -22,9 +23,9 @@ private:
 
     U8 indexMenu;
     U8 indexSubMenu;
-    ColorDefined colorSelection;
     static const U8 nCWeldParam = 3;
     std::array<CWeldingGenericContainerParam,nCWeldParam>CWeldingGenContParm;
+    U8 maskDiameter;
 
 public:
 	 CWeldingContainerMig();
@@ -34,17 +35,13 @@ public:
    virtual void initialize();
 
    void seletcMenu(S8 menu,S8 submenu);
-   void seletcSubMenu_TipoDiametro(S8 menu);
-   void seletcSubMenu_TipoFilo(S8 menu);
-   void seletcSubMenu_TipoMig(S8 menu);
-   void seletcSubMenu_TipoMGas(S8 menu);
+   void seletcMig_WireDIameter(S8 menu);
+   void seletcMig_MigType(S8 menu);
+   void seletcMig_WireType(S8 menu);
+   void seletcMig_GasType(S8 menu);
    void confirmMenu(S8 preessed);
-//   void setPtr(SWeldingProcessView* ptr);
-//    void setMenuList(U8 list);
-//    void setPtr(SWeldingProcessView* ptr);
-//    void encDxOffset(S16 v);
-//    void encSxOffset(S16 v);
-//   void setViewCallback(GenericCallback<uint8_t>& callback);
+   void setContainerType(viperdef_Processo_e c){containerType = c;}
+
 protected:
 //    Callback<CustomContainer1, const Box&, const ClickEvent&> BoxClickedCallback;
 //    SWeldingProcessView* viewPtr;

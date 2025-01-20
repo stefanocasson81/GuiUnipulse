@@ -4,6 +4,10 @@
 //===================================================================== INCLUDES
 #include "ARMLib/Common/ComDef.h"
 
+//#ifdef __cplusplus
+//extern "C"{
+//#endif
+
 //====================================================================== DEFINES
 #define FEATURES_INFOFIRMWARE_VERSION			5	// Versione firmware
 #define FEATURES_INFOFIRMWARE_STAGE				'A'
@@ -11,14 +15,17 @@
 
 #define FEATURES_RGB_COLOREAZIENDALE	0x66b32e
 #define FEATURES_RGB_NERO              0x000000
-#define FEATURES_RGB_GRIGIOSCURO		0x313131
-#define FEATURES_RGB_GRIGIOMEDIO		0x878787
+#define FEATURES_RGB_GRIGIOSCURO		   0x313131
+#define FEATURES_RGB_GRIGIOMEDIO		   0x878787
 #define FEATURES_RGB_GRIGIOCHIARO		0x575757
 #define FEATURES_RGB_BIANCO				0xffffff
 
 //============================================================= GLOBAL VARIABLES
 
 //============================================================ GLOBAL PROTOTYPES
+//#ifdef __cplusplus
+//}
+//#endif
 
 #endif /* FEATURES_H_INCLUDED */
 

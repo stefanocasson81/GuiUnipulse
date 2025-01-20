@@ -167,10 +167,10 @@ void SDebugVarView::handleTickEvent()
 	int32_t lA;
 
 	//________________________________________________________Valuta dove andare
-	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+	if(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT)==ENCODER_PRESSION_RELEASED)
 		application().VisualizzaSMenuPrincipale();
 
-	lA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);
+	lA=tgfxcustom_GetOffsetEncoder(ENCODER_LEFT);
 	if(lA)
 	{
 		lA+=IndiceSelezionato;

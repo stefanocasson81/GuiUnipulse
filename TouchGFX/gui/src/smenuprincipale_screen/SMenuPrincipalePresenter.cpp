@@ -21,17 +21,17 @@ void SMenuPrincipalePresenter::setPressionEncoder(Model::Enc_Type e, Model::Enc_
 {
    switch (e)
    {
-      case Model::TGFXCUSTOM_ENCODER_LEFT:
-         if ( p == Model::TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO )
+      case Model::ENC_LEFT:
+         if ( p == Model::ENC_PRESSION_RELEASED )
          {
             view.GoBack();
          }
       break;
-      case Model::TGFXCUSTOM_ENCODER_CENTER:
+      case Model::ENC_CENTER:
 
       break;
-      case Model::TGFXCUSTOM_ENCODER_RIGHT:
-         if ( p == Model::TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO )
+      case Model::ENC_RIGHT:
+         if ( p == Model::ENC_PRESSION_RELEASED )
          {
             view.setMenu();
          }
@@ -45,14 +45,14 @@ void SMenuPrincipalePresenter::setOffsetEncoder(Model::Enc_Type e, S16 offset, S
 {
    switch (e)
    {
-      case Model::TGFXCUSTOM_ENCODER_LEFT:
+      case Model::ENC_LEFT:
 
       break;
-      case Model::TGFXCUSTOM_ENCODER_CENTER:
+      case Model::ENC_CENTER:
 
       break;
 
-      case Model::TGFXCUSTOM_ENCODER_RIGHT:
+      case Model::ENC_RIGHT:
          if ( dir > 0 )
             view.encRup();
          else

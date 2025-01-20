@@ -63,14 +63,14 @@ void SUpgradeFirmwareView::handleTickEvent()
 	int16_t sA;
 
 	//________________________________________________________Valuta dove andare
-	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+	if(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT)==ENCODER_PRESSION_RELEASED)
 		application().VisualizzaSMenuAdvance();	// Torna indietro
 
-	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_RIGHT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+	if(tgfxcustom_GetPressioneEncoder(ENCODER_RIGHT)==ENCODER_PRESSION_RELEASED)
 		AggiornaFirmware = true;
 
 	uCA = 0;
-	sA = tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);
+	sA = tgfxcustom_GetOffsetEncoder(ENCODER_LEFT);
 	if(sA>0)
 	{
 		Selezionato++;

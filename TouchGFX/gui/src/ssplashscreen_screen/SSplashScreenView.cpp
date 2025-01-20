@@ -30,7 +30,7 @@ void SSplashScreenView::handleTickEvent()
 	SSplashScreenViewBase::handleTickEvent();
 
 	//________________________________________________________Valuta dove andare
-	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_CENTER) == TGFXCUSTOM_PRESSIONEENCODER_PREMUTO)
+	if(tgfxcustom_GetPressioneEncoder(ENCODER_CENTER) == ENCODER_PRESSION_PRESSED)
 	{
 		application().VisualizzaSBasic();
 	}

@@ -51,7 +51,7 @@ void SBasicView::handleTickEvent()
 	char tmpStr[30];
 
 	//________________________________________________________Valuta dove andare
-	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+	if(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT)==ENCODER_PRESSION_RELEASED)
 	{
 		presenter->setSaveParametersEeprom();
 //		presenter->setSaveCalibration();
@@ -59,11 +59,11 @@ void SBasicView::handleTickEvent()
 		application().VisualizzaSMain();
 	}
 
-	sA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);
+	sA=tgfxcustom_GetOffsetEncoder(ENCODER_LEFT);
 	if(sA)
 		viperuisupport_ObjTabParametri_SelezioneOffset(&ObjTabParametri,sA);
 
-	lA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_RIGHT);
+	lA=tgfxcustom_GetOffsetEncoder(ENCODER_RIGHT);
 	if(lA)
 	{
 		lA+=data_GetValData(&viperui_StrutturaDati[ObjTabParametri.PtrStructParametri[ObjTabParametri.IndiceParametroSelezionato].EnumData]);

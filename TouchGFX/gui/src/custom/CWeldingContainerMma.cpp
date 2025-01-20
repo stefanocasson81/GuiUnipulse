@@ -1,5 +1,4 @@
 #include <gui/custom/CWeldingContainerMma.hpp>
-#include <ARMLib/TGFX/color_define.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 //extern "C"
 //{
@@ -12,6 +11,7 @@
 
 CWeldingContainerMma::CWeldingContainerMma():indexMenu(0)
 {
+   setContainerType(VIPERDEF_PROCESSO_MMA);
 	CWeldingGenContParm[0].setXY(5,0);
 //	CWeldingGenContParm[1].setXY(325,1);
 //	CWeldingGenContParm[2].setXY(485,1);
@@ -56,25 +56,4 @@ void CWeldingContainerMma::seletcMenu(S8 menu,S8 submenu)
 		CWeldingGenContParm[i].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_NERO]));
 	}
 
-	switch (indexMenu)
-	{
-      case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG:
-         CWeldingGenContParm[0].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
-      break;
-		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO:
-			CWeldingGenContParm[1].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
-		break;
-		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_DIAMETROFILO:
-			CWeldingGenContParm[1].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
-		break;
-		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS:
-			CWeldingGenContParm[1].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
-		break;
-
-		default:
-			if ( indexMenu < VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO)
-				indexMenu = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO;
-			else if ( indexMenu > VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG )
-				indexMenu = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG;
-	}
 }

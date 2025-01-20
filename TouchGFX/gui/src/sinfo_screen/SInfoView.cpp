@@ -39,6 +39,6 @@ void SInfoView::tearDownScreen()
 void SInfoView::handleTickEvent()
 {
 	//________________________________________________________Valuta dove andare
-	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+	if(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT)==ENCODER_PRESSION_RELEASED)
 		application().VisualizzaSMenuPrincipale();	// Torna indietro
 }

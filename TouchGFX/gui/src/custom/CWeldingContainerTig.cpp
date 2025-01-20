@@ -12,6 +12,7 @@
 
 CWeldingContainerTig::CWeldingContainerTig():indexMenu(0)
 {
+   setContainerType(VIPERDEF_PROCESSO_TIG);
 	CWeldingGenContParm[0].setXY(5,0);
 	CWeldingGenContParm[1].setXY(165,0);
 //	CWeldingGenContParm[2].setXY(485,1);
@@ -53,26 +54,5 @@ void CWeldingContainerTig::seletcMenu(S8 menu,S8 submenu)
 	{
 		CWeldingGenContParm[i].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_GRIGIOSCURO]));
 		CWeldingGenContParm[i].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_GRIGIOSCURO]));
-	}
-
-	switch (indexMenu)
-	{
-		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO:
-			CWeldingGenContParm[0].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
-		break;
-		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_DIAMETROFILO:
-			CWeldingGenContParm[0].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
-		break;
-		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS:
-			CWeldingGenContParm[1].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
-		break;
-		case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG:
-			CWeldingGenContParm[1].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
-		break;
-		default:
-			if ( indexMenu < VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO)
-				indexMenu = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO;
-			else if ( indexMenu > VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG )
-				indexMenu = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG;
 	}
 }

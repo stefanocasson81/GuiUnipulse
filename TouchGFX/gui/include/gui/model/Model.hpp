@@ -8,36 +8,11 @@
 extern "C"
 {
    #include "ARMLib/Common/ComDef.h"
+   #include "ARMLib/Common/Data.h"
 //   #include "CORELib/UserInterface/ViperUI.h"
    #include "ARMLib/TGFX/TGFXCustom.h"
    #include "CORELib/Common/ViperDef.h"
-};
-
-
-/**
- * CLASS DEFINE
- */
-//class Viper
-//{
-//    public:
-//
-//    protected:
-//
-//    private:
-//};
-
-
-class cEcoder
-{
-public:
-   cEcoder(){EncType = 0;Offset = 0;PressionType = 0;}
-   ~cEcoder(){}
-   void setPressione(U8 t, U8 p){EncType = t; PressionType= 0;}
-
-private:
-   U8 EncType;
-   U16 Offset;
-   U16 PressionType;
+   #include "gui/custom/CommonDefine.h"
 };
 
 
@@ -53,66 +28,83 @@ public:
     {
         modelListener = listener;
     }
+
+
+
     /** Enum **/
-    enum Process_Type
-    {
-      MODEL_PROCESSO_MMA,
-      MODEL_PROCESSO_TIG,
-      MODEL_PROCESSO_MIG,
 
-      MODEL_PROCESSO_MAX
-    };
-
+   enum Views
+   {
+      View_Basic,
+      View_Debug,
+      View_Check,
+      View_CheckTraino,
+      View_Info,
+      View_Main,
+      View_AdvanceMenu,
+      View_DebugMenu,
+      View_MainMenu,
+      View_Watch,
+      View_Test,
+      View_Setup,
+      View_Splash,
+      View_UpgradeFirmware,
+      View_Mig,
+      View_WeldingProcess,
+   } currentView;
 
     enum Enc_Pression
     {
-       TGFXCUSTOM_PRESSIONEENCODER_NONPREMUTO       ,
-       TGFXCUSTOM_PRESSIONEENCODER_PREMUTO          ,
-       TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO     ,  // <800ms
-       TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGO     ,   // 2000ms
-       TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGHISSIMO  ,   // 4000ms
+       ENC_PRESSION_NOT_PRESSED       ,
+       ENC_PRESSION_PRESSED          ,
+       ENC_PRESSION_RELEASED,            // <800ms
+       ENC_PRESSION_LONG_PRESSED,        // 2000ms
+       ENC_PRESSION_VERY_LONG_PRESSED  ,   // 4000ms
 
-       TGFXCUSTOM_PRESSIONEENCODER_MAX
+       ENCODER_PRESSION_MAX
     };
 
     enum Enc_Type
     {
-       TGFXCUSTOM_ENCODER_LEFT    ,
-       TGFXCUSTOM_ENCODER_CENTER  ,
-       TGFXCUSTOM_ENCODER_RIGHT   ,
+       ENC_LEFT    ,
+       ENC_CENTER  ,
+       ENC_RIGHT   ,
 
-       TGFXCUSTOM_ENCODER_MAX
+       ENC_MAX
     };
 
-
     cViper_Info viper_Info;
-    cEcoder Enc;
+
 
     /** Functions**/
     void tick();
-/** get functions */
-//    U8 getProcess();
-    tgfxcustom_PressioneEncoder_e  encGetPression(Model::Enc_Type encoder);
-    S16 encGetOffset(Model::Enc_Type encoder);
 
-/** set functions */
+
+/********** get functions **********************/
+//    U8 getProcess();
+    U32 getDataFromController(viperui_Data_e data);
+    Model::Enc_Pression encGetPression(Model::Enc_Type encoder);
+    S16 encGetOffset(Model::Enc_Type encoder);
+    Views getCurrentScreen();
+    void setCurrentScreen(Views v);
+
+    viperdef_TipoFilo_e getWireTypeFromController(void);
+    viperdef_DiametroFilo_e getWireDiameterFromController(void);
+    viperdef_TipoGas_e getGasTypeFromController(void);
+    viperdef_TipoMig_e getMigTypeFromController(void);
+
+
+
+/************* set functions ******************/
     void setEncoderPreccesed(U8 encoder);
 //    gfxcustom_PressioneEncoder_e tgfxcustom_GetPressioneEncoder(tgfxcustom_Encoder_e encoder);
 
 protected:
-
     ModelListener* modelListener;
 private:
+//   static const U8 nSizeEncArray = 3;
+//   std::array<S16,nSizeEncArray>encArray;
 
-   static const U8 nSizeEncArray = 3;
-//   viperui_AttualeSelezioneProcesso_e OldAttualeSelezione;
-//   viperdef_TipoFilo_e OldTipoFilo;
-//   viperdef_DiametroFilo_e OldDiametroFilo;
-//   viperdef_Processo_e ProcessoAllocato;
-   std::array<S16,nSizeEncArray>encArray;
-
-
-//   clsEcoder Enc;
 };
 
 #endif // MODEL_HPP

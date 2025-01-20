@@ -22,7 +22,8 @@ public:
     void ManagerTickEvent(void);
 protected:
 	int32_t ValShowSX=0xffff;
-
+private:
+	U32 IdCan;
 };
 
 #endif // CMAINMMA_HPP

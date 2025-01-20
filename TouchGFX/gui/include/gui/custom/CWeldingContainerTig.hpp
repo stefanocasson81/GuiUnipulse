@@ -26,21 +26,13 @@ public:
     virtual void initialize();
     void seletcMenu(S8 menu,S8 submenu);
     void confirmMenu(S8 preessed);
-//    void setMenuList(U8 list);
-//    void setPtr(SWeldingProcessView* ptr);
-//    void encDxOffset(S16 v);
-//    void encSxOffset(S16 v);
-//    void setViewCallback(GenericCallback<uint8_t>& callback);
+    void setContainerType(viperdef_Processo_e c){containerType = c;}
 protected:
 //    Callback<CustomContainer1, const Box&, const ClickEvent&> BoxClickedCallback;
 //    SWeldingProcessView* viewPtr;
 private:
     static const U8 nCWeldParam = 2;
     U8 indexMenu;
-//    CWeldingGenericContainerParam cWeldingSetParamGeneric1;
-//    CWeldingGenericContainerParam cWeldingSetParamGeneric2;
-//    CWeldingGenericContainerParam cWeldingSetParamGeneric3;
-    ColorDefined colorSelection;
     std::array<CWeldingGenericContainerParam,nCWeldParam>CWeldingGenContParm;
 };
 

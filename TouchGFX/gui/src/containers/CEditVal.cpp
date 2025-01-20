@@ -1,5 +1,7 @@
 #include <gui/containers/CEditVal.hpp>
 #include <touchgfx/Unicode.hpp>
+#include <gui/custom/WeldingSupport.hpp>
+
 
 extern "C"
 {
@@ -43,7 +45,7 @@ bool CEditVal::ManagerTickEvent(void)
 
 		if(Selezionato)
 		{	// Solo se selezionato è editabile
-			lA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_RIGHT);
+			lA=tgfxcustom_GetOffsetEncoder(ENCODER_RIGHT);
 			if(lA)
 			{
 				value+=lA;

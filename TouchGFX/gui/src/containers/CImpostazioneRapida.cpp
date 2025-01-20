@@ -79,7 +79,7 @@ void CImpostazioneRapida::ManagerTickEvent(void)
 	{
 		if(Selezionato)
 		{
-			sA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_RIGHT);
+			sA=tgfxcustom_GetOffsetEncoder(ENCODER_RIGHT);
 			if(sA)
 			{
 				sA += data_GetValData(PtrData);

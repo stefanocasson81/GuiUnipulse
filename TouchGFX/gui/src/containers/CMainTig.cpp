@@ -37,7 +37,7 @@ void CMainTig::ManagerTickEvent(void)
 	uint32_t uLA;
 
 	//________________________________________________________Valuta dove andare
-	uSA = tgfxcustom_EncoderStatus[TGFXCUSTOM_ENCODER_CENTER].MsTempoPressione;
+	uSA = tgfxcustom_EncoderStatus[ENCODER_CENTER].MsTempoPressione;
 	if(uSA>100)
 	{
 		if(!cPC.isVisible())
@@ -54,25 +54,25 @@ void CMainTig::ManagerTickEvent(void)
 			cPC.setVisible(false);
 			cPC.invalidate();
 		}
-	}	switch(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_CENTER))
+	}	switch(tgfxcustom_GetPressioneEncoder(ENCODER_CENTER))
 	{
 		default:
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_NONPREMUTO:
+		case ENCODER_PRESSION_NOT_PRESSED:
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_PREMUTO:
+		case ENCODER_PRESSION_PRESSED:
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO:
+		case ENCODER_PRESSION_RELEASED:
 			application().VisualizzaSSetup();
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGO:
+		case ENCODER_PRESSION_LONG_PRESSED:
 			application().VisualizzaSMenuPrincipale();
 		break;
-		case TGFXCUSTOM_PRESSIONEENCODER_PREMUTOLUNGHISSIMO:
+		case ENCODER_PRESSION_VERY_LONG_PRESSED:
 		break;
 	}
 
-	lA=tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);
+	lA=tgfxcustom_GetOffsetEncoder(ENCODER_LEFT);
 	if(lA)
 	{
 		lA += data_GetValData(&viperui_StrutturaDati[VIPERUI_DATA_TIG_CORRENTE]);

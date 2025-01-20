@@ -16,7 +16,7 @@
 #include "ARMLib/Common/CustomString.h"
 #include "Applicazione.h"
 #include "CORELib/UserInterface/ViperUI.h"
-
+#include "gui/custom/CommonDefine.h"
 
 //====================================================================== DEFINES
 typedef struct

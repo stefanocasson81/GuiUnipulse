@@ -30,17 +30,18 @@ void SOrologioView::tearDownScreen()
 
 void SOrologioView::handleTickEvent()
 {
+#if 0
 	customrtc_Time_t localRtcTime;
 	int sA;
 	char tmpStr[20];
 	bool invalida = false;
 
 	//________________________________________________________Valuta dove andare
-	if(tgfxcustom_GetPressioneEncoder(TGFXCUSTOM_ENCODER_LEFT)==TGFXCUSTOM_PRESSIONEENCODER_RILASCIATOCORTO)
+	if(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT)==ENCODER_PRESSION_RELEASED)
 		application().VisualizzaSMenuPrincipale();	// Torna indietro
 
 	//___________________________________________________________Cosa modificare
-	sA = tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_LEFT);
+	sA = tgfxcustom_GetOffsetEncoder(ENCODER_LEFT);
 	if(sA)
 	{
 		sA += IndiceSelezione;
@@ -53,7 +54,7 @@ void SOrologioView::handleTickEvent()
 	{
 		OldIndiceSelezione = IndiceSelezione;
 
-		tAGiorno.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
+		tAGiorno.setColor(colortype(viperui_ListStdColor[Model::STDCOLOR_BIANCO]));
 		tAMese.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
 		tAAnno.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
 		tATGiorno.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
@@ -91,7 +92,7 @@ void SOrologioView::handleTickEvent()
 	//_____________________________________________________________Cambio valore
 	customrtc_GetTime(&localRtcTime);
 
-	sA = tgfxcustom_GetOffsetEncoder(TGFXCUSTOM_ENCODER_RIGHT);
+	sA = tgfxcustom_GetOffsetEncoder(ENCODER_RIGHT);
 	if(sA)
 	{
 		switch(IndiceSelezione)
@@ -190,4 +191,5 @@ void SOrologioView::handleTickEvent()
 		analogClock.setTime24Hour(localRtcTime.Ore,localRtcTime.Minuti,localRtcTime.Secondi);
 	}
 	*/
+#endif
 }

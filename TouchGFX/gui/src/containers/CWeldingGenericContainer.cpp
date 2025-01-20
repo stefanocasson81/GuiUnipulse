@@ -10,7 +10,11 @@ void CWeldingGenericContainer::initialize()
 {
     CWeldingGenericContainerBase::initialize();
 }
-void CWeldingGenericContainer::setMenuSelectedView_Callback(GenericCallback<U8,U8>& callback)
+void CWeldingGenericContainer::setMenuSelectedView_Callback(GenericCallback<S8,S8>& callback)
 {
-   MenuSelected_Callback = &callback;
+   menuSelected_Callback = &callback;
+}
+void CWeldingGenericContainer::setInitContainer_Callback(GenericCallback<void>& callback)
+{
+   initContainer_Callback = &callback;
 }
