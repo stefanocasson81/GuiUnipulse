@@ -18,7 +18,7 @@ public:
 	void setActveBase(U8 i, bool b);
 
 	void setAlphaContainer(U8);
-
+	void setBackground(colortype color);
 	//@base 1
 //       void set_TA_Main_1(const TypedText& t);
 	void set_TA_Process_1(const TypedText& t);

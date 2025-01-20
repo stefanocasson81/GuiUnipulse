@@ -79,6 +79,8 @@ void CWeldingContainerMig::initialize()
   // CWeldingGenContParm[2].set_TA_Desc_2(true);
    CWeldingGenContParm[2].setVisible_TA_Desc_2(false);
 
+   CWeldingGenContParm[2].setVisible_IMG_iD_2(false);
+
    CWeldingGenContParm[2].set_IMG_iD_3(touchgfx::Bitmap(BITMAP_ICOGAS35X35_ID));
    CWeldingGenContParm[2].setVisible_IMG_iD_3(true);
 
@@ -108,30 +110,40 @@ void CWeldingContainerMig::seletcMenu(S8 menu,S8 submenu)
 		CWeldingGenContParm[i].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_NERO]));
 		CWeldingGenContParm[i].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_NERO]));
 		CWeldingGenContParm[i].setAlphaContainer(90);
+		CWeldingGenContParm[i].setBackground(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_GRIGIOSCURO]));
 	}
 
 	switch (indexMenu)
 	{
+	   case VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO:
+         CWeldingGenContParm[0].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
+         CWeldingGenContParm[0].setAlphaContainer(255);
+         CWeldingGenContParm[0].setBackground(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
+	      break;
       case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG:
          CWeldingGenContParm[0].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
          CWeldingGenContParm[0].setAlphaContainer(255);
+         CWeldingGenContParm[0].setBackground(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
 //         seletcMig_MigType(indexSubMenu);
       break;
 
       case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO:
          CWeldingGenContParm[1].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
          CWeldingGenContParm[1].setAlphaContainer(255);
+         CWeldingGenContParm[1].setBackground(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
 //         seletcMig_WireType(indexSubMenu);
       break;
       case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_DIAMETROFILO:
          CWeldingGenContParm[1].set_Color_BASE_2(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
          CWeldingGenContParm[1].setAlphaContainer(255);
+         CWeldingGenContParm[1].setBackground(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
 //         seletcMig_WireDIameter(indexSubMenu);
 
       break;
       case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS:
          CWeldingGenContParm[2].set_Color_BASE_1(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
          CWeldingGenContParm[2].setAlphaContainer(255);
+         CWeldingGenContParm[2].setBackground(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
 //         seletcMig_GasType(indexSubMenu);
       break;
 

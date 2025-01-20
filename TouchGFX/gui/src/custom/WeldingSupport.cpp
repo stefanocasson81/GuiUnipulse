@@ -848,13 +848,13 @@ void cViper_Info::viperui_RecalcBitMappedFiloDiametroGasMig(viperdef_TipoMig_e t
             beccato |= _B2_;
       }
 
-//         if ( tipoMig == VIPERDEF_TIPOMIG_MAX )
-//              beccato |= _B3_;
-//           else
-//           {
-      if ( ListaCurveInfoDisponibili[indice].TipoMig == tipoMig )
+      if ( tipoMig == VIPERDEF_TIPOMIG_MAX )
          beccato |= _B3_;
-//           }
+      else
+      {
+         if ( ListaCurveInfoDisponibili[indice].TipoMig == tipoMig )
+            beccato |= _B3_;
+      }
 
       if ( beccato == 0x0F )
       {
@@ -885,7 +885,8 @@ void cViper_Info::viperui_RecalcBitMappedFiloDiametroGasMig(viperdef_TipoMig_e t
 			SelezioneProcesso.IndiceMaxEnumTipoGas++;
 		}
 	}
-	SelezioneProcesso.IndiceMaxEnumTipoMig=0;
+	SelezioneProcesso.IndiceMaxEnumTipoMig=1; //c'e' da considerare il typo Manual
+	SelezioneProcesso.TabEnumTipoMig[0]= 0;   //tipo manual c'e' sempre
 	for(uCA=0;uCA<32;uCA++)
 	{
 		if(SelezioneProcesso.BitMappedTipoMig&(_B0_<<uCA))
@@ -921,7 +922,7 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
 //         SelezioneProcesso.IndiceDiametroFilo = 0;
 //         SelezioneProcesso.IndiceTipoGas = 0;
 //         SelezioneProcesso.IndiceTipoMig = 0;
-           viperui_LoadData();
+         viperui_LoadData();
 //         viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoFilo, SelezioneProcesso.CurvaInfo.DiametroFilo,SelezioneProcesso.CurvaInfo.TipoGas);
 
          sm_State = SM_Run;
@@ -933,7 +934,7 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
 //            return 0;
 
 //         ActualSelection = (S16)SelezioneProcesso.AttualeSelezione;
-         if ( encS.Offset > 0 || (encR.Pression == ENCODER_PRESSION_RELEASED))
+         if ( encS.Offset > 0 || (encR.Pression == ENCODER_PRESSION_RELEASED) )
             ActualSelection = 1;
          else if ( encS.Offset < 0 )
             ActualSelection = -1;
@@ -993,13 +994,13 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                   }
                }
 
-               if(SelezioneProcesso.Processo == VIPERDEF_PROCESSO_MIG)
+               if ( SelezioneProcesso.Processo == VIPERDEF_PROCESSO_MIG )
                {
                   if ( ActualSelection > 0 )
                   {
                      SelezioneProcesso.CurvaInfo.TipoFilo = SelezioneProcesso.CurvaInfoDiPartenza.TipoFilo;
                      SelezioneProcesso.CurvaInfo.TipoMig = SelezioneProcesso.CurvaInfoDiPartenza.TipoMig;
-                     viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig,VIPERDEF_TIPOFILO_MAX, VIPERDEF_DIAMETROFILO_MAX, VIPERDEF_TIPOGAS_MAX);
+                     viperui_RecalcBitMappedFiloDiametroGasMig(VIPERDEF_TIPOMIG_MAX, VIPERDEF_TIPOFILO_MAX, VIPERDEF_DIAMETROFILO_MAX, VIPERDEF_TIPOGAS_MAX);
                      SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG;
                   }
                   else if ( ActualSelection < 0 )
@@ -1007,7 +1008,7 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
 
                   SelezioneProcesso.IndiceDiametroFilo = 0xff;   // Seleziona quello simile o il primo se mancante
                   SelezioneProcesso.IndiceTipoGas = 0xff;     // Seleziona quello simile o il primo se mancante
-               SelezioneProcesso.IndiceTipoMig = 0xff;     // Seleziona quello simile o il primo se mancante
+                  SelezioneProcesso.IndiceTipoMig = 0xff;     // Seleziona quello simile o il primo se mancante
                }
             break;
 
@@ -1022,14 +1023,14 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                   }
                   else if ( Enc_R_OffsetTmp >= SelezioneProcesso.IndiceMaxEnumTipoMig )
                   {
-                     if(SelezioneProcesso.IndiceMaxEnumTipoMig)
+                     if ( SelezioneProcesso.IndiceMaxEnumTipoMig )
                         Enc_R_OffsetTmp = SelezioneProcesso.IndiceMaxEnumTipoMig - 1;
                   }
                   SelezioneProcesso.IndiceTipoMig = Enc_R_OffsetTmp;
                   SelezioneProcesso.CurvaInfo.TipoMig = (viperdef_TipoMig_e) SelezioneProcesso.TabEnumTipoMig[SelezioneProcesso.IndiceTipoMig];
                   SelezioneProcesso.CurvaInfoDiPartenza.TipoMig = SelezioneProcesso.CurvaInfo.TipoMig;
-//                  viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoFilo, SelezioneProcesso.CurvaInfo.DiametroFilo, SelezioneProcesso.CurvaInfo.TipoGas);
-                  viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig,VIPERDEF_TIPOFILO_MAX, VIPERDEF_DIAMETROFILO_MAX, VIPERDEF_TIPOGAS_MAX);
+
+                  viperui_RecalcBitMappedFiloDiametroGasMig(VIPERDEF_TIPOMIG_MAX, VIPERDEF_TIPOFILO_MAX, VIPERDEF_DIAMETROFILO_MAX, VIPERDEF_TIPOGAS_MAX);
                }
                if ( ActualSelection > 0 )
                {
@@ -1046,42 +1047,41 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
             case VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO:
                if ( Enc_R_OffsetTmp )
                {
-                  Enc_R_OffsetTmp += SelezioneProcesso.CurvaInfo.TipoFilo;
+                  Enc_R_OffsetTmp += SelezioneProcesso.IndiceTipoFilo;
                   if ( Enc_R_OffsetTmp < 0 )
-                  {
                      Enc_R_OffsetTmp = 0;
-                  }
-                  else if ( Enc_R_OffsetTmp >= VIPERDEF_TIPOFILO_MAX )
-                     Enc_R_OffsetTmp = VIPERDEF_TIPOFILO_MAX - 1;
-
-                  if ( SelezioneProcesso.CurvaInfo.TipoFilo != (viperdef_TipoFilo_e) Enc_R_OffsetTmp )
+                  else if ( Enc_R_OffsetTmp >= SelezioneProcesso.IndiceMaxEnumTipoFilo )
                   {
-                     SelezioneProcesso.CurvaInfo.TipoFilo = (viperdef_TipoFilo_e) Enc_R_OffsetTmp;
-                     SelezioneProcesso.CurvaInfoDiPartenza.TipoFilo = SelezioneProcesso.CurvaInfo.TipoFilo;
-
-                     viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig,SelezioneProcesso.CurvaInfo.TipoFilo, VIPERDEF_DIAMETROFILO_MAX, VIPERDEF_TIPOGAS_MAX);
-
-                     SelezioneProcesso.IndiceDiametroFilo = 0xff;   // Seleziona quello simile o il primo se mancante
-                     SelezioneProcesso.IndiceTipoGas = 0xff;     // Seleziona quello simile o il primo se mancante
-                     SelezioneProcesso.IndiceTipoMig = 0xff;     // Seleziona quello simile o il primo se mancante
+                     if ( SelezioneProcesso.IndiceMaxEnumTipoFilo )
+                        Enc_R_OffsetTmp = SelezioneProcesso.IndiceMaxEnumTipoFilo - 1;
                   }
-               }
-               if(ActualSelection > 0 )
-               {
-                if(SelezioneProcesso.CurvaInfo.TipoFilo == VIPERDEF_TIPOFILO_MANUAL)
-                {
-                   viperui_Generatore_CambiaProcesso(SelezioneProcesso.Processo,VIPERDEF_TIPOMIG_MAN,VIPERDEF_TIPOFILO_MANUAL,VIPERDEF_TIPOGAS_M21_MIX8020,VIPERDEF_DIAMETROFILO_10);
-                   viperdef_Pack8GenTx_Base.Processo = SelezioneProcesso.Processo;  // Solo per anticipare il refresh el quadro main al nuovo processo...
-                //ToDo da inserire un cambio schermata,
 
-                }
-                else
-                {
-                   viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig,SelezioneProcesso.CurvaInfo.TipoFilo, VIPERDEF_DIAMETROFILO_MAX, VIPERDEF_TIPOGAS_MAX);
-                }
+                  SelezioneProcesso.IndiceTipoFilo = Enc_R_OffsetTmp;
+                  SelezioneProcesso.CurvaInfo.TipoFilo = (viperdef_TipoFilo_e) SelezioneProcesso.TabEnumTipoFilo[SelezioneProcesso.IndiceTipoFilo];
+                  SelezioneProcesso.CurvaInfoDiPartenza.TipoFilo = SelezioneProcesso.CurvaInfo.TipoFilo;
+                  viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig, VIPERDEF_TIPOFILO_MAX, VIPERDEF_DIAMETROFILO_MAX, VIPERDEF_TIPOGAS_MAX);
+                  SelezioneProcesso.IndiceDiametroFilo = 0xff;   // Seleziona quello simile o il primo se mancante
+                  SelezioneProcesso.IndiceTipoGas = 0xff;     // Seleziona quello simile o il primo se mancante
+                  SelezioneProcesso.IndiceTipoFilo = 0xff;
+               }
+               if ( ActualSelection > 0 )
+               {
+                  if ( SelezioneProcesso.CurvaInfo.TipoFilo == VIPERDEF_TIPOFILO_MANUAL )
+                  {
+                     viperui_Generatore_CambiaProcesso(SelezioneProcesso.Processo, VIPERDEF_TIPOMIG_MAN, VIPERDEF_TIPOFILO_MANUAL, VIPERDEF_TIPOGAS_M21_MIX8020,
+                           VIPERDEF_DIAMETROFILO_10);
+                     viperdef_Pack8GenTx_Base.Processo = SelezioneProcesso.Processo;  // Solo per anticipare il refresh el quadro main al nuovo processo...
+                     //ToDo da inserire un cambio schermata,
+
+                  }
+                  else
+                  {
+                     viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig, SelezioneProcesso.CurvaInfo.TipoFilo, VIPERDEF_DIAMETROFILO_MAX,
+                           VIPERDEF_TIPOGAS_MAX);
+                  }
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_DIAMETROFILO;
                }
-               else if (ActualSelection < 0 )
+               else if ( ActualSelection < 0 )
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG;
             break;
 
@@ -1093,7 +1093,7 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                      Enc_R_OffsetTmp = 0;
                   else if ( Enc_R_OffsetTmp >= SelezioneProcesso.IndiceMaxEnumDiametro )
                   {
-                     if(SelezioneProcesso.IndiceMaxEnumDiametro)
+                     if ( SelezioneProcesso.IndiceMaxEnumDiametro )
                         Enc_R_OffsetTmp = SelezioneProcesso.IndiceMaxEnumDiametro - 1;
                   }
                   SelezioneProcesso.IndiceDiametroFilo = Enc_R_OffsetTmp;
@@ -1101,14 +1101,15 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                   SelezioneProcesso.CurvaInfo.DiametroFilo = (viperdef_DiametroFilo_e) SelezioneProcesso.TabEnumDiametro[SelezioneProcesso.IndiceDiametroFilo];
                   SelezioneProcesso.CurvaInfoDiPartenza.DiametroFilo = SelezioneProcesso.CurvaInfo.DiametroFilo;
 
-                  viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig,SelezioneProcesso.CurvaInfo.TipoFilo, VIPERDEF_DIAMETROFILO_MAX, VIPERDEF_TIPOGAS_MAX);
+                  viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig, SelezioneProcesso.CurvaInfo.TipoFilo, VIPERDEF_DIAMETROFILO_MAX,
+                        VIPERDEF_TIPOGAS_MAX);
 
                   SelezioneProcesso.IndiceTipoGas = 0xff;     // Seleziona quello simile o il primo se mancante
                   SelezioneProcesso.IndiceTipoMig = 0xff;     // Seleziona quello simile o il primo se mancante
                }
-               if(ActualSelection > 0 )
+               if ( ActualSelection > 0 )
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS;
-               else if (ActualSelection < 0 )
+               else if ( ActualSelection < 0 )
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO;
             break;
 
@@ -1120,7 +1121,7 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                      Enc_R_OffsetTmp = 0;
                   else if ( Enc_R_OffsetTmp >= SelezioneProcesso.IndiceMaxEnumTipoGas )
                   {
-                     if(SelezioneProcesso.IndiceMaxEnumTipoGas)
+                     if ( SelezioneProcesso.IndiceMaxEnumTipoGas )
                         Enc_R_OffsetTmp = SelezioneProcesso.IndiceMaxEnumTipoGas - 1;
                   }
                   SelezioneProcesso.IndiceTipoGas = Enc_R_OffsetTmp;
@@ -1128,12 +1129,13 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                   SelezioneProcesso.CurvaInfo.TipoGas = (viperdef_TipoGas_e) SelezioneProcesso.TabEnumTipoGas[SelezioneProcesso.IndiceTipoGas];
                   SelezioneProcesso.CurvaInfoDiPartenza.TipoGas = SelezioneProcesso.CurvaInfo.TipoGas;
 
-                  viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig,SelezioneProcesso.CurvaInfo.TipoFilo, SelezioneProcesso.CurvaInfo.DiametroFilo, VIPERDEF_TIPOGAS_MAX);
+                  viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig, SelezioneProcesso.CurvaInfo.TipoFilo, SelezioneProcesso.CurvaInfo.DiametroFilo,
+                        VIPERDEF_TIPOGAS_MAX);
                }
 
-               if(ActualSelection > 0 )
+               if ( ActualSelection > 0 )
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS;
-               else if(ActualSelection < 0 )
+               else if ( ActualSelection < 0 )
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_DIAMETROFILO;
             break;
 
@@ -1193,10 +1195,26 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                }
             }
          }
+
+         if ( SelezioneProcesso.IndiceTipoFilo >= SelezioneProcesso.IndiceMaxEnumTipoFilo )
+            SelezioneProcesso.IndiceTipoFilo = 0xff;
+         if ( SelezioneProcesso.IndiceTipoFilo == 0xff )
+         {
+            SelezioneProcesso.IndiceTipoFilo = 0;
+            for (uCA = 0; uCA < SelezioneProcesso.IndiceMaxEnumTipoFilo; uCA++)
+            {
+               if ( (viperdef_TipoFilo_e) SelezioneProcesso.TabEnumTipoFilo[uCA] == SelezioneProcesso.CurvaInfoDiPartenza.TipoFilo )
+               {
+                  SelezioneProcesso.IndiceTipoFilo = uCA;
+                  break;
+               }
+            }
+         }
+
          SelezioneProcesso.CurvaInfo.DiametroFilo = (viperdef_DiametroFilo_e) SelezioneProcesso.TabEnumDiametro[SelezioneProcesso.IndiceDiametroFilo];
          SelezioneProcesso.CurvaInfo.TipoGas = (viperdef_TipoGas_e) SelezioneProcesso.TabEnumTipoGas[SelezioneProcesso.IndiceTipoGas];
 //         SelezioneProcesso.CurvaInfo.TipoMig = (viperdef_TipoMig_e) SelezioneProcesso.TabEnumTipoMig[SelezioneProcesso.IndiceTipoMig];
-         SelezioneProcesso.CurvaInfo.TipoFilo = (viperdef_TipoFilo_e)SelezioneProcesso.TabEnumTipoMig[SelezioneProcesso.IndiceMaxEnumTipoFilo];
+         SelezioneProcesso.CurvaInfo.TipoFilo = (viperdef_TipoFilo_e) SelezioneProcesso.TabEnumTipoFilo[SelezioneProcesso.IndiceTipoFilo];
 
          if ( memcmp(&oldCurva, &SelezioneProcesso.CurvaInfo, sizeof(viperdef_MigCurvaInfo_t)) )
          {

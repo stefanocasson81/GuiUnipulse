@@ -2163,15 +2163,6 @@
         "Height": 39,
         "Components": [
           {
-            "Type": "Image",
-            "Name": "image2",
-            "X": 370,
-            "Y": 8,
-            "Width": 96,
-            "Height": 24,
-            "RelativeFilename": "ImgLogoHelvi96x24.png"
-          },
-          {
             "Type": "TextArea",
             "Name": "tATitolo",
             "X": 3,
@@ -2668,10 +2659,10 @@
           {
             "Type": "TextArea",
             "Name": "tAGoBack",
-            "X": 6,
-            "Y": 210,
+            "X": 11,
+            "Y": 217,
             "Width": 159,
-            "Height": 21,
+            "Height": 16,
             "TextId": "__SingleUse_P8E6",
             "TextRotation": "0",
             "Color": {
@@ -2692,10 +2683,10 @@
           {
             "Type": "TextArea",
             "Name": "tAConfirm",
-            "X": 315,
-            "Y": 210,
+            "X": 304,
+            "Y": 217,
             "Width": 159,
-            "Height": 21,
+            "Height": 15,
             "TextId": "__SingleUse_3JKU",
             "TextRotation": "0",
             "Color": {

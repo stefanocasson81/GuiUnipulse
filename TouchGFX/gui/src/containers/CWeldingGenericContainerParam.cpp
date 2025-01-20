@@ -22,6 +22,13 @@ void CWeldingGenericContainerParam::set_TA_MainTitle(const TypedText& t)
    tAMainTitle.invalidate();
 }
 
+
+void CWeldingGenericContainerParam::setBackground(colortype color)
+{
+   bBackground.setColor(color);
+   bBackground.invalidate();
+}
+
 //void CWeldingGenericContainerParam::set_TA_Main_1(const TypedText& t)
 //{
 //	tAMain_1.setTypedText(t);

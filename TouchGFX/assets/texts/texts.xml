@@ -196,10 +196,10 @@
       <Text Id="__SingleUse_TNBD" Alignment="Left" TypographyId="Semibold15">
         <Translation Language="EN">DIAMETER&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_3JKU" Alignment="Right" TypographyId="Regular15">
+      <Text Id="__SingleUse_3JKU" Alignment="Right" TypographyId="Regular11">
         <Translation Language="EN">press    to confirm</Translation>
       </Text>
-      <Text Id="__SingleUse_P8E6" Alignment="Left" TypographyId="Regular15">
+      <Text Id="__SingleUse_P8E6" Alignment="Left" TypographyId="Regular11">
         <Translation Language="EN">press     to go back</Translation>
       </Text>
       <Text Id="__SingleUse_WWZO" Alignment="Left" TypographyId="Regular20">

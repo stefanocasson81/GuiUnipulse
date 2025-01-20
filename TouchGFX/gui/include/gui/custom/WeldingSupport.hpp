@@ -64,6 +64,7 @@ typedef struct
     U8 IndiceDiametroFilo;
     U8 IndiceTipoGas;
     U8 IndiceTipoMig;
+    U8 IndiceTipoFilo;
 
     U8 TabEnumDiametro[32];
     U8 TabEnumTipoGas[32];
