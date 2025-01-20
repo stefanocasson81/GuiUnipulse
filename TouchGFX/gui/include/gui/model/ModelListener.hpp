@@ -22,6 +22,7 @@ public:
     virtual void setMigType(viperdef_TipoMig_e  migtype){};
     virtual void setMigWeldingProcessMenu(viperui_AttualeSelezioneProcesso_e selection){};
     virtual void setProcessWelding(viperdef_Processo_e process){};
+    virtual void setViewChange(Model::Views v){};
 
 protected:
     Model* model;

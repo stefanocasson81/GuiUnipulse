@@ -6,11 +6,11 @@
 //#include <gui/model/ModelListener.hpp>
 extern "C"
 {
-   #include "ARMLib/Common/ComDef.h"
-   #include "ARMLib/Common/Data8Pack.h"
-   #include "ARMLib/Common/Data.h"
+//   #include "ARMLib/Common/ComDef.h"
+//   #include "ARMLib/Common/Data8Pack.h"
+//   #include "ARMLib/Common/Data.h"
    #include "CORELib/UserInterface/ViperUI.h"
-   #include "CORELib/Common/ViperDef.h"
+//   #include "CORELib/Common/ViperDef.h"
    #include "gui/custom/CommonDefine.h"
 }
 //====================================================================== DEFINES
@@ -82,23 +82,9 @@ typedef struct
  *************************************************************************************************/
 class cViper_Info
 {
-private:
-//   typeProcess prc;
-   SelezioneProcesso_t SelezioneProcesso;
-   viperdef_MigCurvaInfo_t ListaCurveInfoDisponibili[VIPERUI_NMAXCURVEINFODISPONIBILI];
-   viperdef_MigCurvaInfo_t oldCurva;
-   enum sm_States_e
-   {
-      SM_Init,
-      SM_Run,
-      SM_Stop
-   }sm_State;
-   void *pModelListner;
-protected:
-
 public :
    cViper_Info();
-   ~cViper_Info(){}
+   virtual ~cViper_Info(){}
    /*functions*/
    void viperui_setAttualProcess(viperui_AttualeSelezioneProcesso_e m,viperdef_Processo_e p){SelezioneProcesso.AttualeSelezione = (viperui_AttualeSelezioneProcesso_e)m;SelezioneProcesso.Processo = (viperdef_Processo_e)p;}
    void viperui_setProcess(viperdef_Processo_e p){SelezioneProcesso.Processo = p;}
@@ -116,6 +102,21 @@ public :
 //   void viperui_ManagerTickEvent(U8 t, U8 p);
    viperdef_Processo_e getProcess(){return SelezioneProcesso.Processo;}
    U8 viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t &encR,void* pMListner);
+
+private:
+//   typeProcess prc;
+   SelezioneProcesso_t SelezioneProcesso;
+   viperdef_MigCurvaInfo_t ListaCurveInfoDisponibili[VIPERUI_NMAXCURVEINFODISPONIBILI];
+   viperdef_MigCurvaInfo_t oldCurva;
+   enum sm_States_e
+   {
+      SM_Init,
+      SM_Run,
+      SM_Stop
+   }sm_State;
+   void *pModelListner;
+protected:
+
 
 };
 

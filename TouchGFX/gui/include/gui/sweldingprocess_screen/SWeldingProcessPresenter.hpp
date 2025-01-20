@@ -45,10 +45,11 @@ public:
    void setMigType(viperdef_TipoMig_e  migtype);
    viperui_AttualeSelezioneProcesso_e getActualSelezioneProcesso(void);
    void setProcessWelding(viperdef_Processo_e process);
-   viperdef_TipoFilo_e getWireType(void);
-   viperdef_DiametroFilo_e getWireDiameter(void);
-   viperdef_TipoGas_e getGasType(void);
-   viperdef_TipoMig_e getMigType(void);
+   void getWireType(void);
+   void getWireDiameter(void);
+   void getGasType(void);
+   void getMigType(void);
+   void setViewChange(Model::Views v);
 //   void setFocusMenu(U8);
    /**
     * Get Functions

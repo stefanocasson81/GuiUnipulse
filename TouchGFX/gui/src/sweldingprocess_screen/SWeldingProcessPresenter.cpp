@@ -122,19 +122,19 @@ void SWeldingProcessPresenter::setMigType(viperdef_TipoMig_e migtype)
 }
 
 
-viperdef_TipoFilo_e SWeldingProcessPresenter::getWireType(void)
+void SWeldingProcessPresenter::getWireType(void)
 {
    view.updateWireType(model->getWireTypeFromController());
 }
-viperdef_DiametroFilo_e SWeldingProcessPresenter::getWireDiameter(void)
+void SWeldingProcessPresenter::getWireDiameter(void)
 {
    view.updateWireDiameter(model->getWireDiameterFromController());
 }
-viperdef_TipoGas_e SWeldingProcessPresenter::getGasType(void)
+void SWeldingProcessPresenter::getGasType(void)
 {
    view.updateGasType(model->getGasTypeFromController());
 }
-viperdef_TipoMig_e SWeldingProcessPresenter::getMigType(void)
+void SWeldingProcessPresenter::getMigType(void)
 {
    view.updateMigType(model->getMigTypeFromController());
 }
@@ -152,6 +152,18 @@ viperdef_Processo_e SWeldingProcessPresenter::getProcess(void)
 
 
 
+
+void SWeldingProcessPresenter::setViewChange(Model::Views v)
+{
+   switch(v)
+   {
+      case (Model::View_Main):
+            static_cast<FrontendApplication*>(Application::getInstance())->VisualizzaSMain();
+         break;
+      default:
+         break;
+   }
+}
 
 
 

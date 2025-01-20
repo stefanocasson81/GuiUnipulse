@@ -81,6 +81,8 @@ void CWeldingContainerMig::initialize()
 
    CWeldingGenContParm[2].setVisible_IMG_iD_2(false);
 
+   CWeldingGenContParm[2].setVisible_IMG_iTypo_2(false);
+
    CWeldingGenContParm[2].set_IMG_iD_3(touchgfx::Bitmap(BITMAP_ICOGAS35X35_ID));
    CWeldingGenContParm[2].setVisible_IMG_iD_3(true);
 
