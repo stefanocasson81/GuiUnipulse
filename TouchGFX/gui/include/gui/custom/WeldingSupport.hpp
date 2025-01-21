@@ -104,7 +104,7 @@ public :
    viperdef_TipoMig_e viperui_getMigType(void){return SelezioneProcesso.CurvaInfo.TipoMig;}
 //   void viperui_ManagerTickEvent(U8 t, U8 p);
    viperdef_Processo_e getProcess(){return SelezioneProcesso.Processo;}
-   U8 viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t &encR);
+   U8 viperui_ManagerTickEvents(const Encoder_t& encS, const Encoder_t& encR);
 
 
 private:

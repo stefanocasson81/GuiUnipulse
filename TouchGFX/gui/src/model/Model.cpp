@@ -89,14 +89,7 @@ Model::Views Model::getCurrentScreen(void)
 /*********************************************
  * FUNCTION GET SOMETHING TO CONTROLLER
  **********************************************/
-
-U32 Model::getDataFromController(viperui_Data_e data)
-{
-   data_GetValData(&viperui_StrutturaDati[data]);
-}
-
-
-S32 Model::getDataFromCan(viperui_Data_e iD)
+S32 Model::getDataFromCanController(viperui_Data_e iD)
 {
    return data_GetValData(&viperui_StrutturaDati[iD]);
 }

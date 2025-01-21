@@ -153,6 +153,9 @@ void CMainMig::ManagerTickEvent(void)
 		default:
 		break;
 		case CMAINMIG_SELEZIONATO_VOID:
+
+
+
 			switch(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT))
 			{
 				default:
@@ -249,6 +252,9 @@ void CMainMig::ManagerTickEvent(void)
 				break;
 			}
 
+
+
+
 			switch(tgfxcustom_GetPressioneEncoder(ENCODER_RIGHT))
 			{
 				default:
@@ -307,7 +313,12 @@ void CMainMig::ManagerTickEvent(void)
 				break;
 			}
 		break;
+
+
 		case CMAINMIG_SELEZIONATO_WHATVISSX:
+
+
+
 			if(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT)==ENCODER_PRESSION_RELEASED)
 				Selezionato = CMAINMIG_SELEZIONATO_VOID;
 			else
@@ -323,7 +334,10 @@ void CMainMig::ManagerTickEvent(void)
 				OldSelezionato = CMAINMIG_SELEZIONATO_MAX;	// Tanto per rigenerare la pagina
 			}
 		break;
+
 		case CMAINMIG_SELEZIONATO_WHATVISDX:
+
+
 			if(tgfxcustom_GetPressioneEncoder(ENCODER_RIGHT)==ENCODER_PRESSION_RELEASED)
 				Selezionato = CMAINMIG_SELEZIONATO_VOID;
 			else
@@ -339,7 +353,9 @@ void CMainMig::ManagerTickEvent(void)
 				OldSelezionato = CMAINMIG_SELEZIONATO_MAX;	// Tanto per rigenerare la pagina
 			}
 		break;
+
 		case CMAINMIG_SELEZIONATO_IMPOSTAZIONERAPIDA:
+
 			if(tgfxcustom_GetPressioneEncoder(ENCODER_LEFT)==ENCODER_PRESSION_RELEASED)
 			{	// Esce dalla impostazione rapida
 				cImpostazioneRapida1.Seleziona(false);
@@ -479,24 +495,30 @@ void CMainMig::ManagerTickEvent(void)
 					tADX3Val.setY(-30);	// Sparisce
 				break;
 			}
+
+
 			switch(Selezionato)
 			{
 				default:
 				break;
+
 				case CMAINMIG_SELEZIONATO_VOID:
 				break;
+
 				case CMAINMIG_SELEZIONATO_EDITSX:
 					tAValSX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
 					tAValDX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
 
 					bSX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
 				break;
+
 				case CMAINMIG_SELEZIONATO_EDITDX:
 					tAValSX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
 					tAValDX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
 
 					bDX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_AZIENDALE]));
 				break;
+
 				case CMAINMIG_SELEZIONATO_WHATVISSX:
 					tAValSX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
 					tAValDX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
@@ -519,6 +541,7 @@ void CMainMig::ManagerTickEvent(void)
 						break;
 					}
 				break;
+
 				case CMAINMIG_SELEZIONATO_WHATVISDX:
 					tAValSX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));
 					tAValDX.setColor(colortype(viperui_ListStdColor[VIPERUI_STDCOLOR_BIANCO]));

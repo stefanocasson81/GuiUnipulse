@@ -9,7 +9,7 @@ SMainPresenter::SMainPresenter(SMainView& v)
 
 void SMainPresenter::activate()
 {
-
+   model->setCurrentScreen(Model::View_Main);
 }
 
 void SMainPresenter::deactivate()

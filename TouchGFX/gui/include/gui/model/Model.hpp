@@ -77,7 +77,6 @@ public:
 
    /********** get Data from Controller **********************/
 //    U8 getProcess();
-   U32 getDataFromController(viperui_Data_e data);
    Model::Enc_Pression encGetPression(Model::Enc_Type encoder);
    S16 encGetOffset(Model::Enc_Type encoder);
    Views getCurrentScreen();
@@ -87,7 +86,7 @@ public:
    viperdef_DiametroFilo_e getWireDiameterFromController(void);
    viperdef_TipoGas_e getGasTypeFromController(void);
    viperdef_TipoMig_e getMigTypeFromController(void);
-   S32 getDataFromCan(viperui_Data_e iD);
+   S32 getDataFromCanController(viperui_Data_e iD);
 
    /************* set functions ******************/
    void setEncoderPreccesed(U8 encoder);

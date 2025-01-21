@@ -46,17 +46,32 @@ SMainView::~SMainView()
 	//touchgfx::Application::getInstance()->unregisterTimerWidget(this);
 }
 
+
+void SMainView::setupScreen()
+{
+    SMainViewBase::setupScreen();
+    processo = (viperdef_Processo_e)presenter->getDataFromCan(VIPERUI_DATA_BASE_PROCESSO);
+    tipoMig = (viperdef_TipoMig_e)presenter->getDataFromCan(VIPERUI_DATA_BASE_TIPOMIG);
+}
+
+void SMainView::tearDownScreen()
+{
+    SMainViewBase::tearDownScreen();
+}
+
 void SMainView::handleTickEvent()
 {
 	viperdef_Processo_e processo;
 	viperdef_TipoMig_e tipoMig;
 	bool rigenera = false;
 
-	processo = (viperdef_Processo_e)data_GetValData(&viperui_StrutturaDati[VIPERUI_DATA_BASE_PROCESSO]);
-	tipoMig = (viperdef_TipoMig_e)data_GetValData(&viperui_StrutturaDati[VIPERUI_DATA_BASE_TIPOMIG]);
+	processo = (viperdef_Processo_e)presenter->getDataFromCan(VIPERUI_DATA_BASE_PROCESSO);
+	tipoMig = (viperdef_TipoMig_e)presenter->getDataFromCan(VIPERUI_DATA_BASE_TIPOMIG);
+//	processo = (viperdef_Processo_e)data_GetValData(&viperui_StrutturaDati[VIPERUI_DATA_BASE_PROCESSO]);
+//	tipoMig = (viperdef_TipoMig_e)data_GetValData(&viperui_StrutturaDati[VIPERUI_DATA_BASE_TIPOMIG]);
 
 	// Un minimo di protezione su valori sballati
-	if(processo<VIPERDEF_PROCESSO_MAX)
+	if(processo < VIPERDEF_PROCESSO_MAX)
 	{
 		if((processo!=ShowProcesso) || (tipoMig!=ShowTipoMig))
 		{
@@ -175,12 +190,4 @@ void SMainView::handleTickEvent()
 }
 
 
-void SMainView::setupScreen()
-{
-    SMainViewBase::setupScreen();
-}
 
-void SMainView::tearDownScreen()
-{
-    SMainViewBase::tearDownScreen();
-}

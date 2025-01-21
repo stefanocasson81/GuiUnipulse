@@ -903,7 +903,7 @@ void cViper_Info::viperui_RecalcBitMappedFiloDiametroGasMig(viperdef_TipoMig_e t
 
 
 
-U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t &encR)
+U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t& encS, const Encoder_t& encR)
 {
    S16 Enc_R_OffsetTmp = 0;
 //   S16 Enc_S_OffsetTmp = 0;

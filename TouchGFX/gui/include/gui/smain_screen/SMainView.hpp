@@ -28,6 +28,10 @@ protected:
     viperdef_Processo_e ShowProcesso;
     viperdef_TipoMig_e ShowTipoMig;
 
+private:
+    viperdef_Processo_e processo;
+     viperdef_TipoMig_e tipoMig;
+
 };
 
 #endif // SMAINVIEW_HPP

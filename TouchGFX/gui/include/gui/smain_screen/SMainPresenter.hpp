@@ -27,6 +27,8 @@ public:
 
     virtual ~SMainPresenter() {};
 
+    S32 getDataFromCan(viperui_Data_e iD){return (model->getDataFromCanController(iD));}
+
 private:
     SMainPresenter();
 
