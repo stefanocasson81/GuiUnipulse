@@ -1,12 +1,5 @@
 #include <gui/custom/CWeldingContainerMma.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
-//extern "C"
-//{
-//	#include "CORELib/UserInterface/ViperUI.h"
-//	#include "ARMLib/TGFX/TGFXCustom.h"
-//	#include "CORELib/Common/ViperDef.h"
-//	#include "Features.h"
-//};
 
 
 CWeldingContainerMma::CWeldingContainerMma():indexMenu(0)

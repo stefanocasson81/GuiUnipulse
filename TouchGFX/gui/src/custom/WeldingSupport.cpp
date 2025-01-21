@@ -10,7 +10,7 @@
 #include <ARMLib/TGFX/cpp_define.hpp>
 #include <ARMLib/TGFX/color_define.hpp>
 #include <gui/custom/WeldingSupport.hpp>
-#include <ARMLib/TGFX/TGFXCustom.h>
+//#include <ARMLib/TGFX/TGFXCustom.h>
 #include <gui/model/ModelListener.hpp>
 #include <TouchGFX/Color.hpp>
 extern "C"
@@ -66,18 +66,13 @@ cViper_Info::cViper_Info():sm_State(SM_Init),pModelListner(NULL)
    SelezioneProcesso.IndiceDiametroFilo = 0;
    SelezioneProcesso.IndiceTipoGas = 0;
    SelezioneProcesso.IndiceTipoMig = 0;
+
 //   viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig,SelezioneProcesso.CurvaInfo.TipoFilo, SelezioneProcesso.CurvaInfo.DiametroFilo, SelezioneProcesso.CurvaInfo.TipoGas);
 }
 
 
 void cViper_Info::viperui_LoadData(void)
 {
-
-//   SelezioneProcesso.IndiceDiametroFilo = 0;
-//   SelezioneProcesso.IndiceTipoGas = 0;
-//   SelezioneProcesso.IndiceTipoMig = 0;
-//   viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig,SelezioneProcesso.CurvaInfo.TipoFilo, SelezioneProcesso.CurvaInfo.DiametroFilo, SelezioneProcesso.CurvaInfo.TipoGas);
-
    SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO;
    SelezioneProcesso.Processo = viperdef_Pack8GenTx_Base.Processo;
 
@@ -908,7 +903,7 @@ void cViper_Info::viperui_RecalcBitMappedFiloDiametroGasMig(viperdef_TipoMig_e t
 
 
 
-U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t &encR, void *pMListner)
+U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t &encR)
 {
    S16 Enc_R_OffsetTmp = 0;
 //   S16 Enc_S_OffsetTmp = 0;
@@ -919,10 +914,10 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
    switch (sm_State)
    {
       case SM_Init:
-//         SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO;
-//         SelezioneProcesso.IndiceDiametroFilo = 0;
-//         SelezioneProcesso.IndiceTipoGas = 0;
-//         SelezioneProcesso.IndiceTipoMig = 0;
+         SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO;
+         SelezioneProcesso.IndiceDiametroFilo = 0;
+         SelezioneProcesso.IndiceTipoGas = 0;
+         SelezioneProcesso.IndiceTipoMig = 0;
          viperui_LoadData();
 //         viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoFilo, SelezioneProcesso.CurvaInfo.DiametroFilo,SelezioneProcesso.CurvaInfo.TipoGas);
 
@@ -944,25 +939,6 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
 
          if(encR.Pression == ENCODER_PRESSION_RELEASED)
             PressionConfirm = 1;
-//         if ( ActualSelection < VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO )
-//         {
-//            ActualSelection = VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO;
-//         }
-//         if ( ActualSelection > VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS )
-//         {
-//            ActualSelection = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS;
-//         }
-//         SelezioneProcesso.AttualeSelezione = (viperui_AttualeSelezioneProcesso_e)ActualSelection;
-//
-//         if ( SelezioneProcesso.oldAttualeSelezione != SelezioneProcesso.AttualeSelezione )
-//         {
-//            SelezioneProcesso.oldAttualeSelezione = SelezioneProcesso.AttualeSelezione;
-//            ((ModelListener*) pMListner)->setMigWeldingProcessMenu(SelezioneProcesso.AttualeSelezione);
-//         }
-//         else if(!encR.Offset) //se nessuno dei 2 encoder e' stato mosso esco
-//         {
-//            return 0;
-//         }
 
          if ( SelezioneProcesso.Processo < VIPERDEF_PROCESSO_MIG )
          {
@@ -993,13 +969,13 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                   if ( SelezioneProcesso.Processo != SelezioneProcesso.oldProcesso )
                   {
                      SelezioneProcesso.oldProcesso = SelezioneProcesso.Processo;
-                     ((ModelListener*) pMListner)->setProcessWelding(SelezioneProcesso.Processo);
+                     pModelListner->setProcessWelding(SelezioneProcesso.Processo);
                   }
                }
 
                if ( SelezioneProcesso.Processo == VIPERDEF_PROCESSO_MIG )
                {
-                  if ( ActualSelection > 0 )
+                  if ( ActualSelection > 0 || PressionConfirm)
                   {
                      SelezioneProcesso.CurvaInfo.TipoFilo = SelezioneProcesso.CurvaInfoDiPartenza.TipoFilo;
                      SelezioneProcesso.CurvaInfo.TipoMig = SelezioneProcesso.CurvaInfoDiPartenza.TipoMig;
@@ -1040,16 +1016,10 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                {
                   if ( SelezioneProcesso.IndiceTipoMig == VIPERDEF_TIPOMIG_MAN )
                   {
-                     viperui_Generatore_CambiaProcesso(SelezioneProcesso.Processo, SelezioneProcesso.CurvaInfo.TipoMig, SelezioneProcesso.CurvaInfo.TipoFilo,
-                           SelezioneProcesso.CurvaInfo.TipoGas, SelezioneProcesso.CurvaInfo.DiametroFilo);
-                     viperdef_Pack8GenTx_Base.Processo = SelezioneProcesso.Processo;  // Solo per anticipare il refresh el quadro main al nuovo processo...
-                     if ( pMListner != NULL )
-                     {
-                        ((ModelListener*) pMListner)->setViewChange(Model::View_Main);
-                     }
+                     viperui_LoadManView();
                   }
                }
-               if ( ActualSelection > 0 )
+               if ( ActualSelection > 0 || PressionConfirm )
                {
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO;
                }
@@ -1078,21 +1048,7 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                   SelezioneProcesso.IndiceTipoGas = 0xff;     // Seleziona quello simile o il primo se mancante
                   SelezioneProcesso.IndiceTipoFilo = 0xff;
                }
-               if ( PressionConfirm )
-               {
-                  if ( SelezioneProcesso.CurvaInfo.TipoFilo == VIPERDEF_TIPOFILO_MANUAL )
-                  {
-                     viperui_Generatore_CambiaProcesso(SelezioneProcesso.Processo, VIPERDEF_TIPOMIG_MAN, VIPERDEF_TIPOFILO_MANUAL, VIPERDEF_TIPOGAS_M21_MIX8020,
-                           VIPERDEF_DIAMETROFILO_10);
-                     viperdef_Pack8GenTx_Base.Processo = SelezioneProcesso.Processo;  // Solo per anticipare il refresh el quadro main al nuovo processo...
-                     if ( pMListner != NULL )
-                     {
-                        ((ModelListener*) pMListner)->setViewChange(Model::View_Main);
-                     }
-
-                  }
-               }
-               if ( ActualSelection > 0 )
+               if ( ActualSelection > 0 || PressionConfirm)
                {
                   viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig, SelezioneProcesso.CurvaInfo.TipoFilo, VIPERDEF_DIAMETROFILO_MAX,
                         VIPERDEF_TIPOGAS_MAX);
@@ -1124,7 +1080,7 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                   SelezioneProcesso.IndiceTipoGas = 0xff;     // Seleziona quello simile o il primo se mancante
                   SelezioneProcesso.IndiceTipoMig = 0xff;     // Seleziona quello simile o il primo se mancante
                }
-               if ( ActualSelection > 0 )
+               if ( ActualSelection > 0 || PressionConfirm)
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS;
                else if ( ActualSelection < 0 )
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOFILO;
@@ -1149,6 +1105,10 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
                   viperui_RecalcBitMappedFiloDiametroGasMig(SelezioneProcesso.CurvaInfo.TipoMig, SelezioneProcesso.CurvaInfo.TipoFilo, SelezioneProcesso.CurvaInfo.DiametroFilo,
                         VIPERDEF_TIPOGAS_MAX);
                }
+               if ( PressionConfirm )
+               {
+                  viperui_LoadManView();
+               }
 
                if ( ActualSelection > 0 )
                   SelezioneProcesso.AttualeSelezione = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOGAS;
@@ -1164,9 +1124,8 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
 
          if ( SelezioneProcesso.oldAttualeSelezione != SelezioneProcesso.AttualeSelezione )
          {
-            SelezioneProcesso.oldAttualeSelezione = SelezioneProcesso.AttualeSelezione;
-            if(pMListner != NULL)
-               ((ModelListener*) pMListner)->setMigWeldingProcessMenu(SelezioneProcesso.AttualeSelezione);
+            if(pModelListner != NULL)
+               pModelListner->setMigWeldingProcessMenu(SelezioneProcesso.AttualeSelezione);
          }
 
          if ( SelezioneProcesso.IndiceTipoMig >= SelezioneProcesso.IndiceMaxEnumTipoMig )
@@ -1236,12 +1195,12 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
 
          if ( memcmp(&oldCurva, &SelezioneProcesso.CurvaInfo, sizeof(viperdef_MigCurvaInfo_t)) )
          {
-            if(pMListner != NULL)
+            if(pModelListner != NULL)
             {
-               ((ModelListener*) pMListner)->setWireType(SelezioneProcesso.CurvaInfo.TipoFilo);
-               ((ModelListener*) pMListner)->setGasType(SelezioneProcesso.CurvaInfo.TipoGas);
-               ((ModelListener*) pMListner)->setMigType(SelezioneProcesso.CurvaInfo.TipoMig);
-               ((ModelListener*) pMListner)->setWireDiameter(SelezioneProcesso.CurvaInfo.DiametroFilo);
+               pModelListner->setWireType(SelezioneProcesso.CurvaInfo.TipoFilo);
+               pModelListner->setGasType(SelezioneProcesso.CurvaInfo.TipoGas);
+               pModelListner->setMigType(SelezioneProcesso.CurvaInfo.TipoMig);
+               pModelListner->setWireDiameter(SelezioneProcesso.CurvaInfo.DiametroFilo);
             }
             memcpy(&oldCurva, &SelezioneProcesso.CurvaInfo, sizeof(viperdef_MigCurvaInfo_t));
          }
@@ -1253,35 +1212,17 @@ U8 cViper_Info::viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t
    return 1;
 }
 
-
-//void cViper_Info::viperui_ManagerTickEvent(U8 t, U8 p)
-//{
-//   switch (this->SelezioneProcesso.Processo)
-//   {
-//      case VIPERDEF_PROCESSO_MMA:
-//
-//      break;
-//      case VIPERDEF_PROCESSO_TIG:
-//      break;
-//      case VIPERDEF_PROCESSO_MIG:
-//
-//
-//
-//
-//
-//      break;
-//      case VIPERDEF_PROCESSO_MAX:
-//
-//
-//         break;
-//   }
-//   switch(this->SelezioneProcesso.AttualeSelezione)
-//   {
-//      case VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO:
-//         break;
-//   }
-//}
-
+void cViper_Info::viperui_LoadManView(void)
+{
+   viperui_Generatore_CambiaProcesso(SelezioneProcesso.Processo, SelezioneProcesso.CurvaInfo.TipoMig, SelezioneProcesso.CurvaInfo.TipoFilo, SelezioneProcesso.CurvaInfo.TipoGas,
+         SelezioneProcesso.CurvaInfo.DiametroFilo);
+   viperdef_Pack8GenTx_Base.Processo = SelezioneProcesso.Processo;  // Solo per anticipare il refresh el quadro main al nuovo processo...
+   sm_State = SM_Init;
+   if ( pModelListner != NULL )
+   {
+      pModelListner->setViewChange(Model::View_Main);
+   }
+}
 
 
 

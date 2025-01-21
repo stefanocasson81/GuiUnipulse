@@ -16,6 +16,7 @@ public:
 	void set_TA_MainTitle(const TypedText &t);
 	void setVisible_TA_MainTitle(bool b);
 	void setActveBase(U8 i, bool b);
+	void setVisibleContainer(bool f);
 
 	void setAlphaContainer(U8);
 	void setBackground(colortype color);

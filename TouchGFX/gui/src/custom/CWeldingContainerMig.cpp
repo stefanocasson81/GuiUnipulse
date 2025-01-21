@@ -175,12 +175,18 @@ void CWeldingContainerMig::seletcMig_MigType(S8 submenu)
 
       case VIPERDEF_TIPOMIG_MAN:
          CWeldingGenContParm[0].set_TA_Desc_2("MANUAL");
+         CWeldingGenContParm[1].setVisibleContainer(false);
+         CWeldingGenContParm[2].setVisibleContainer(false);
       break;
       case VIPERDEF_TIPOMIG_SYN:
          CWeldingGenContParm[0].set_TA_Desc_2("SYNERGIC");
+         CWeldingGenContParm[1].setVisibleContainer(true);
+         CWeldingGenContParm[2].setVisibleContainer(true);
       break;
       case VIPERDEF_TIPOMIG_PULSE:
          CWeldingGenContParm[0].set_TA_Desc_2("PULSED");
+         CWeldingGenContParm[1].setVisibleContainer(true);
+         CWeldingGenContParm[2].setVisibleContainer(true);
       break;
    }
 }

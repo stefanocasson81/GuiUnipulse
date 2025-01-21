@@ -43,6 +43,11 @@ void CWeldingGenericContainerParam::setVisible_TA_MainTitle(bool b)
 }
 
 
+void CWeldingGenericContainerParam::setVisibleContainer(bool f)
+{
+   this->setVisible(f);
+   this->invalidate();
+}
 
 //@base1
 void CWeldingGenericContainerParam::set_TA_Process_1(const TypedText& t)

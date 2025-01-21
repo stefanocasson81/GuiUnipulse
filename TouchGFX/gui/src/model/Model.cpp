@@ -53,17 +53,6 @@ void Model::tick()
       {
          modelListener->setOffsetEncoder((Model::Enc_Type)i,encOffset,encOffset);
       }
-//      if(tmp != encArray[i])
-//      {
-//         S16 direction = 0;
-//         if(encArray[i] < tmp)
-//            direction = 1;
-//         else
-//            direction = -1;
-//         encArray[i] = tmp;
-//         modelListener->setOffsetEncoder((Model::Enc_Type)i,tmp,direction);
-//      }
-
       Enc[i].Type = i;
       Enc[i].Pression = encPression;
       Enc[i].Offset = encOffset;
@@ -72,18 +61,8 @@ void Model::tick()
    }
 
    if ( getCurrentScreen() == View_WeldingProcess )
-//      if ( viper_Info.getProcess() == VIPERDEF_PROCESSO_MIG )
-//      {
+         viper_Info.viperui_ManagerTickEvents(Enc[ENC_LEFT], Enc[ENC_RIGHT]);
 
-         viper_Info.viperui_ManagerTickEvents(Enc[ENC_LEFT], Enc[ENC_RIGHT], modelListener);
-//         if ( viper_Info.viperui_ManagerTickEvents(Enc[ENC_LEFT], Enc[ENC_RIGHT], MigCurva, modelListener) )
-//         {
-//            modelListener->setWireType(MigCurva.TipoFilo);
-//            modelListener->setGasType(MigCurva.TipoGas);
-//            modelListener->setMigType(MigCurva.TipoMig);
-//            modelListener->setWireDiameter(MigCurva.DiametroFilo);
-//         }
-//      }
 }
 
 
@@ -117,6 +96,10 @@ U32 Model::getDataFromController(viperui_Data_e data)
 }
 
 
+S32 Model::getDataFromCan(viperui_Data_e iD)
+{
+   return data_GetValData(&viperui_StrutturaDati[iD]);
+}
 
 /**@SET Functions ***/
 

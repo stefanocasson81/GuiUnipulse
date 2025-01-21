@@ -6,15 +6,6 @@
 #include <gui/containers/CWeldingGenericContainerParam.hpp>
 #include <gui/containers/CWeldingGenericContainer.hpp>
 
-//extern "C"
-//{
-//#include "CORELib/UserInterface/ViperUI.h"
-//#include "ARMLib/TGFX/TGFXCustom.h"
-//#include "CORELib/Common/ViperDef.h"
-//#include "Features.h"
-//};
-
-//class SWeldingProcessView;
 
 class CWeldingContainerTig : public CWeldingGenericContainer
 {

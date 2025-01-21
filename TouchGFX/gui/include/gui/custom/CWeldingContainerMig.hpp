@@ -10,12 +10,6 @@
 #include <touchgfx/Callback.hpp>
 #include <array>
 
-//extern "C"
-//{
-//   #include "ARMLib/Common/ComDef.h"
-//   #include "CORELib/Common/ViperDef.h"
-//   #include "CORELib/UserInterface/ViperUI.h"
-//};
 
 class CWeldingContainerMig : public CWeldingGenericContainer
 {

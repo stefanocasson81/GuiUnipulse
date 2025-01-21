@@ -94,11 +94,7 @@ void SWeldingProcessView::createSelectedProcess(viperdef_Processo_e p)
       break;
 
       case VIPERDEF_PROCESSO_MAX:
-      default:
-//         if ( process >= VIPERDEF_PROCESSO_MAX )
-//            process = VIPERDEF_PROCESSO_MIG;
-//         else if ( process < VIPERDEF_PROCESSO_MMA )
-//            process = VIPERDEF_PROCESSO_MMA;
+      default:;
       break;
    }
 }
@@ -106,13 +102,7 @@ void SWeldingProcessView::createSelectedProcess(viperdef_Processo_e p)
 
 void SWeldingProcessView::encRXconfirm(void)
 {
-//   if(focusMenu == VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO)
-//   {
-//      presenter->setProcessToModel(viperdef_TipoMig_e(process));
-//      focusMenu = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG;
-//   }
-//   else
-//      focusMenu +=1;
+
 }
 
 /***********************Calback*************************/
@@ -133,30 +123,7 @@ void SWeldingProcessView::fromContainerMenuSelected_Callback(S8 Menu,S8 Process)
 
 void SWeldingProcessView::encRX_incDec(S8 toward)
 {
-/*
-   if(!focusMenu)
-   {
-      if ( PtrQuadro )
-      {
-         remove(*PtrQuadro);
-         _DELETE_(PtrQuadro);
-      }
-      process += toward;
-      if ( process >= VIPERDEF_PROCESSO_MAX )
-         process = VIPERDEF_PROCESSO_MIG;
-      else if ( process < VIPERDEF_PROCESSO_MMA )
-         process = VIPERDEF_PROCESSO_MMA;
-      presenter->setFocusIdVariableToModel(0, process);
-      createSelectedProcess(viperdef_TipoMig_e(process));
-   }
-   */
-//   else
-//   {
-//      if ( PtrQuadro )
-//      {
-//         PtrQuadro->seletcMenu(focusMenu,toward);
-//      }
-//   }
+
 }
 
 void SWeldingProcessView::setMenuContainer(viperui_AttualeSelezioneProcesso_e m)
@@ -169,15 +136,7 @@ void SWeldingProcessView::setMenuContainer(viperui_AttualeSelezioneProcesso_e m)
 
 void SWeldingProcessView::encSX_incDec(S8 toward)
 {
-//   if(focusMenu == VIPERUI_ATUALESELEZIONEPROCESSO_TIPOPROCESSO)
-//      focusMenu = VIPERUI_ATUALESELEZIONEPROCESSO_MIG_TIPOMIG;
-//   else
-//   focusMenu += toward;
 
-//	if(PtrQuadro)
-//	{
-//		PtrQuadro->seletcMenu(focusMenu,0);
-//	}
 }
 
 

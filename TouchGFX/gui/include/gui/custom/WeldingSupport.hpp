@@ -10,7 +10,6 @@ extern "C"
 //   #include "ARMLib/Common/Data8Pack.h"
 //   #include "ARMLib/Common/Data.h"
    #include "CORELib/UserInterface/ViperUI.h"
-//   #include "CORELib/Common/ViperDef.h"
    #include "gui/custom/CommonDefine.h"
 }
 //====================================================================== DEFINES
@@ -80,6 +79,8 @@ typedef struct
 /**************************************************************************************************
  * class
  *************************************************************************************************/
+ class ModelListener;
+
 class cViper_Info
 {
 public :
@@ -95,13 +96,16 @@ public :
    void viperui_InitData(void);
    void viperui_LoadData(void);
    void viperui_DestroyData(void);
+   void viperui_LoadManView(void);
+   void viperui_setModelListnerPoint(ModelListener* p){pModelListner = p;}
    viperdef_TipoFilo_e viperui_getWiteType(void){return SelezioneProcesso.CurvaInfo.TipoFilo;}
    viperdef_DiametroFilo_e viperui_getWireDiameter(void){return SelezioneProcesso.CurvaInfo.DiametroFilo;}
    viperdef_TipoGas_e viperui_getGasType(void){return SelezioneProcesso.CurvaInfo.TipoGas;}
    viperdef_TipoMig_e viperui_getMigType(void){return SelezioneProcesso.CurvaInfo.TipoMig;}
 //   void viperui_ManagerTickEvent(U8 t, U8 p);
    viperdef_Processo_e getProcess(){return SelezioneProcesso.Processo;}
-   U8 viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t &encR,void* pMListner);
+   U8 viperui_ManagerTickEvents(const Encoder_t &encS, const Encoder_t &encR);
+
 
 private:
 //   typeProcess prc;
@@ -114,9 +118,8 @@ private:
       SM_Run,
       SM_Stop
    }sm_State;
-   void *pModelListner;
 protected:
-
+   ModelListener* pModelListner;
 
 };
 
